@@ -13,7 +13,7 @@ Route::post('cailaimatkhau','Auth\ForgotPasswordController@postguimatkhau');
 
 
 Route::group(['prefix'=>'private','middleware'=>'adminLogin'],function(){
-Route::get('/', 'NhanVienController@getview'); 
+Route::get('/', 'NhanVienController@getview');
 //-------------------------- Tin tuc--------------------------------------
 Route::group(['prefix'=>'theloai','middleware'=>'check:theloai'],function(){
 
@@ -40,29 +40,29 @@ Route::group(['prefix'=>'loaitin','middleware'=>'check:loaitin'],function(){
 Route::group(['prefix'=>'tintuc','middleware'=>'check:tintuc'],function(){
     //admin/tintuc/them
     Route::get('danhsach', 'TinTucController@getDanhSach');
-   
+
     Route::get('sua/{id}','TinTucController@getSua');
     Route::post('sua/{id}','TinTucController@postSua');
-    
+
     Route::get('them','TinTucController@getThem');
     Route::post('them','TinTucController@postThem');
 
     Route::get('xoa/{id}','TinTucController@getXoa');
-    
-    
+
+
     //tuyendung
      Route::get('danhsachtuyendung','TinTucController@getDanhSachtuyendung');
 
      Route::get('tuyendung/sua/{id}','TinTucController@getSuatuyendung');
      Route::post('tuyendung/sua/{id}','TinTucController@postSuatuyendung');
-     
+
      Route::get('tuyendung/them','TinTucController@getThemtuyendung');
      Route::post('tuyendung/them','TinTucController@postThemtuyendung');
- 
+
      Route::get('tuyendung/xoa/{id}','TinTucController@getXoatuyendung');
 });
     Route::group(['prefix'=>'comment'],function(){
-    Route::get('xoa/{id}/{idTinTuc}','CommentController@getXoa');	
+    Route::get('xoa/{id}/{idTinTuc}','CommentController@getXoa');
 });
 Route::group(['prefix'=>'thongtin','middleware'=>'check:thongtincongty'],function(){
 
@@ -71,14 +71,14 @@ Route::group(['prefix'=>'thongtin','middleware'=>'check:thongtincongty'],functio
 
     Route::get('gioithieu/sua/{id}','ThongtinController@getSuagioithieu');
     Route::post('gioithieu/sua/{id}','ThongtinController@postSuagioithieu');
-    
+
     Route::get('gioithieu/them','ThongtinController@getThemgioithieu');
     Route::post('gioithieu/them','ThongtinController@postThemgioithieu');
 
     Route::get('gioithieu/xoa/{id}','ThongtinController@getXoagioithieu');
-    
 
-   
+
+
 
 
     //thong tin cong ty
@@ -91,8 +91,8 @@ Route::group(['prefix'=>'thongtin','middleware'=>'check:thongtincongty'],functio
 
 // Route::group(['prefix' => 'Export'], function () {
 //     Route::get('dsnhanvien','ExcelController@Exceldsnhanviens');
-//     
-//    
+//
+//
 // });
 
 
@@ -103,15 +103,15 @@ Route::group(['prefix'=>'thongtin','middleware'=>'check:thongtincongty'],functio
 Route::get('danhsachnvpb','DanhmucController@getDanhSachNVPB')->middleware('check:qlnhanvienpb');;
 
 //--------------------------- Phòng ban ---------------------------
-Route::group(['prefix' => 'phongban','middleware'=>'check:phongban'], function () { 
+Route::group(['prefix' => 'phongban','middleware'=>'check:phongban'], function () {
     Route::get('danhsach','DanhmucController@getDanhSachPB');
     //Route::get('danhsach', ['uses'=>'DanhmucController@getDanhSachPB', 'as'=>'danhsach.index']);
     //---------------------Form Thêm phòng ban -----------------------------------
-    Route::get('them','PhongbanController@getThemPB'); 
+    Route::get('them','PhongbanController@getThemPB');
     Route::post('them','PhongBanController@postThemPB');
 
     Route::get('sua/{id_phongban}','PhongBanController@getSuaPB');
-    Route::post('sua/{id_phongban}','PhongBanController@postSuaPB'); 
+    Route::post('sua/{id_phongban}','PhongBanController@postSuaPB');
 
     Route::get('xoa/{id_phongban}','PhongBanController@getXoaPB');
     Route::get('bab','PhongBanController@tesT');
@@ -119,11 +119,11 @@ Route::group(['prefix' => 'phongban','middleware'=>'check:phongban'], function (
 
 //--------------------------- Chức vụ ---------------------------
 Route::group(['prefix' => 'chucvu','middleware'=>'check:chucvu'], function () {
-    Route::get('danhsach','DanhmucController@getDanhSachCV');   
+    Route::get('danhsach','DanhmucController@getDanhSachCV');
 
-    Route::get('them','ChucVuController@getThemCV');     
-    Route::post('them','ChucVuController@postThemCV');  
-    
+    Route::get('them','ChucVuController@getThemCV');
+    Route::post('them','ChucVuController@postThemCV');
+
     Route::get('sua/{id_chucvu}','ChucVuController@getSuaCV');
     Route::post('sua/{id_chucvu}','ChucVuController@postSuaCV');
 
@@ -131,21 +131,21 @@ Route::group(['prefix' => 'chucvu','middleware'=>'check:chucvu'], function () {
 });
 
 Route::group(['prefix' => 'phucap','middleware'=>'check:phucap'], function () {
-    Route::get('danhsach','DanhmucController@getDanhSachPC');    
+    Route::get('danhsach','DanhmucController@getDanhSachPC');
     Route::get('sua/{id}','PhucapController@getSuaPC');
     Route::post('sua/{id}','PhucapController@postSuaPC');
 });
 
 //--------------------------- Nhân Viên ---------------------------
 Route::group(['prefix' => 'nhanvien','middleware'=>'check:dsnhanvien'], function () {
-    Route::get('danhsach','DanhmucController@getDanhSachNV'); 
+    Route::get('danhsach','DanhmucController@getDanhSachNV');
     // //-------------------------- Chi tiết -----------------------------------
     // Route::get('chitiet/{id}','DanhmucController@getHoSoFull');
     Route::get('{num}','DanhmucController@getDanhSachNVLoai');
 
     // Route::get('them','DanhmucController@getDanhSachCV');     //chua lam
     // Route::post('them','DanhmucController@getDanhSachCV');     //chua lam
-    
+
     // Route::get('sua','PhongbanController@getFormPB');   //chua lam
     // Route::post('sua','PhongbanController@addPhongBan');    //chua lam
 
@@ -155,11 +155,11 @@ Route::group(['prefix' => 'nhanvien','middleware'=>'check:dsnhanvien'], function
 //--------------------------- Hợp đồng ---------------------------
 Route::group(['prefix' => 'hopdong','middleware'=>'check:quanlyhopdong'], function () {
     Route::get('danhsach','DanhmucController@getDanhSachHD');
-    Route::get('nhanvien/{id}','DanhmucController@getDanhSachHDNV');   
+    Route::get('nhanvien/{id}','DanhmucController@getDanhSachHDNV');
 
     Route::get('them','DanhmucController@getDanhSachCV');     //chua lam
     Route::post('them','DanhmucController@getDanhSachCV');     //chua lam
-    
+
     Route::get('sua','PhongbanController@getFormPB');   //chua lam
     Route::post('sua','PhongbanController@addPhongBan');    //chua lam
 });
@@ -170,12 +170,12 @@ Route::group(['prefix' => 'ykien'], function () {
     Route::get('danhsach/loai/{id}','DanhmucController@getDanhSachYKL')->middleware('check:quanlyykien');    //Danh sách theo loại ý kiến
     Route::get('danhsach/theodoi','YKienController@getDSYKCaNhan')->middleware('check:ykien');
     Route::get('danhsach/chitiet/{id_luuykien}','YkienController@getChiTietYK')->middleware('check:ykien');     //Danh sách để người dùng theo dõi
-    
-    Route::post('danhsach/{id}/{id_luuykien}','YKienController@postDuyetYK')->middleware('check:quanlyykien');       //Duyệt ý kiến 
+
+    Route::post('danhsach/{id}/{id_luuykien}','YKienController@postDuyetYK')->middleware('check:quanlyykien');       //Duyệt ý kiến
 
     Route::get('them','YKienController@getThemYK')->middleware('check:ykien');         //thêm
     Route::post('them','YKienController@postThemYK')->middleware('check:ykien');       //thêm
-    
+
     Route::get('sua/{id_luuykien}','YKienController@getSuaYK')->middleware('check:ykien');     //sửa
     Route::post('sua/{id_luuykien}','YKienController@postSuaYK')->middleware('check:ykien');   //sửa
 
@@ -183,13 +183,13 @@ Route::group(['prefix' => 'ykien'], function () {
 });
 
 //--------------------------- Loại ý kiến ---------------------------
-Route::group(['prefix' => 'loaiykien','middleware'=>'check:quanlyloaiykien'], function () { 
+Route::group(['prefix' => 'loaiykien','middleware'=>'check:quanlyloaiykien'], function () {
     Route::get('danhsach','DanhmucController@getDanhSachLoaiYK');
 
-    Route::get('them','LoaiYKienController@getThemLoaiYK');   
+    Route::get('them','LoaiYKienController@getThemLoaiYK');
     Route::post('them','LoaiYKienController@postThemLoaiYK');
-    
-    Route::get('sua/{id_ykien}','LoaiYKienController@getSuaLoaiYK');  
+
+    Route::get('sua/{id_ykien}','LoaiYKienController@getSuaLoaiYK');
     Route::post('sua/{id_ykien}','LoaiYKienController@postSuaLoaiYK');
 
     Route::get('xoa/{id_ykien}','LoaiYKienController@getXoaLoaiYK');
@@ -228,16 +228,16 @@ Route::group(['prefix' => 'baohiem'], function () {
     Route::get('them/{id_nhanvien}','BaoHiemController@getThemBH');
     Route::post('them/{id_nhanvien}','BaoHiemController@postThemBH');
 
-    Route::get('sua/{id_baohiem}','BaoHiemController@getSuaBH');  
+    Route::get('sua/{id_baohiem}','BaoHiemController@getSuaBH');
     Route::post('sua/{id_baohiem}','BaoHiemController@postSuaBH');
 
     Route::get('xoa/{id_baohiem}','BaoHiemController@postXoaBH');
 });
 //--------------------------------17.7--------------------------------
 Route::group(['prefix' => 'luong','middleware'=>'check:quanlyluong'], function () {
-   
+
     Route::get('danhsach','DanhmucController@getDanhSachLuong');
-    
+
     Route::post('update','LuongController@updateLuongAll')->name('update');
 });
 Route::get('luong','LuongController@getLuong');
@@ -316,7 +316,7 @@ Route::group(['prefix'=>'ajax'],function(){
 
     Route::get('phucap_moi/{id_chucvu_moi}','AjaxController@getPhucapmoi');
     Route::get('nhanvien_ykien/{id_chucvu}','AjaxController@getNhanvienykien');
-    
+
 });
 });
 
