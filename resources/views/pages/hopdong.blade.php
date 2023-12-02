@@ -29,11 +29,11 @@
                     <div class="card">
                         
                         <div class="card-body">
-                            {{-- @if(session('thongbao'))
+                             @if(session('thongbao'))
                                 <div class="alert alert-success">
                                 {{session('thongbao')}}
                                 </div>
-                            @endif --}}
+                            @endif 
                           
                             <table class="table table-striped table-bordered table-hover" id="data-tables">
                                 <thead>
@@ -105,7 +105,7 @@
                                  @endif
                                  @endif
                                     
-                                    {{-- <td><a href="{{url('private/hopdong/'.$hd->id_nhanvien)}}">Xem Chi Tiết</a></td> --}}
+                                     <td><a href="{{url('private/hopdong/'.$hd->id_nhanvien)}}">Xem Chi Tiết</a></td> 
                                 </tr>
                                 @endforeach
                                 </tbody>

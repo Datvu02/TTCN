@@ -11,7 +11,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Chi Tiết Ý Kiến</h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -166,10 +166,10 @@
                                                 <label for="nguoi_duyet_2">Giám Đốc Duyệt</label>
                                                 <div class="form-control" name="nguoi_duyet_2">Đang Cập Nhật</div>
                                             </div>
-                                            {{-- <div class="form-group col-md-4">
+                                             <div class="form-group col-md-4">
                                                 <label for="chuc_vu_2">Chức Vụ</label>
                                                 <div class="form-control" name="chuc_vu_2">Đang Cập Nhật</div>
-                                            </div> --}}
+                                            </div> 
                                             @endif
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">

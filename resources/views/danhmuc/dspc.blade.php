@@ -20,7 +20,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="btn-group">
-                                        {{-- <a class="btn btn-info mb-3" href="{{url('private/phongban/them')}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a> --}}
+                                         <a class="btn btn-info mb-3" href="{{url('private/phongban/them')}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a> 
                                         
                                     </div>
                                     <!-- /.col-lg-12 -->

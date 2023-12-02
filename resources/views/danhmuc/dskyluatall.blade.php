@@ -37,7 +37,7 @@
                                                 <td>{{$nv->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>   
                                         @foreach($kyluat as $kl) 
                                         
-                                            {{-- <tr class="even gradeC" align="center">
+                                             <tr class="even gradeC" align="center">
                                                 <td>{{$kl->updated_at}}</td>
                                                 <td>{{$kl->nguoi_huong}}</td>
                                                 <td>{{$kl->chuc_vu_2}}</td>
@@ -45,7 +45,7 @@
                                                 <td>{{$kl->nguoi_duyet_2}}</td>
                                                 <td>{{$kl->gia_tri}}</td>
                                                 <td>{{$kl->ly_do}}</td>
-                                            </tr>  --}}
+                                            </tr>  
                                             <?php  
                                            
                                             if($kl->nguoi_huong==$nv->id_nhanvien)

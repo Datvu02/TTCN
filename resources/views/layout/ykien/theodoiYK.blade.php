@@ -57,18 +57,18 @@
                                 <td>
                                     <a class="btn btn-outline-primary" href="{{url('private/ykien/danhsach/chitiet/'.$yk->id_luuykien)}}">Xem Chi Tiết</a> 
                                 </td>
-                                {{-- @if(((strtotime(date('Y-m-d H:i:s')) - strtotime($yk->created_at))/60) <= 30) --}}
+                                 @if(((strtotime(date('Y-m-d H:i:s')) - strtotime($yk->created_at))/60) <= 30) 
                                 <td>
                                 @if($yk->trang_thai == 0)
-                                    {{-- @if($yk->id_ykien == 2 || $yk->id_ykien == 3 || $yk->id_ykien == 4) --}}
+                                     @if($yk->id_ykien == 2 || $yk->id_ykien == 3 || $yk->id_ykien == 4) 
                                         <a class="btn btn-outline-primary" href="{{url('private/ykien/sua/'.$yk->id_luuykien)}}">Bổ Sung</a> 
-                                    {{-- @endif --}}
+                                     @endif 
                                     <a class="btn btn-outline-danger" href="{{url('private/ykien/xoa/'.$yk->id_luuykien)}}">Xóa</a>
                                 @endif
                                 </td>
-                                {{-- @else
+                                 @else
                                 <td> Đã hết thời gian chỉnh sửa</td>
-                                @endif --}}
+                                @endif 
                             </tr> 
                             @endforeach
                         </tbody>

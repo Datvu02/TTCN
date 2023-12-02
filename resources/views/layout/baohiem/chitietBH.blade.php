@@ -10,7 +10,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">CHI TIẾT BẢO HIỂM</h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -18,7 +18,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -33,13 +33,13 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            {{-- @if(count($errors)>0)
+                             @if(count($errors)>0)
                             <div class="alert alert-danger">A
                                 @foreach($errors->all() as $err)
                                 {{$err}}<br>
                                 @endforeach
                             </div>
-                            @endif --}}
+                            @endif 
                             @if(session('thongbao'))
                                 <div class="alert alert-success">
                                 {{session('thongbao')}}
@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                             <a class="btn btn-outline-primary" href="{{url('private/baohiem/sua/'.$nhanvien->id_baohiem)}}">Sửa</a>
-                                            {{-- <button class="btn btn-default" type="reset">Reset</button> --}}
+                                             <button class="btn btn-default" type="reset">Reset</button> 
                                         </div>
                                     </div>
                                 </div>

@@ -89,13 +89,13 @@
                                                         <p class="ml-3 mt-4">Tổng tiền: {{$hopdong->tbl_phucap->tong_tien_phu_cap}}</p>
                                                         
                                                         </div>
-                                                        {{-- <div class="form-group col-md-3">
+                                                         <div class="form-group col-md-3">
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center mt-5" name="muc_luong_chinh"></label>
-                                                            </div> --}}
+                                                            </div> 
                                                         </div>
                                                     
                                                     
@@ -127,8 +127,8 @@
                                                     </div>
                                                     </div>
                                                 
-                                                  {{-- <label >Mức lương chính</label>
-                                                  <input type="text" class="form-control" name="muc_luong_chinh" placeholder="Nhập mức lương chính( lương cơ bản)"> --}}
+                                                   <label >Mức lương chính</label>
+                                                  <input type="text" class="form-control" name="muc_luong_chinh" placeholder="Nhập mức lương chính( lương cơ bản)"> 
                                                 </div>
                                                 <div class="form-group col-md-2 mt-3 text-center">
                                                     <label>Phụ cấp với chức vụ mới:  </label>
@@ -227,7 +227,7 @@
                 <!-- end validation form -->
                 <!-- ============================================================== -->
             </div>
-            {{-- @endif --}}
+             @endif 
     </div>
 </div>
 

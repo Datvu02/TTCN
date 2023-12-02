@@ -32,7 +32,7 @@
                                                 // exit;
                                                 ?>
                                                 @foreach ($nhanvien as $nv)
-                                            {{-- <td>{{$nv->id_nhanvien}}-{{$t->nguoi_huong}}</td> --}}
+                                             <td>{{$nv->id_nhanvien}}-{{$t->nguoi_huong}}</td> 
                                            
                                                 @if($nv->id_nhanvien==$t->nguoi_huong)
                                                 
@@ -43,7 +43,7 @@
                                                  @endif
                                                 @endforeach
                                                 
-                                                {{-- @foreach ($nhanvien as $nv)
+                                                 @foreach ($nhanvien as $nv)
                                               
                                            
                                                     @if($t->nguoi_huong==$nv->id_nhanvien)
@@ -52,7 +52,7 @@
                                               
                                                 <td>{{$nv->tbl_chucvu->ten_chuc_vu}}-{{$nv->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>
                                                 @endif
-                                                @endforeach --}}
+                                                @endforeach 
                                                 <td>{{$t->tbl_hosonhanvien->ho_ten}}</td>
                                                 
                                                 <td>{{$t->ly_do}}</td>

@@ -47,11 +47,11 @@
                                                                             @else 
                                                                             <td>Vô hạn</td>
                                                                             @endif
-                                                                             {{-- @if(($phuluc->id_loaiphuluc==3)) --}}
+                                                                              @if(($phuluc->id_loaiphuluc==3)) 
                                                                        
-                                                {{-- <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> --}}
+                                                 <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> 
                                                 <td>
-                                                    {{-- <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> --}}
+                                                     <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> 
                                                     <a class="btn btn-primary" href="{{url('private/laphopdong/pdf/'.$hopdong->id_hopdong)}}" title="Xuất file pdf"> <i class="fa fa-edit"></i> Xuất file pdf</a>
                                                     
                                     <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>

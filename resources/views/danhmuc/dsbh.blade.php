@@ -41,7 +41,7 @@
                                                     <a class="btn btn-warning" href="{{url('private/baohiem/them/'.$nv->id_nhanvien)}}"><i class="fa fa-edit mr-2"></i>Bổ Sung</a>
                                                 </td>
                                                 @endif
-                                                {{-- <td><a class="btn btn-primary" href="{{url('private/chucvu/sua/'.$nv->id_chucvu)}}"><i class="fa fa-edit"></i>Quản lý quyền</a></td> --}}
+                                                <td><a class="btn btn-primary" href="{{url('private/chucvu/sua/'.$nv->id_chucvu)}}"><i class="fa fa-edit"></i>Quản lý quyền</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

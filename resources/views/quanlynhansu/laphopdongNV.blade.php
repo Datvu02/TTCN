@@ -7,7 +7,7 @@
         <!-- ============================================================== -->
         <!-- pageheader -->
         <!-- ============================================================== -->
-        {{-- @if(isset($hopdong))
+         @if(isset($hopdong))
         <div class="row">
             <div class="col-lg-12 ">
                 <h1>LẬP HỢP ĐỒNG
@@ -18,7 +18,7 @@
                 @endif
             </div>
         </div>
-        @else --}}
+        @else 
         <div class="row">
             <div class="col-lg-12 ">
                 <h1>LẬP HỢP ĐỒNG
@@ -115,7 +115,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- @endif --}}
+                                             @endif 
                                                 
                                             </div>
                                             
@@ -134,7 +134,7 @@
                 <!-- end validation form -->
                 <!-- ============================================================== -->
             </div>
-            {{-- @endif --}}
+             @endif 
     </div>
 </div>
 

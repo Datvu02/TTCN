@@ -25,8 +25,8 @@
                                         <thead>
                                             <tr align="center">
                                                 <th  style="width: 165px;">Tiêu đề</th>
-                                                {{-- <th>Tóm tắt</th> --}}
-                                                {{-- <th>Thể loại</th> --}}
+                                                 <th>Tóm tắt</th> 
+                                                 <th>Thể loại</th> 
                                                 <th>Nội dung</th>
                                                 <th>Nổi bật</th>
                                                 <th style="width: 145px;" >Tác vụ</th>
@@ -37,8 +37,8 @@
                                             @foreach($tintuc as $tt)
                                             <tr class="odd gradeX" align="center">
                                                 <td><p>{{$tt->TieuDe}}</p><img src="{{url('upload/tintuc/'.$tt->Hinh)}}" style="width: 100px;"></td>
-                                                {{-- <td>{{$tt->TomTat}}</td> --}}
-                                                {{-- <td>{{$tt->LoaiTin->TheLoai->Ten}}</td>--}}
+                                                 <td>{{$tt->TomTat}}</td> 
+                                                 <td>{{$tt->LoaiTin->TheLoai->Ten}}</td>
                                                 <td  style="display: block;overflow: scroll; height: 195px;">{!!$tt->NoiDung!!}</td> 
                                                 <td>
                                                     @if($tt->NoiBat==0)
