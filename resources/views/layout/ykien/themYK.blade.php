@@ -10,7 +10,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Thêm Ý Kiến </h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -18,7 +18,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                                                   </select>
                                             </div>       
                                         </div>
-                                        {{-- <input type="text" class="form-control y-kien 9 10{{$chucnang[1]}}" name="nguoi_de_xuat" > --}}
+                                         <input type="text" class="form-control y-kien 9 10{{$chucnang[1]}}" name="nguoi_de_xuat" > 
                                         <label for="truong_hop" class="y-kien 3">Các Loại Nghỉ Phép Riêng</label>
                                         <select name="truong_hop" id="truong_hop" class="form-control col-md-3 y-kien 3" style="-webkit-appearance: auto;">
                                             <option selected> --Chọn--</option>
@@ -102,26 +102,26 @@
                                         <!-- Số 3 -->
                                         <label for="gia_tri" class="y-kien {{$chucnang[3]}}" >Số tiền / Số Lượng</label>
                                         <input type="text" class="form-control y-kien {{$chucnang[3]}}" name="gia_tri" placeholder="Giá trị / Số Lượng" value="" >
-                                        {{-- <label for="phong_ban" class="y-kien 8">Chọn Phòng Ban Mong Muốn</label>
+                                         <label for="phong_ban" class="y-kien 8">Chọn Phòng Ban Mong Muốn</label>
                                         <select name="phong_ban" id="phong_ban" class="form-control y-kien 8" style="-webkit-appearance: auto;">
                                             <option value="0"selected>--Phòng-- </option>
                                             @foreach($phongban as $pb)
                                                     <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
                                             @endforeach
-                                        </select> --}}
-                                        {{-- <select name="chuc_vu" id="chuc_vu" class="form-control y-kien 8" style="-webkit-appearance: auto;">
+                                        </select> 
+                                         <select name="chuc_vu" id="chuc_vu" class="form-control y-kien 8" style="-webkit-appearance: auto;">
                                             <option selected> Chọn Chức Vụ</option>
-                                            {{-- @foreach($phongban as $pb)
+                                             @foreach($phongban as $pb)
                                                     <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
                                             @endforeach
-                                        </select> --}}
+                                        </select> 
                                         <!-- số 4 -->
                                         <label for="thoi_gian_nghi" class="y-kien {{$chucnang[4]}}" >Thời gian nghỉ (ngày)</label>
                                         <input type="text" class="form-control y-kien {{$chucnang[4]}}" name="thoi_gian_nghi" placeholder="Ngày" >
                                         <!-- số 5 -->
                                         <label for="ngay_bat_dau" class="y-kien {{$chucnang[5]}}" >Bắt đầu từ ngày / Ngày tăng ca</label>
  
-                                        {{-- <label for="ngay_bat_dau" class="y-kien 7" >Ngày tăng ca</label> --}}
+                                         <label for="ngay_bat_dau" class="y-kien 7" >Ngày tăng ca</label> 
                                         <input type="date" class="form-control y-kien {{$chucnang[5]}}" name="ngay_bat_dau" >
                                         <!-- Số 6 -->
                                         <label for="nop_minh_chung" class="y-kien {{$chucnang[6]}}">Nộp Minh Chứng (Hình Ảnh)</label>

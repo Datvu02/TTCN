@@ -11,7 +11,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Chấm công tăng ca ngày {{date('d/m')}} </h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -48,18 +48,18 @@
                                     </form>
                                 @endif  
                             @else
-                            {{-- @if(date('Y-m-d H:i:s') > date('Y-m-d 18:00:00') && date('Y-m-d H:i:s') < date('Y-m-d 08:00:00',strtotime('+1 days'))) --}}
+                             @if(date('Y-m-d H:i:s') > date('Y-m-d 18:00:00') && date('Y-m-d H:i:s') < date('Y-m-d 08:00:00',strtotime('+1 days'))) 
                             <form action="{{route('checkin_tangca')}}" method="post">
                                 {{ csrf_field() }}
                                 <input class="btn btn-outline-primary" type="submit" name="" value="Checkin" />
                             </form>
-                            {{-- @else
+                             @else
                             <div class="h2"> Chưa Đến Giờ Điểm Danh </div>
-                            <div class="h3"> Cổng điểm danh mở ra từ 8h đến 10h sáng </div> --}}
-                            {{-- @endif --}}
+                            <div class="h3"> Cổng điểm danh mở ra từ 8h đến 10h sáng </div> 
+                             @endif 
                             @endif
                             
-                            {{-- {{ exec('getmac') }}  lay dia chi mac chua duoc--}}
+                             {{ exec('getmac') }}  lay dia chi mac chua duoc
                      </div>
                 </div>
             </div>

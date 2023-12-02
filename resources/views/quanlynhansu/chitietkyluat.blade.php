@@ -40,9 +40,9 @@
                                                 <td>{{$kl->ly_do}}</td>
                                                 <td>{{$kl->gia_tri}}</td>
                                                 <td>{{date(' d-m-Y',strtotime($kl->created_at))}}</td>
-                                                {{-- <td>{{}}</td>
+                                                 <td>{{}}</td>
                                                 <td>{{}}</td>
-                                                <td>{{}}</td> --}}
+                                                <td>{{}}</td> 
                                                 
                                                 
                                             </tr> 

@@ -11,7 +11,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">LỊCH SỬ CHẤM CÔNG</h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                 <!-- ============================================================== -->
                 <!-- validation form -->
                 <!-- ============================================================== -->
-            {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                         <div class="card-body">
                             @if(session('thongbao'))
@@ -54,22 +54,22 @@
                                     </form>
                                 @endif  
                             @else
-                            {{-- @if(date('08:00:00') < date('H:i:s') && date('H:i:s') < date('10:00:00')) --}}
-                            {{-- <form action="{{route('checkin')}}" method="post">
+                             @if(date('08:00:00') < date('H:i:s') && date('H:i:s') < date('10:00:00')) 
+                             <form action="{{route('checkin')}}" method="post">
                                 {{ csrf_field() }}
                                 <input class="btn btn-outline-primary" type="submit" name="" value="Checkin" />
-                            </form> --}}
-                            {{-- @else
+                            </form> 
+                             @else
                             <div class="h2"> Chưa Đến Giờ Điểm Danh </div>
                             <div class="h3"> Cổng điểm danh mở ra từ 8h đến 10h sáng </div>
-                            @endif --}}
-                            {{-- @endif --}}
+                            @endif 
+                             @endif 
                             
-                            {{-- {{ exec('getmac') }}  lay dia chi mac chua duoc--}}
-                     {{-- </div> --}}
-                {{-- </div> --}}
+                             {{ exec('getmac') }}  lay dia chi mac chua duoc
+                      </div> 
+                 </div> 
             
-            {{-- </div> --}}    
+             </div>     
                 <!-- ============================================================== -->
                 <!-- end validation form -->
                 <!-- ============================================================== -->

@@ -11,7 +11,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Sửa Ý Kiến </h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -94,22 +94,22 @@
                                             @endforeach
                                         </select>
                                         @endif
-                                        {{-- <div class="form-control"> --}}
+                                         <div class="form-control"> 
                                             <label for="ly_do">Nội dung </label>
                                             <input type="text" class="form-control" id="ly_do" name="ly_do" value="{{$ykien->ly_do}}">
-                                        {{-- </div>  --}}
+                                         </div>  
                                         @if($ykien->id_ykien == 9 || $ykien->id_ykien == 10)
                                         <label for="nguoi_de_xuat">Người được đề xuất</label>
                                         <input type="text" class="form-control" name="nguoi_de_xuat" >
                                         @endif
                                         
-                                        {{-- <label for="truong_hop" class="">Các Loại Nghỉ Phép Riêng</label>
+                                         <label for="truong_hop" class="">Các Loại Nghỉ Phép Riêng</label>
                                         <select name="truong_hop" id="truong_hop" class="form-control col-md-3 " style="-webkit-appearance: auto;">
                                             <option selected> --Chọn--</option>
                                                     <option value="1">Kết Hôn</option>
                                                     <option value="2">Con Cái Kết Hôn</option>
                                                     <option value="3">Người Thân Mất</option>
-                                        </select> --}}
+                                        </select> 
                                         @if($ykien->id_ykien == 5)
                                         <label for="gia_tri">Số tiền</label>
                                         <input type="text" class="form-control " name="gia_tri" placeholder="{{$ykien->gia_tri}}">
@@ -139,9 +139,9 @@
                                                 <label for="chuc_vu_new">Chọn Lại Chức vụ</label>
                                                 <select name="chuc_vu_new" id="chuc_vu_new" class="form-control " style="-webkit-appearance: auto;">
                                                     <option >Chọn Chức vụ</option>
-                                                    {{-- @foreach($phongban as $pb)
+                                                     @foreach($phongban as $pb)
                                                             <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                    @endforeach --}}
+                                                    @endforeach 
                                                 </select>
                                             </div>
                                         </div>

@@ -13,11 +13,11 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    {{-- <div class="btn-group">
+                                     <div class="btn-group">
                                         
                                         <a class="btn btn-info mb-3" href="{{url('private/lapphuluc/'.$hopdong->id_hopdong)}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a>
                                        
-                                    </div> --}}
+                                    </div> 
                                     <!-- /.col-lg-12 -->
                                     @if(session('thongbao'))
                                     <div class="alert alert-success">
@@ -52,7 +52,7 @@
                                         </thead>
                                         <tbody>
                                            
-                                            {{-- @foreach($phuluc as $pl) --}}
+                                             @foreach($phuluc as $pl) 
                                             <tr class="even gradeC" align="center">
                                                 
                                                 
@@ -88,16 +88,16 @@
                                                 <td>{{$chitiet->ngay_ket_thuc}}</td>
                                                 
                                                 
-                                                {{-- <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> --}}
+                                                 <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> 
                                                 <td>
-                                                    {{-- <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> --}}
+                                                     <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> 
                                                   
                                                     <a class="btn btn-primary" href="{{url('private/lapphuluc/pdf/'.$phuluc->id_phuluc)}}">Xuất file pdf!!</a>
                                                     <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>      
                                                     <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td>   
                                             </tr>
                                             
-                                            {{-- @endforeach --}}
+                                             @endforeach 
                                             
                                         </tbody>
                                     </table>

@@ -49,13 +49,13 @@
                         @endif
                 <form role="form" action="quenmatkhau" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    {{-- <p></p> --}}
+                     <p></p> 
                     <div class="form-group">
                         <input class="form-control form-control-lg" type="email" name="email" required="" placeholder="Email" autocomplete="off">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Gửi</button>
                 </form>
-                {{-- <div class="form-group pt-1"><a class="btn btn-block btn-primary btn-xl" href="../index.html">Gửi</a></div> --}}
+                 <div class="form-group pt-1"><a class="btn btn-block btn-primary btn-xl" href="../index.html">Gửi</a></div> 
             </div>
             
         </div>

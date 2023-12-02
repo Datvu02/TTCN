@@ -35,7 +35,7 @@
                             <form class="needs-validation"  action="{{url('private/quanly/suathongtin/'.$nhanvien->id_nhanvien)}}" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                     <ul class="nav  mt-3 mb-4 card-header">
-                                        {{-- <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a> --}}
+                                         <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a> 
                                         <li class="active"><a class"="" data-toggle="tab" href="#home" class="active show">Thông Tin Chính</a></li>
                                          <li><a data-toggle="tab" href="#menu1" >Thông Tin Liên Hệ</a></li>
                                          <li ><a data-toggle="tab" href="#menu2" >Thông Tin Trình Độ Bằng Cấp</a></li>
@@ -226,7 +226,7 @@
                                       <div id="menu3" class="tab-pane fade">
                                         <div class="form-row mb-3">
                                             <div class="form-group col-md-12 mb-3">
-                                                {{-- @if($ds_ho_so->count()>0) --}}
+                                                 @if($ds_ho_so->count()>0) 
                                                
                                                 @if(!empty($nhanvien->id_hoso))
                                                 @php
@@ -239,7 +239,7 @@
                                                     @endforeach
                                                 </div>
                                             @endif       
-                                                {{-- @endif --}}
+                                                 @endif 
                                             
                                             </div>
                                         </div>
@@ -270,20 +270,20 @@
                                                 @foreach ($user as $user)
                                             <div class="form-group col-md-4 mb-3">
                                                 <label >Tên Người Dùng</label>
-                                                {{-- <label class="form-control mb-3" >{{$nhanvien->id_chucvu}}</label> --}}
+                                                 <label class="form-control mb-3" >{{$nhanvien->id_chucvu}}</label> 
                                                 <input type="text" class="form-control mb-3" name="name" placeholder="Nhập tên người dùng" value="{{$user->name}}" required>
                                             </div>
                                             
                                             <div class="form-group col-md-4 mb-3">
                                                 <label >Email Công Ty (Tài khoản)</label>
-                                                    {{-- <label class="form-control mb-3" >{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label> --}}
+                                                     <label class="form-control mb-3" >{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label> 
                                             <input type="email" class="form-control" name="email" placeholder="Nhập email" value="{{$user->email}}" readonly="">
                                                 
                                             </div>
                                             
                                              <div class="form-group col-md-4 mb-3">
                                                 <label>PassWord</label>
-                                                {{-- <label class="form-control mb-3" >{{$nhanvien->tbl_vitri->ten_vi_tri}}</label> --}}
+                                                 <label class="form-control mb-3" >{{$nhanvien->tbl_vitri->ten_vi_tri}}</label> 
                                              <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu" value="{{$user->password}}" required>
                                             @endforeach
                                             

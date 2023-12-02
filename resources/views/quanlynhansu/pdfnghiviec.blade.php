@@ -40,7 +40,7 @@
 <p><b style="">Điều 2: </b>Ông (Bà) {{$nhanvien->ho_ten}} và các Ông (Bà) phó giám đốc hành chính, và các bộ phận có liên quan chịu trách nhiệm thi hành Quyết định này. </p>
 
 
-{{-- <p style="font-size: 25px; text-transform:uppercase"><b>CÔNG TY: {{$thongtinchinh->ten_cong_ty}}</b></p> --}}
+ <p style="font-size: 25px; text-transform:uppercase"><b>CÔNG TY: {{$thongtinchinh->ten_cong_ty}}</b></p> 
 <p style="font-size: 25px; text-transform:uppercase"><b>GIÁM ĐỐC: {{$thongtinchinh->ten_cong_ty}}</b><b style="margin-left:30% ">NGƯỜI XIN NGHỈ</b></p>
 <i style="margin-left: 120px">(Ký, đóng dấu)</i><i style="margin-left: 50%">(Ký tên)</i>
 </body>
