@@ -34,7 +34,11 @@ class NhanVienController extends Controller
     
 
     public function getDangnhap(){
-    	return view('login');
+        if(Auth::check()){
+            return redirect('private')->with('wanning','Bạn đang đăng nhập');
+        }else{
+    	    return view('login');
+        }
     }
     public function postDangnhap(Request $request){
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){

@@ -1,3 +1,4 @@
+
         @extends('layout1.index')
         @section('content')
         <div class="banner">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -102,8 +103,8 @@ class QLNhansuController extends Controller
 
         $user= new User;
         $user->name=$request->name;
-        $user->email=$hosonhanvien->id_nhanvien."@cty.com.vn";
-        $pass=str_random(6);
+        $user->email=$hosonhanvien->id_nhanvien."@cnsg.com.vn";
+        $pass=Str::random(6);
         $user->password=bcrypt($pass);
         $user->id_nhanvien=$hosonhanvien->id_nhanvien;
         $user->save();

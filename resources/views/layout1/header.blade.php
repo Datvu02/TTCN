@@ -20,7 +20,7 @@
                         <li class="{{Request::is('tintuyendung') ? 'active':null}}" style="text-align: center"><a href="tintuyendung">TUYỂN DỤNG</a></li>
                         <li class="{{Request::is('lienhe') ? 'active':null}}"><a href="lienhe">LIÊN HỆ</a></li>
                         {{-- <ul style="display: inline-grid;">  --}}
-                        {{-- @if((Auth::user()))
+                        @if((Auth::user()))
                         <li class="{{Request::is('nguoidung') ? 'active':null}}"><a href="nguoidung">User: <img src="https://simpleicon.com/wp-content/uploads/user1.png" style="width: 17px;"> {{Auth::user()->name}}</a></li>
                             <li class="{{Request::is('dangxuat') ? 'active':null}}"><a href="dangxuat" style="margin-left: 50px;">Đăng Xuất</a></li>
                        
@@ -30,6 +30,6 @@
                         <li class="{{Request::is('dangky') ? 'active':null}}"><a href="dangky">Đăng Ký</a></li>
                     </ul>
                         @endif
-                    </ul> --}}
+                    </ul>
                 </div>
         </div>
