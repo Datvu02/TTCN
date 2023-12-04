@@ -48,7 +48,7 @@
                                         </div> -->
                                         <div class="form-row">
                                             
-                                            {{-- <div class="form-group col-md-12">
+                                             <div class="form-group col-md-12">
                                                 <label>Thể loại</label>
                                                 <select class="form-control" name="TheLoai" style="-webkit-appearance: auto;" required>
                                                     @foreach($theloai as $tl)
@@ -71,7 +71,7 @@
                                                     value="{{$lt->id}}">{{$lt->Ten}}</option>
                                                     @endforeach
                                                 </select>
-                                            </div> --}}
+                                            </div> 
                                             <div class="form-group col-md-6">
                                                 <label>Tiêu đề</label>
                                                 <input class="form-control" name="TieuDe" rows="5" placeholder="Hãy nhập tiêu đề"  value="{{$tintuc->TieuDe}}" required />

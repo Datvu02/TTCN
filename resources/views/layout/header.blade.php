@@ -1,4 +1,9 @@
-         <!-- navbar -->
+@if (session('wanning'))
+    <div class="alert alert-warning" role="alert">
+        {{ session('wanning') }}
+    </div>
+@endif
+        <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top ">

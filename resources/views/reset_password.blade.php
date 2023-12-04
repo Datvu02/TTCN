@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </form>
-                {{-- <div class="form-group pt-1"><a class="btn btn-block btn-primary btn-xl" href="../index.html">Gửi</a></div> --}}
+                 <div class="form-group pt-1"><a class="btn btn-block btn-primary btn-xl" href="../index.html">Gửi</a></div> 
             </div>
             
         </div>

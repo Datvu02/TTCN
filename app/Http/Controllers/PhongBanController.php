@@ -26,7 +26,7 @@ class PhongBanController extends Controller
         $phongban->id_phongban= $request->get('id_phongban');
         $phongban->ten_phong_ban= $request->get('ten_phong_ban');
         $phongban->save();
-        return redirect('private/phongban/them')->with('thongbao','Thêm Thành Công');
+        return redirect('private/phongban/danhsach')->with('thongbao','Thêm Thành Công');
     }
 
     public function getSuaPB($id_phongban){

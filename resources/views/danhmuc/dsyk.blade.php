@@ -82,7 +82,7 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                                                             <button type="submit" class="btn btn-primary">Xác nhận</button>
-                                                            {{-- <input class="btn btn-outline-primary" type="submit" name="" value="Duyệt" /> --}}
+                                                             <input class="btn btn-outline-primary" type="submit" name="" value="Duyệt" /> 
                                                         </div>
                                                     </form>
                                                 </div>
@@ -94,7 +94,7 @@
                                     <input class="btn btn-outline-primary" type="submit" name="" value="Duyệt" />
                                     </form>
                                     @endif
-                                {{-- <a class="btn btn-outline-danger" href="#">Từ chối</a> --}}
+                                 <a class="btn btn-outline-danger" href="#">Từ chối</a> 
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#denied-target">
                                     Từ chối
                                 </button>
@@ -117,7 +117,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                                                     <button type="submit" class="btn btn-primary">Gửi</button>
-                                                    {{-- <input class="btn btn-outline-primary" type="submit" name="" value="Duyệt" /> --}}
+                                                     <input class="btn btn-outline-primary" type="submit" name="" value="Duyệt" /> 
                                                 </div>
                                             </form>
                                         </div>
@@ -130,7 +130,7 @@
                                 @else
                                 <div class="btn btn-outline-danger disabled"> Đã Từ Chối</div>
                                 @endif
-                                {{-- <a class="btn btn-outline-primary" href="{{url('private/ykien/sua/'.$yk->id_luuykien)}}">Sửa</div> --}}
+                                 <a class="btn btn-outline-primary" href="{{url('private/ykien/sua/'.$yk->id_luuykien)}}">Sửa</div> 
                                 </td>
                             </tr> 
                             @endforeach

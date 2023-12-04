@@ -11,7 +11,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">CHI TIẾT LƯƠNG</h2>
-                    {{-- <div class="page-breadcrumb">
+                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -111,14 +111,14 @@
                                                 <label for="thue_bao_hiem">Thuế Bảo Hiểm Thất Nghiệp</label>
                                                 <span class="form-control" name="thue_bao_hiem">{{number_format($thuebhtn)}}</span>
                                             </div>
-                                            {{-- <div class="form-group col-md-3">
+                                             <div class="form-group col-md-3">
                                                 <label for="luong_thuong">Tiền Thưởng</label>
                                                 <span class="form-control" name="luong_thuong">{{number_format($thuong)}}</span>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="ky_luat">Tiền Phạt</label>
                                                 <span class="form-control" name="ky_luat">{{number_format($kyluat)}}</span>
-                                            </div> --}}
+                                            </div> 
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md 6">
@@ -172,9 +172,9 @@
                                             <div class="form-group col-md-4">
                                                 <label for="luong_nhan">Lương Nhận</label>
                                                 <span class="form-control" name="luong_nhan" aria-describedby="helper">
-                                                    {{-- @if(isset($luong->tong_tien_luong) && isset($luong->thue_thu_nhap)) --}}
+                                                     @if(isset($luong->tong_tien_luong) && isset($luong->thue_thu_nhap)) 
                                                         {{number_format($luongnhanduoc)}}
-                                                    {{-- @endi  f --}}
+                                                     @endi  f 
                                                 </span>
                                                 <small id="helper" class="text-muted">Cập nhật lần cuối vào : {{date('H:i:s d/m/Y',strtotime($luong->updated_at))}}</small><div>
                                         </div>

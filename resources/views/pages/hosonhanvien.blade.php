@@ -32,7 +32,7 @@
                             <form class="needs-validation"  action="thongtintaikhoan" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                     <ul class="nav  mt-3 mb-4 card-header">
-                                        {{-- <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a> --}}
+                                         <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a> 
                                         <li class="active"><a class"="" data-toggle="tab" href="#home" class="active show">Thông Tin Chính</a></li>
                                          <li><a data-toggle="tab" href="#menu1" >Thông Tin Liên Hệ</a></li>
                                          <li ><a data-toggle="tab" href="#menu2" >Thông Tin Trình Độ Bằng Cấp</a></li>
@@ -198,7 +198,7 @@
                                  <div id="menu3" class="tab-pane fade">
                                     <div class="form-row mb-3">
                                         <div class="form-group col-md-12 mb-3">
-                                            {{-- @if($ds_ho_so->count()>0) --}}
+                                             @if($ds_ho_so->count()>0) 
                                            
                                             @if(!empty($nhanvien->id_hoso))
                                             @php
@@ -211,7 +211,7 @@
                                                 @endforeach
                                             </div>
                                         @endif       
-                                            {{-- @endif --}}
+                                             @endif 
                                         
                                         </div>
                                     </div>
@@ -297,7 +297,7 @@
                                                           @if(isset($nhanvien->anh_dai_dien))
                                                                   <img src="{{url('upload/arvarta/'.$nhanvien->anh_dai_dien)}}" style="width: 255px;height: 265px;">
                                                                   <input type="file" name="Hinh" class="form-control mt-3" style="width:250px" >
-                                                          {{-- <img src="upload/tintuc/{{$tt->Hinh}}" style="width: 100px;"> --}}
+                                                           <img src="upload/tintuc/{{$tt->Hinh}}" style="width: 100px;"> 
                                                           @endif
                                                       </div>
                                                   </div>
@@ -349,7 +349,7 @@
                                         </div>
                                       </div> 
                                 </div>
-                                {{-- <a class="btn btn-primary mr-5 " href="{{url('private/suathongtin/'.Auth::user()->id_nhanvien)}}">Sửa đổi thông tin</a> --}}
+                                 <a class="btn btn-primary mr-5 " href="{{url('private/suathongtin/'.Auth::user()->id_nhanvien)}}">Sửa đổi thông tin</a> 
                             </form>
                             
                         </div>

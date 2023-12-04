@@ -11,15 +11,6 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Thêm Phụ cấp </h2>
-                    {{-- <div class="page-breadcrumb">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Forms</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
-                            </ol>
-                        </nav>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -58,10 +49,10 @@
                                                     </select>
                                             </div>
                                             
-                                            {{-- <div class="form-group col-md-">
+                                             <div class="form-group col-md-">
                                                 <label for="ten_chuc_vu">Lưu ý, đây là mức phục cấp nhân được mỗi tháng của từng chức vụ!!</label>
                                             
-                                            </div>  --}}
+                                            </div>  
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">

@@ -69,9 +69,7 @@
                                                                             <th>PHỤ CẤP</th>
                                                                             <th>NGÀY KẾT THÚC HỢP ĐỒNG</th>
                                                                              <th>TRẠNG THÁI</th>
-                                                                            
-                                                                            
-                                                                            {{-- <th>TÁC VỤ</th>  --}}
+                                                                            <!-- <th>TÁC VỤ</th> -->
                                                                                                      
                                                                         </tr>
                                                                     </thead>
@@ -147,8 +145,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                    {{-- <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}" title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
-                                                    <br> --}}
                                     
                                     <a class="btn btn-warning " href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
                                    
@@ -243,6 +239,9 @@
                             </div>
                         </div>
                         
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                 <!-- /.row -->
             </div>
             

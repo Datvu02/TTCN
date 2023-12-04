@@ -19,10 +19,6 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="btn-group">
-                                        {{-- <a class="btn btn-info mb-3" href="{{url('private/phongban/them')}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a> --}}
-                                        
-                                    </div>
                                     <!-- /.col-lg-12 -->
                                     <table class="table table-striped table-bordered table-hover" id="data-tables">
                                         <thead>

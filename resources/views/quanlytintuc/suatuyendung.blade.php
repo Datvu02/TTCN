@@ -48,7 +48,7 @@
                                         </div> -->
                                         <div class="form-row">
                                             
-                                            {{-- <div class="form-group col-md-4">
+                                             <div class="form-group col-md-4">
                                                 <label>Tên</label>
                                                 <input type="text" class="form-control" name="Ten" placeholder="Nhập lĩnh vực kinh doanh" value="{{$linhvuckinhdoanh->Ten}}" />
                                             </div>
@@ -63,7 +63,7 @@
                                                 <label>Nội dung</label>
                                                 <textarea class="form-control" name="NoiDung"rows="10" placeholder="Nhập nội dung lĩnh vực kinh doanh">{{$linhvuckinhdoanh->NoiDung}}</textarea>
                                             </div>
-                                        </div> --}}
+                                        </div> 
 
                                         <div class="form-group col-md-6">
                                             <label>Vị trí</label>

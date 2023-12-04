@@ -35,8 +35,8 @@
                                             <tr class="even gradeC" align="center">
                                                 <td>{{$tl->Ten}}</td>
                                                 
-                                                {{-- <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/theloai/xoa/{{$tl->id}}"> Xóa</a></td>
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$tl->id}}">Sửa</a></td> --}}
+                                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/theloai/xoa/{{$tl->id}}"> Xóa</a></td>
+                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$tl->id}}">Sửa</a></td> 
                                                 <td><a class="btn btn-warning" href="{{url('private/theloai/sua/'.$tl->id)}}"><i class="fa fa-edit mr-2"></i>Sửa</a>
                                                      <a class="btn btn-danger" href="{{url('private/theloai/xoa/'.$tl->id)}}"><i class="fa fa-trash mr-2"></i>Xóa</a></td>
                                             </tr>

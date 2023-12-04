@@ -41,7 +41,7 @@
                                                 <td>{{$pb->id_phongban}}</td>
                                                 <td>{{$pb->ten_phong_ban}}</td>
                                                 <td><a class="btn btn-warning" href="{{url('private/phongban/sua/'.$pb->id_phongban)}}"><i class="fa fa-edit mr-2"></i>Sửa</a> 
-                                                    <a class="btn btn-danger" href="{{url('private/phongban/xoa/'.$pb->id_phongban)}}"><i class="fa fa-trash mr-2"></i>Xóa</a></td>
+                                                    <a class="btn btn-danger" href="{{url('private/phongban/xoa/'.$pb->id_phongban)}}"onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban {{$pb->ten_phong_ban}} không?');" title="Xóa"><i class="fa fa-trash mr-2"></i>Xóa</a></td>
                                             </tr> 
                                         @endforeach
                                         </tbody>

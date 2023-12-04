@@ -27,7 +27,7 @@
                             <form name="myform"  class="needs-validation"  action="laphoso" method="POST" enctype="multipart/form-data" onsubmit="return validatehoso()">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         <ul class="nav  mt-3 mb-4 card-header">
-                                         {{-- <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a> --}}
+                                          <!-- <a class" data-toggle="tab" href="#home" >Thông Tin Chính</a>  -->
                                          <li class="active"><a class"="" data-toggle="tab" href="#home" class="active show">Thông Tin Chính</a></li>
                                           <li><a data-toggle="tab" href="#menu1" >Thông Tin Liên Hệ</a></li>
                                           <li><a data-toggle="tab" href="#menu2" >Thông Tin Trình Độ Bằng Cấp</a></li>
@@ -186,9 +186,9 @@
                                                 <div class="form-group col-md-2">
                                                     <label >Năm Tốt Nghiệp</label>
                                                     <input type="number" name="nam_tot_nghiep" id="namtotnghiep" class="form-control text-center" min="2010" max="2020" step="1" value="2020" />
-                                                    {{-- <input type="month"  name="nam_tot_nghiep" min="2010-01" value="2018-05">
-                                                    <input type="month" class="form-control" name="email_cong_ty" placeholder="Nhập email công ty"> --}}
-                                                    <span id="namtotnghiepf"></span>
+                                                     <!-- <input type="month"  name="nam_tot_nghiep" min="2010-01" value="2018-05"> -->
+                                                    <!-- <input type="month" class="form-control" name="email_cong_ty" placeholder="Nhập email công ty">  -->
+                                                    <!-- <span id="namtotnghiepf"></span> -->
                                                   </div>
                                                 
                                             </div>
@@ -207,7 +207,7 @@
                                             </div>
                                             <div class="form-row mb-3">
                                                 <div class="form-group col-md-12"> 
-                                                    <label > Tên các bằng cấp, chứng chỉ khác (nếu có)</label>
+                                                    <label > Tên các bằng cấp, chứng chỉ khác (nếu không có ghi "Không")</label>
                                                     <input type="text" class="form-control mb-3" name="chung_chi_khac" placeholder="Nhập bằng cấp, chứng chỉ khác (cách nhau bằng dấu , hoặc dấu , )" value="" >
                                                     
                                                 </div>

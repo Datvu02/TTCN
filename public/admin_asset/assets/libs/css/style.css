@@ -189,6 +189,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.alert {
+    padding-left: 20% !important;
+    color: red !important;
+}
+
 h1,
 h2,
 h3,
