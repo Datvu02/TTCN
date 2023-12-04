@@ -89,7 +89,7 @@ p {
 .page-intro h1 {
     text-align: center;
     margin-top: 35px;
-    font-family: "Algerian";
+    font-family: "Roboto";
 }
 .page-content {
     padding: 35px 0;
@@ -138,6 +138,7 @@ a.view-intro {
     justify-content: center;
     align-items: center;
     position: relative;
+    font-family: "Roboto";
     background-attachment: fixed;
 }
 .bg-newfeed::before {
