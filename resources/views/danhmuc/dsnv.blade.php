@@ -48,7 +48,7 @@
                                     <td>
                                         <p>{{$nv->ho_ten}}</p>
                                         @if(isset($nv->anh_dai_dien))
-                                        <img src="{{url('upload/arvarta/'.$nv->anh_dai_dien)}}"
+                                        <img src="{{url('upload/avatar/'.$nv->anh_dai_dien)}}"
                                             style="width: 75px;height: 55px;"></a>
                                         @endif
                                     </td>
