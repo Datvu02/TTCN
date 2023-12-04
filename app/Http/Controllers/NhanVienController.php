@@ -54,6 +54,7 @@ class NhanVienController extends Controller
     {
         $ds_ho_so = tbl_hoso::all();
         // $user = User::find($id);
+
         $nhanvien = tbl_hosonhanvien::where('id_nhanvien', Auth::user()->id_nhanvien)->first();
 
         $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
