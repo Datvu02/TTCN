@@ -10,7 +10,7 @@
             <div class="col-lg-12 ">
                 <h1>QUYẾT ĐỊNH THÔI VIỆC
                 </h1>
-                <h4 style="margin-left:3% ">Bạn quyết đinh thôi việc nhân viên: {{$nhanvien->ho_ten}}, xin hãy nhập lý
+                <h4 style="margin-left:3% ">Bạn quyết định thôi việc nhân viên: {{$nhanvien->ho_ten}}, xin hãy nhập lý
                     do!!</h4>
             </div>
         </div>
@@ -33,10 +33,12 @@
                                     <div class="form-row mb-3">
                                         <div class="form-group col-md-3 mb-3">
                                             <label>Ngày lập quyết định</label>
+                                            <span class='text-danger text-strong'>&nbsp;*</span>
                                             <input type="date" class="form-control" name="ngay_quyet_dinh">
                                         </div>
                                         <div class="form-group col-md-3 mb-3">
                                             <label>Ngày nghỉ việc</label>
+                                            <span class='text-danger text-strong'>&nbsp;*</span>
                                             <input type="date" class="form-control" name="ngay_nghi_viec">
                                         </div>
                                         <div class="form-group col-md-12">
@@ -56,10 +58,10 @@
                                         <div>
                                             <button class="btn btn-primary mr-5" type="submit" formtarget="_blank">Đồng
                                                 ý</button>
+                                            <!-- _self -->
                                             <button type="reset" class="btn btn-primary">Làm mới</button>
                                         </div>
-                                        <a class="btn btn-primary"
-                                            href="{{url('private/kyluat/canhan/'.$nhanvien->id_nhanvien)}}"
+                                        <a class="btn btn-primary" href="{{url('private/kyluat/danhsach')}}"
                                             title="Quay lại"> <i class="fa fa-eye"></i> Quay lại</a>
                                     </div>
                                 </div>

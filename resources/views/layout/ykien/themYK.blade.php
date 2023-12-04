@@ -1,31 +1,9 @@
 @extends('layout.index')
 @section('content')
- 
+
 <div class="dashboard-wrapper">
-    <div class="container-fluid  dashboard-content">
-        <!-- ============================================================== -->
-        <!-- pageheader -->
-        <!-- ============================================================== -->
-        <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="page-header">
-                    <h2 class="pageheader-title">Thêm Ý Kiến </h2>
-                     <div class="page-breadcrumb">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Forms</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
-                            </ol>
-                        </nav>
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- end pageheader -->
-        <!-- ============================================================== -->
-     
+
+
             <div class="row">
                 <!-- ============================================================== -->
                 <!-- validation form -->
@@ -51,7 +29,7 @@
                                             <option selected> Chọn Loại Ý Kiến</option>
                                                 @foreach($loaiykien as $lyk)
                                                     @if($lyk->id_ykien == 8 && $mientrugiacanh == true)
-                                                    @else <option value="{{$lyk->id_ykien}}">{{$lyk->loai_y_kien}}</option>    
+                                                    @else <option value="{{$lyk->id_ykien}}">{{$lyk->loai_y_kien}}</option>
                                                     @endif
                                                 @endforeach
                                         </select>
@@ -63,9 +41,9 @@
                                             <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
                                             @endforeach
                                           </select>
-                                        
+
                                         <!-- Số 1 -->
-                                        
+
                                         <label for="nguoi_de_xuat" class="y-kien {{$chucnang[1]}}" >Chọn nhân viên</label>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
@@ -85,9 +63,9 @@
                                                     <option value="{{$nv->id_nhanvien}}">{{$nv->ho_ten}}</option>
                                                 @endforeach
                                                   </select>
-                                            </div>       
+                                            </div>
                                         </div>
-                                         <input type="text" class="form-control y-kien 9 10{{$chucnang[1]}}" name="nguoi_de_xuat" > 
+                                         <input type="text" class="form-control y-kien 9 10{{$chucnang[1]}}" name="nguoi_de_xuat" >
                                         <label for="truong_hop" class="y-kien 3">Các Loại Nghỉ Phép Riêng</label>
                                         <select name="truong_hop" id="truong_hop" class="form-control col-md-3 y-kien 3" style="-webkit-appearance: auto;">
                                             <option selected> --Chọn--</option>
@@ -108,20 +86,20 @@
                                             @foreach($phongban as $pb)
                                                     <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
                                             @endforeach
-                                        </select> 
+                                        </select>
                                          <select name="chuc_vu" id="chuc_vu" class="form-control y-kien 8" style="-webkit-appearance: auto;">
                                             <option selected> Chọn Chức Vụ</option>
                                              @foreach($phongban as $pb)
                                                     <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
                                             @endforeach
-                                        </select> 
+                                        </select>
                                         <!-- số 4 -->
                                         <label for="thoi_gian_nghi" class="y-kien {{$chucnang[4]}}" >Thời gian nghỉ (ngày)</label>
                                         <input type="text" class="form-control y-kien {{$chucnang[4]}}" name="thoi_gian_nghi" placeholder="Ngày" >
                                         <!-- số 5 -->
                                         <label for="ngay_bat_dau" class="y-kien {{$chucnang[5]}}" >Bắt đầu từ ngày / Ngày tăng ca</label>
- 
-                                         <label for="ngay_bat_dau" class="y-kien 7" >Ngày tăng ca</label> 
+
+                                         <label for="ngay_bat_dau" class="y-kien 7" >Ngày tăng ca</label>
                                         <input type="date" class="form-control y-kien {{$chucnang[5]}}" name="ngay_bat_dau" >
                                         <!-- Số 6 -->
                                         <label for="nop_minh_chung" class="y-kien {{$chucnang[6]}}">Nộp Minh Chứng (Hình Ảnh)</label>
@@ -151,14 +129,14 @@
     <script>
         $(document).ready(function(){
             $("#chuc_vu").change(function(){
-                
+
                 var id_chucvu=$(this).val();
-                
+
                 $.get("../ajax/nhanvien_ykien/"+id_chucvu,function(data){
                     console.log(data);
                     $("#nhan_vien").html(data);
                 });
             });
         });
-    </script>   
+    </script>
 @endsection
