@@ -119,7 +119,7 @@ class QLNhansuController extends Controller
             'password' => $pass,
         );
 
-        Mail::to($request->emailcanhan)->send(new SendMail($data));
+        // Mail::to($request->emailcanhan)->send(new SendMail($data));
 
 
 
