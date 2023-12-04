@@ -81,7 +81,7 @@ class NhanVienController extends Controller
             $file = $request->file('Hinh');
 
             $name = $file->getClientOriginalName();
-            $Hinh = str_random(4) . "_" . $name;
+            $Hinh = $name;
             while (file_exists("upload/avatar/" . $Hinh)) {
                 $Hinh = str_random(4) . "_" . $name;
             }

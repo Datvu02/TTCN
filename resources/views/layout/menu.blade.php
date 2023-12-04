@@ -1,5 +1,4 @@
 <!-- left sidebar -->
-<!-- ============================================================== -->
 <div class="nav-left-sidebar sidebar-dark">
     <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -81,14 +80,14 @@
                         <div id="submenu-2"
                             class="collapse submenu {{Request::is('private/laphoso')|| Request::is('private/kyluat/danhsach')|| Request::is('private/thuong/danhsach')||Request::is('private/danhsachnvpb')||Request::is('private/ykien/danhsach')||Request::is('private/ykien/danhsach/loai/*')? 'show':null}}"" style="">
                                     <ul class=" nav flex-column">
-                            <!-- Request::is('private/danhsachquyetdinh') || -->
+                            <!-- |Request::is('private/danhsachquyetdinh') | -->
                     <li class="nav-item">
                         <a class="nav-link {{Request::is('private/laphoso') ? 'active':null}}"
                             href="{{url('private/laphoso')}}">Lập hồ sơ nhân viên</a>
                     </li>
                     <!-- <li class="nav-item">
-                                            <a class="nav-link {{Request::is('private/danhsachquyetdinh') ? 'active':null}}" href="{{url('private/danhsachquyetdinh')}}">Theo dõi tình trạng nghỉ việc</a>
-                                        </li> -->
+                        <a class="nav-link {{Request::is('private/danhsachquyetdinh') ? 'active':null}}" href="{{url('private/danhsachquyetdinh')}}">Theo dõi tình trạng nghỉ việc</a>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link {{Request::is('private/kyluat/danhsach') ? 'active':null}}"
                             href="{{url('private/kyluat/danhsach')}}">Danh sách nhân viên kỷ luật</a>
@@ -106,20 +105,14 @@
                     <li class="nav-item"><a class="nav-link {{Request::is('private/ykien/danhsach') ? 'active':null}}"
                             href="{{url('private/ykien/danhsach')}}"> Danh sách ý kiến </a></li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-11" aria-controls="submenu-11">Các ý kiến, đề xuất</a>
-                        <div id="submenu-11"
-                            class="collapse submenu  {{Request::is('private/ykien/danhsach')||Request::is('private/ykien/danhsach/loai/*') ? 'show':null}}"
-                            style="">
+                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Các ý kiến, đề xuất</a>
+                        <div id="submenu-11" class="collapse submenu  {{Request::is('private/ykien/danhsach')||Request::is('private/ykien/danhsach/loai/*') ? 'show':null}}" style="">
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a
-                                        class="nav-link {{Request::is('private/ykien/danhsach') ? 'active':null}}"
-                                        href="{{url('private/ykien/danhsach')}}"> Tất cả ý kiến </a></li>
+                            <li class="nav-item"><a class="nav-link {{Request::is('private/ykien/danhsach') ? 'active':null}}"  href="{{url('private/ykien/danhsach')}}"> Tất cả ý kiến </a></li>
                                 @foreach ($ykien as $yk)
                                 <li class="nav-item">
-                                    <a class="nav-link {{Request::is('private/ykien/danhsach/loai/'.$yk->id_ykien) ? 'active':null}}"
-                                        href="{{url('private/ykien/danhsach/loai/'.$yk->id_ykien)}}">{{$yk->loai_y_kien}}</a>
-                                </li>
+                                    <a class="nav-link {{Request::is('private/ykien/danhsach/loai/'.$yk->id_ykien) ? 'active':null}}" href="{{url('private/ykien/danhsach/loai/'.$yk->id_ykien)}}">{{$yk->loai_y_kien}}</a>
+                                </li> 
                                 @endforeach
                             </ul>
                         </div>
@@ -187,16 +180,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5"
-                    aria-controls="submenu-5"><i class="fas fa-fw fa-file"></i>Giới thiệu-Tin tức-Tuyển dụng</a>
+                    aria-controls="submenu-5"><i class="fas fa-fw fa-file"></i>Tin tức</a>
                 <div id="submenu-5"
-                    class="collapse submenu {{Request::is('private/thongtin/danhsachgioithieu')||Request::is('private/tintuc/danhsach') || Request::is('private/tintuc/danhsachtuyendung') ? 'show':null}}"
+                    class="collapse submenu {{Request::is('private/tintuc/danhsach') || Request::is('private/tintuc/danhsachtuyendung') ? 'show':null}}"
                     style="">
                     <ul class="nav flex-column">
-                        <label>Giới thiệu</label>
-                        <li class="nav-item">
-                            <a class="nav-link {{Request::is('private/thongtin/danhsachgioithieu') ? 'active':null}}"
-                                href="{{url('private/thongtin/danhsachgioithieu')}}">Thông tin giới thiệu về công ty</a>
-                        </li>
                         <label>Tuyển dụng</label>
                         <li class="nav-item">
                             <a class="nav-link {{Request::is('private/tintuc/danhsachtuyendung') ? 'active':null}}"
@@ -211,16 +199,26 @@
                     </ul>
                 </div>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link ml-2 {{Request::is('private/thongtin/congty') ? 'active':null}}"
-                    href="{{url('private/thongtin/congty')}}">Thông tin công ty</a>
+                <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6"
+                    aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Giới thiệu Công ty</a>
+                <div id="submenu-6"
+                    class="collapse submenu {{Request::is('private/thongtin/congty') || Request::is('private/thongtin/danhsachgioithieu') ? 'show':null}}"
+                    style="">
+                    <ul class="nav flex-column">
+                        <label>Giới thiệu</label>
+                        <li class="nav-item">
+                            <a class="nav-link {{Request::is('private/thongtin/congty') ? 'active':null}}"
+                                href="{{url('private/thongtin/congty')}}">Thông tin công ty</a>
+                        </li>
+                        <label>Giới thiệu</label>
+                        <li class="nav-item">
+                            <a class="nav-link {{Request::is('private/thongtin/danhsachgioithieu') ? 'active':null}}"
+                                href="{{url('private/thongtin/danhsachgioithieu')}}">Giới thiệu về công ty</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
-            <li style="text-align: center"> <a href="{{url('private/')}}"> <img
-                        src="{{url('upload/logo/'.$thongtinchinh->Hinh)}}"
-                        style="margin-top: 40px;width: 70px;height: 70px;" class=""></a></li>
-            <li style="text-align: center"><a class="navbar-brand" href="{{url('private/')}}"
-                    style="color: #71748d;font-size: 15px;">{{$thongtinchinh->ten_cong_ty}}</a></li>
             </ul>
     </div>
     </nav>

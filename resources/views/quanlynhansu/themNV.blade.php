@@ -178,7 +178,7 @@
                                             <label>Năm Tốt Nghiệp</label>
                                             <input type="number" name="nam_tot_nghiep" class="form-control text-center"
                                                 step="1" value="2023" />
-                                            <input type="month" name="nam_tot_nghiep" min="2010-01" value="2018-05">
+                                            <input type="month" name="nam_tot_nghiep" value="2023-05">
                                             <input type="month" class="form-control" name="email_cong_ty"
                                                 placeholder="Nhập email công ty">
                                         </div>
