@@ -7,7 +7,6 @@
             <div class="container-fluid  dashboard-content">
                 <div class="col-lg-12">
                     <h1 class="page-header">DANH SÁCH LOẠI Ý KIẾN</h1>
-                    <a class="btn btn-outline-secondary btn-lg btn-block" href="{{url('private/loaiykien/them')}}">Thêm</a>
                 </div>
                 @if(session('thongbao'))
                 <div class="alert alert-success">
@@ -19,6 +18,11 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-body">
+                    <div class="btn-group">
+                        
+                        <a class="btn btn-info mb-3" href="{{url('private/loaiykien/them')}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a>
+                        
+                    </div>
                                 <table class="table table-striped table-bordered" id="data-tables">
                                     <thead>
                                        <tr align="center">

@@ -69,9 +69,7 @@
                                                                             <th>PHỤ CẤP</th>
                                                                             <th>NGÀY KẾT THÚC HỢP ĐỒNG</th>
                                                                              <th>TRẠNG THÁI</th>
-                                                                            
-                                                                            
-                                                                            <th>TÁC VỤ</th>
+                                                                            <!-- <th>TÁC VỤ</th> -->
                                                                                                      
                                                                         </tr>
                                                                     </thead>
@@ -130,14 +128,14 @@
                                                                           @endif
                                                                           @endif
                                                                             
-                                                                            <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td>
-                                                                            <td>
+                                                                            {{-- <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> --}}
+                                                                            {{-- <td>
                                                                                 <a class="btn btn-primary" href="{{url('private/laphopdong/pdf/'.$hd->id_hopdong)}}" title="Xuất file pdf"> <i class="fa fa-edit"></i> Xuất file pdf</a>
                                                                                 
                                                                 <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
                                                                
                                                                 
-                                                                <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td></td>
+                                                                <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td></td> --}}
                             
                                                                         </tr>
                                                                        
@@ -147,8 +145,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                     <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}" title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
-                                                    <br>
                                     
                                     <a class="btn btn-warning " href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
                                    
@@ -156,7 +152,7 @@
                                     <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td></td>
 
                                     <td>
-                                        <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a>
+                                        {{-- <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> --}}
                                         <a class="btn btn-primary mb-2" href="{{url('private/laphopdong/pdf/'.$hd->id_hopdong)}}" title="Xuất file pdf"> <i class="fa fa-edit"></i> Xuất file pdf</a>
                         <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}" title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
                         
@@ -168,7 +164,7 @@
                                         
 
 
-                                        hop dong cu
+                                        {{-- hop dong cu --}}
 
 
                                     </table>
@@ -223,15 +219,15 @@
                                                 <td>{{$hd->ngay_ket_thuc_hop_dong}}</td>
                                                 <td>{{$hd->nguoi_laphd}}</td>
                                                 
-                                                      <a class="btn btn-primary " href="{{url('private/chitiethopdong/'.$hd->id_hopdong)}}" title="Xem"> <i class="fa fa-edit"></i> Xem</a>  
+                                                    {{-- <a class="btn btn-primary " href="{{url('private/chitiethopdong/'.$hd->id_hopdong)}}" title="Xem"> <i class="fa fa-edit"></i> Xem</a> --}}
                                                   
-                                      <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}" title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
-                                                    <br>  
+                                    {{-- <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}" title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
+                                                    <br> --}}
                                     
-                                      <a class="btn btn-warning " href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
+                                    {{-- <a class="btn btn-warning " href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
                                    
                                     
-                                    <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td>  
+                                    <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td> --}}
 
                                     
                                             </tr>
@@ -243,6 +239,9 @@
                             </div>
                         </div>
                         
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                 <!-- /.row -->
             </div>
             

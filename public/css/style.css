@@ -17,7 +17,7 @@ body {
 
 p {
     margin: 0 0 10px;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Roboto;
 }
 
 h1 {
@@ -25,7 +25,7 @@ h1 {
 }
 
 .header {
-    font-family: "Algerian";
+    font-family: "Roboto";
     display: flex;
     padding: 20px 0;
     position: fixed;
@@ -113,7 +113,7 @@ h1 {
 .page-intro h1 {
     text-align: center;
     margin-top: 35px;
-    font-family: "Algerian";
+    font-family: "Roboto";
 }
 
 .page-content {
@@ -168,6 +168,7 @@ a.view-intro {
     justify-content: center;
     align-items: center;
     position: relative;
+    font-family: "Roboto";
     background-attachment: fixed;
 }
 
