@@ -39,7 +39,6 @@
                                                 <td>{{$pl->tbl_loaiphuluc->ten_phu_luc}}</td>
                                                 <td>
                                                 <a class="btn btn-primary " href="{{url('private/chitietphuluc/'.$hopdong->id_hopdong.'/'.$pl->id_phuluc)}}" title="Chi tiết phụ lục"> <i class="fa fa-edit"></i> Xem</a>
-                                                <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>      
                                                 <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a>
                                             </td> 
                                             
@@ -57,6 +56,9 @@
                                 </div>
                             </div>
                         </div>
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->

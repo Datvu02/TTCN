@@ -28,9 +28,7 @@
                                 <th>NGÀY KẾT THÚC HỢP ĐỒNG</th>
                                 <th>NGƯỜI LẬP HỢP ĐỒNG</th>
                                 <th>TRẠNG THÁI</th>
-
                                 <th style="width:220px">TÁC VỤ</th>
-                                <th>HÀNH ĐỘNG</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,8 +50,9 @@
                                     @else
                                     <td class=" label label-success">Còn hạn</td>
                                     @endif
-                                    <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i
-                                                class="fa fa-edit"></i> Lập phụ lục</a></td>
+                                    <!-- <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i
+                                                class="fa fa-edit"></i> Lập phụ lục</a>
+                                    </td> -->
                                     <td>
                                         <!-- <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}"
                                             title="Xem"> <i class="fa fa-eye"></i> Xem</a> -->
@@ -64,10 +63,6 @@
                                         <a class="btn btn-primary"
                                             href="{{url('private/chitiethopdong/'.$hd->id_hopdong)}}"
                                             title="Xem hợp đồng"> <i class="fa fa-edit"></i> Xem</a>
-                                        <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i>
-                                            Sửa</a>
-
-
                                         <a class="btn btn-danger" href=""
                                             onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');"
                                             title="Xóa"> <i class="fa fa-trash"></i> Xóa</a>

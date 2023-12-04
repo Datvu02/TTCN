@@ -359,15 +359,7 @@ class QLNhansuController extends Controller
     public function getChitiethopdong($id_hopdong){
         $hopdong=tbl_hopdong::where('id_hopdong',$id_hopdong)->first();
         $phuluc1=tbl_phuluc::where('id_hopdong',$id_hopdong)->first();
-        if(isset($phuluc1)){
-        $phuluc=tbl_phuluc::where('id_loaiphuluc',$phuluc1->id_loaiphuluc)->first();
-        
-        // dd($phuluc);
-        return view('quanlynhansu.chitiethopdongNV',['hopdong'=>$hopdong,'phuluc'=>$phuluc]);
-        }
-        else
-        
-        return view('quanlynhansu.chitiethopdongNV',['hopdong'=>$hopdong]);
+        return view('quanlynhansu.chitiethopdongNV',['hopdong'=>$hopdong,'phuluc'=>$phuluc1]);
 
     }
 
@@ -382,9 +374,9 @@ class QLNhansuController extends Controller
         $hopdong=tbl_hopdong::where('id_hopdong',$id_hopdong)->first();
         $phuluc=tbl_phuluc::where('id_phuluc',$id_phuluc)->first();
         $chitiet=tbl_chitietphuluc::where('id',$phuluc->id_chitiet)->first();
-        
+        $loaipl=tbl_loaiphuluc::where('id', $phuluc->id_loaiphuluc)->first();
         $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$hopdong->id_nhanvien)->first();
-        return view('quanlynhansu.chitietphulucNV',['hopdong'=>$hopdong,'phuluc'=>$phuluc,'chitiet'=>$chitiet,'nhanvien'=>$nhanvien]);
+        return view('quanlynhansu.chitietphulucNV',['hopdong'=>$hopdong,'phuluc'=>$phuluc,'loaiphuluc'=>$loaipl, 'chitiet'=>$chitiet,'nhanvien'=>$nhanvien]);
     }
     public function getlapPhulucNV($id_hopdong){
         $hopdong=tbl_hopdong::where('id_hopdong',$id_hopdong)->first();
