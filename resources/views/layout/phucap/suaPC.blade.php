@@ -53,6 +53,9 @@
                             </form>
                         </div>
                     </div>
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- end validation form -->

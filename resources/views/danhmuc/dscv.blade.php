@@ -47,8 +47,8 @@
                                                 <td style="display: block;overflow: scroll; height: 105px; text-align: left">{!!$cv->noi_dung_cv!!}</td>
                                                 <td>
                                                     <a class="btn btn-warning" href="{{url('private/chucvu/sua/'.$cv->id_chucvu)}}"><i class="fa fa-edit mr-2"></i>Sửa</a> 
-                                                    <a class="btn btn-danger" href="{{url('private/chucvu/xoa/'.$cv->id_chucvu)}}"onclick="return confirm('Bạn có chắc chắn muốn xóa chức vụ này không?');" title="Xóa"><i class="fa fa-trash mr-2"></i>Xóa</a></td>
-                                                <td><a class="btn btn-primary" href="{{url('private/chucvu/sua/'.$cv->id_chucvu)}}"><i class="fa fa-edit"></i>Quản lý quyền</a></td>
+                                                    <a class="btn btn-danger" href="{{url('private/chucvu/xoa/'.$cv->id_chucvu)}}"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa chức vụ này không?');" title="Xóa"><i class="fa fa-trash mr-2"></i>Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

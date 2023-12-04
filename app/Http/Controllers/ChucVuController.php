@@ -60,6 +60,7 @@ class ChucVuController extends Controller
         $permissions=tbl_permissions::all();
         $phongban = tbl_phongban::all();
         $cv_permission=tbl_chucvu_permission::where('id_chucvu',$id_chucvu)->pluck('id_permission');
+        // die($cv_permission);
         return view('layout.chucvu.suaCV',compact('chucvu','permissions','cv_permission','phongban'));
     }
 
@@ -85,12 +86,17 @@ class ChucVuController extends Controller
         }
         
         $permissions=$request->permission;
-        foreach($permissions as $permissionID){
-           $cv_permission=new tbl_chucvu_permission;
-            $cv_permission->id_chucvu=$chucvu->id_chucvu;
-            $cv_permission->id_permission =(int)$permissionID;
+        // die($chucvu);
+        if (is_array($permissions) || is_object($permissions))
+        {
+            foreach($permissions as $permissionID){
+            $cv_permission=new tbl_chucvu_permission;
+                $cv_permission->id_chucvu=$chucvu->id_chucvu;
+                $cv_permission->id_permission =(int)$permissionID;
 
-            $cv_permission->save();
+                $cv_permission->save();
+            }
+            
         }
         
         return redirect('private/chucvu/sua/'.$chucvu->id_chucvu)->with('thongbao','Sửa Thành Công');
