@@ -13,11 +13,6 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                     <div class="btn-group">
-                                        
-                                        <a class="btn btn-info mb-3" href="{{url('private/lapphuluc/'.$hopdong->id_hopdong)}}"><i class="fa fa-plus mr-2"></i>Thêm mới</a>
-                                       
-                                    </div> 
                                     <!-- /.col-lg-12 -->
                                     @if(session('thongbao'))
                                     <div class="alert alert-success">
@@ -27,7 +22,7 @@
                                     <table class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr align="center">
-                                                
+                                                <th>LOẠI PHỤ LỤC</th>
                                                 @if(isset($chitiet->thay_doi_luong))
                                                 <th>MỨC LƯƠNG CŨ</th>
                                                 <th>MỨC LƯƠNG MỚI</th>
@@ -52,10 +47,9 @@
                                         </thead>
                                         <tbody>
                                            
-                                             @foreach($phuluc as $pl) 
                                             <tr class="even gradeC" align="center">
                                                 
-                                                
+                                                <td>{{$loaiphuluc->ten_phu_luc}}</td>
                                                 
                                                 
                                                 
@@ -88,22 +82,19 @@
                                                 <td>{{$chitiet->ngay_ket_thuc}}</td>
                                                 
                                                 
-                                                 <td><a class="btn btn-primary" href="" title="Lập phụ lục"> <i class="fa fa-edit"></i> Lập phụ lục</a></td> 
                                                 <td>
-                                                     <a class="btn btn-primary" href="{{url('private/hopdong/'.$hd->id_nhanvien)}}" title="Xem"> <i class="fa fa-eye"></i> Xem</a> 
                                                   
-                                                    <a class="btn btn-primary" href="{{url('private/lapphuluc/pdf/'.$phuluc->id_phuluc)}}">Xuất file pdf!!</a>
-                                                    <a class="btn btn-warning" href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>      
-                                                    <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td>   
+                                                    <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa phụ lục này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td>   
                                             </tr>
-                                            
-                                             @endforeach 
                                             
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->

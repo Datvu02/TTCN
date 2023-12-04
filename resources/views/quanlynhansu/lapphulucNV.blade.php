@@ -89,13 +89,13 @@
                                                         <p class="ml-3 mt-4">Tổng tiền: {{$hopdong->tbl_phucap->tong_tien_phu_cap}}</p>
                                                         
                                                         </div>
-                                                         <div class="form-group col-md-3">
+                                                         <!-- <div class="form-group col-md-3">
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center" name="muc_luong_chinh"></label>
                                                         <label type="text" class="form-control text-center mt-5" name="muc_luong_chinh"></label>
-                                                            </div> 
+                                                            </div>  -->
                                                         </div>
                                                     
                                                     
@@ -221,13 +221,15 @@
                                 </div>
                             </form>
                         </div>
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                     <a class="btn btn-secondary" href="javascript:history.back()">Quay Lại</a>
+                 </div>
                     </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- end validation form -->
                 <!-- ============================================================== -->
             </div>
-             @endif 
     </div>
 </div>
 
