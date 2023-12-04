@@ -158,7 +158,7 @@
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label >Năm Tốt Nghiệp</label>
-                                                <input type="number" name="nam_tot_nghiep" class="form-control text-center" min="2010" max="2020" step="1" value="2020" />
+                                                <input type="number" name="nam_tot_nghiep" class="form-control text-center"step="1" value="2020" />
                                                 {{-- <input type="month"  name="nam_tot_nghiep" min="2010-01" value="2018-05">
                                                 <input type="month" class="form-control" name="email_cong_ty" placeholder="Nhập email công ty"> --}}
                                               </div>

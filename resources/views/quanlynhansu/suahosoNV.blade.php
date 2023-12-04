@@ -199,7 +199,7 @@
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label >Năm Tốt Nghiệp</label>
-                                                <input type="number" name="nam_tot_nghiep" class="form-control text-center" min="2010" max="2020" step="1" value="{{$td->nam_tot_nghiep}}" required />
+                                                <input type="number" name="nam_tot_nghiep" class="form-control text-center" step="1" value="{{$td->nam_tot_nghiep}}" required />
                                               </div>
                                             
                                         </div>
