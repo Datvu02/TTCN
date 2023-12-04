@@ -22,16 +22,16 @@ use App\tbl_chitietphuluc;
 
 class NhanVienController extends Controller
 {
-    public function getview(){ 
-        
+    public function getview(){
+
         $tongnhanvien=tbl_hosonhanvien::count();
         $nhanviennam =tbl_hosonhanvien::where('gioi_tinh',1)->count();
         $nhanviennu =tbl_hosonhanvien::where('gioi_tinh',0)->count();
         return view('layout.content',['tongnhanvien'=>$tongnhanvien,'nhanviennam'=>$nhanviennam,'nhanviennu'=>$nhanviennu]);
-        
+
     }
-    
-    
+
+
 
     public function getDangnhap(){
         if(Auth::check()){
@@ -52,17 +52,17 @@ class NhanVienController extends Controller
         $ds_ho_so = tbl_hoso::all();
         // $user = User::find($id);
         $nhanvien=tbl_hosonhanvien::where('id_nhanvien',Auth::user()->id_nhanvien)->first();
-        
+
         $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        
+
         $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
         $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-        
+
         $hopdong=tbl_hopdong::where([['id_nhanvien',Auth::user()->id_nhanvien],['trang_thai','1']])->first();
         $phuluc=tbl_phuluc::where([['id_hopdong',$hopdong->id_hopdong],['id_loaiphuluc','2']])->first();
         if(isset($phuluc)){
             return view('pages.hosonhanvien',['nhanvien'=>$nhanvien,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'ds_ho_so'=>$ds_ho_so,'user'=>$user,'phuluc'=>$phuluc]);
-        
+
         }
         return view('pages.hosonhanvien',['nhanvien'=>$nhanvien,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'ds_ho_so'=>$ds_ho_so,'user'=>$user]);
     }
@@ -70,13 +70,13 @@ class NhanVienController extends Controller
     public function postThongtinTaikhoan(Request $request){
         $nhanvien=tbl_hosonhanvien::where('id_nhanvien',Auth::user()->id_nhanvien)->first();
         $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-         
+
         if($request->hasFile('Hinh')){
 
             $file=$request->file('Hinh');
 
             $name=$file->getClientOriginalName();
-            $Hinh=str_random(4)."_".$name;
+            $Hinh="_".$name;
             while (file_exists("upload/arvarta/".$Hinh)) {
                $Hinh=str_random(4)."_".$name;
             }
@@ -91,7 +91,7 @@ class NhanVienController extends Controller
         $nhanvien->save();
         return redirect('private/thongtincanhan')->with('thongbao','Sửa đổi thông tin tài khoản thành công');
     }
-    
+
     public function getDangXuatAdmin(){
         Auth::logout();
          return redirect('login');

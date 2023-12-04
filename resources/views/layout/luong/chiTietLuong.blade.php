@@ -1,7 +1,7 @@
- 
+
 @extends('layout.index')
 @section('content')
- 
+
 <div class="dashboard-wrapper">
     <div class="container-fluid  dashboard-content">
         <!-- ============================================================== -->
@@ -19,14 +19,14 @@
                                 <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
                             </ol>
                         </nav>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
         <!-- ============================================================== -->
         <!-- end pageheader -->
         <!-- ============================================================== -->
-     
+
             <div class="row">
                 <!-- ============================================================== -->
                 <!-- validation form -->
@@ -117,8 +117,8 @@
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="ky_luat">Tiền Phạt</label>
-                                                <span class="form-control" name="ky_luat">{{number_format($kyluat)}}</span>
-                                            </div> 
+                                                <span class="form-control" name="ky_luat">{{$kyluat}}</span>
+                                            </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md 6">
@@ -132,8 +132,8 @@
                                                             <th>Giá Trị</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody> 
-                                                        @foreach($khenthuong as $kt) 
+                                                    <tbody>
+                                                        @foreach($khenthuong as $kt)
                                                         <tr class="even gradeC" align="center">
                                                             <td>{{date('d-m-Y',strtotime($kt->updated_at))}}</td>
                                                             <td>{{$kt->tbl_hosonhanvien->ho_ten}}</td>
@@ -156,7 +156,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($kyluat as $kl) 
+                                                        @foreach($kyluat as $kl)
                                                         <tr class="even gradeC" align="center">
                                                             <td>{{date('d-m-Y',strtotime($kl->updated_at))}}</td>
                                                             <td>{{$kl->tbl_hosonhanvien->ho_ten}}</td>
@@ -172,9 +172,9 @@
                                             <div class="form-group col-md-4">
                                                 <label for="luong_nhan">Lương Nhận</label>
                                                 <span class="form-control" name="luong_nhan" aria-describedby="helper">
-                                                     @if(isset($luong->tong_tien_luong) && isset($luong->thue_thu_nhap)) 
+                                                     @if(isset($luong->tong_tien_luong) && isset($luong->thue_thu_nhap))
                                                         {{number_format($luongnhanduoc)}}
-                                                     @endi  f 
+                                                     @endif
                                                 </span>
                                                 <small id="helper" class="text-muted">Cập nhật lần cuối vào : {{date('H:i:s d/m/Y',strtotime($luong->updated_at))}}</small><div>
                                         </div>
@@ -195,6 +195,6 @@
             </div>
     </div>
 </div>
- 
+
 @endsection
- 
+
