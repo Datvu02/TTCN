@@ -32,10 +32,10 @@ $(document).ready(function() { //Datatables chấm công & lương
     var table = $('#data-tables-check').DataTable({
         orderCellsTop: true,
         fixedHeader: true,
-        "order": false,
         "dom": 'lrtip', //Xóa search nhưng vẫn giữ bảng
         "info": false
     });
+    
 });
 $(document).ready(function() { //Datatable bình thường
     $('#data-tables-ykien').DataTable({

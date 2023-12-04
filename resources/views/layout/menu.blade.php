@@ -137,31 +137,36 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-file"></i>Giới thiệu-Tin tức-Tuyển dụng</a>
-                                <div id="submenu-5" class="collapse submenu {{Request::is('private/thongtin/danhsachgioithieu')||Request::is('private/tintuc/danhsach') || Request::is('private/tintuc/danhsachtuyendung') ? 'show':null}}" style="">
+                                <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-file"></i>Tin tức</a>
+                                <div id="submenu-5" class="collapse submenu {{Request::is('private/tintuc/danhsach') || Request::is('private/tintuc/danhsachtuyendung') ? 'show':null}}" style="">
                                     <ul class="nav flex-column">
-                                        <label>Giới thiệu</label>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{Request::is('private/thongtin/danhsachgioithieu') ? 'active':null}}" href="{{url('private/thongtin/danhsachgioithieu')}}">Thông tin giới thiệu về công ty</a>
-                                        </li>
                                         <label>Tuyển dụng</label>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{Request::is('private/tintuc/danhsachtuyendung') ? 'active':null}}" href="{{url('private/tintuc/danhsachtuyendung')}}">Quản lý tin tuyển dụng</a>
-                                        </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{Request::is('private/tintuc/danhsachtuyendung') ? 'active':null}}" href="{{url('private/tintuc/danhsachtuyendung')}}">Quản lý tin tuyển dụng</a>
+                                            </li>
                                         <label>Tin tức</label>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{Request::is('private/tintuc/danhsach') ? 'active':null}}" href="{{url('private/tintuc/danhsach')}}">Quản lý tin tức</a>
-                                        </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{Request::is('private/tintuc/danhsach') ? 'active':null}}" href="{{url('private/tintuc/danhsach')}}">Quản lý tin tức</a>
+                                            </li>
                                         
                                     </ul>
                                 </div>
                             </li>
-                        
                             <li class="nav-item">
-                                <a class="nav-link ml-2 {{Request::is('private/thongtin/congty') ? 'active':null}}" href="{{url('private/thongtin/congty')}}">Thông tin công ty</a>
+                                <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Giới thiệu Công ty</a>
+                                <div id="submenu-6" class="collapse submenu {{Request::is('private/thongtin/congty') || Request::is('private/thongtin/danhsachgioithieu') ? 'show':null}}" style="">
+                                    <ul class="nav flex-column">
+                                        <label>Giới thiệu</label>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{Request::is('private/thongtin/congty') ? 'active':null}}" href="{{url('private/thongtin/congty')}}">Thông tin công ty</a>
+                                            </li>
+                                        <label>Giới thiệu</label>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{Request::is('private/thongtin/danhsachgioithieu') ? 'active':null}}" href="{{url('private/thongtin/danhsachgioithieu')}}">Giới thiệu về công ty</a>
+                                            </li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li style="text-align: center"> <a  href="{{url('private/')}}">  <img src="{{url('upload/logo/'.$thongtinchinh->Hinh)}}" style="margin-top: 40px;width: 70px;height: 70px;" class=""></a></li>
-                            <li  style="text-align: center"><a class="navbar-brand" href="{{url('private/')}}" style="color: #71748d;font-size: 15px;">{{$thongtinchinh->ten_cong_ty}}</a></li>
                         </ul>
                     </div>
                 </nav>

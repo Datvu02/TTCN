@@ -81,7 +81,7 @@
                                       </div>
                                         </div>    
                                     </div>
-                                   <a class="btn btn-primary mr-5 " href="{{url('private/thongtin/congty/sua')}}">Sửa đổi thông tin</a>
+                                   <!--<a class="btn btn-primary mr-5 " href="{{url('private/thongtin/congty/sua')}}">Sửa đổi thông tin</a> -->
                                 </div>
                                 
                             </div>
