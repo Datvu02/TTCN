@@ -189,8 +189,8 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.alert {
-    padding-left: 20% !important;
+.alert-warning {
+    /* padding-left: 20% !important; */
     color: red !important;
 }
 

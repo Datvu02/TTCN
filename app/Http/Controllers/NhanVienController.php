@@ -21,84 +21,91 @@ use App\tbl_chitietphuluc;
 
 class NhanVienController extends Controller
 {
-    public function getview(){ 
-        
-        $tongnhanvien=tbl_hosonhanvien::count();
-        $nhanviennam =tbl_hosonhanvien::where('gioi_tinh',1)->count();
-        $nhanviennu =tbl_hosonhanvien::where('gioi_tinh',0)->count();
-        return view('layout.content',['tongnhanvien'=>$tongnhanvien,'nhanviennam'=>$nhanviennam,'nhanviennu'=>$nhanviennu]);
-        
-    }
-    
-    
+    public function getview()
+    {
 
-    public function getDangnhap(){
-        if(Auth::check()){
-            return redirect('private')->with('wanning','Bạn đang đăng nhập');
-        }else{
-    	    return view('login');
+        $tongnhanvien = tbl_hosonhanvien::count();
+        $nhanviennam = tbl_hosonhanvien::where('gioi_tinh', 1)->count();
+        $nhanviennu = tbl_hosonhanvien::where('gioi_tinh', 0)->count();
+        return view('layout.content', ['tongnhanvien' => $tongnhanvien, 'nhanviennam' => $nhanviennam, 'nhanviennu' => $nhanviennu]);
+
+    }
+
+
+
+    public function getDangnhap()
+    {
+        if (Auth::check()) {
+            return redirect('private')->with('wanning', 'Bạn đang đăng nhập');
+        } else {
+            return view('login');
         }
     }
-    public function postDangnhap(Request $request){
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
+    public function postDangnhap(Request $request)
+    {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('private');
-        }
-        else{
-            return redirect('login')->with('thongbao','Tài khoảng hoặc mật khẩu không đúng, vui lòng đăng nhập lại');
+        } else {
+            return redirect('login')->with('thongbao', 'Tài khoảng hoặc mật khẩu không đúng, vui lòng đăng nhập lại');
         }
     }
-    public function getHoSoNhanVien(){
+    public function getHoSoNhanVien()
+    {
         $ds_ho_so = tbl_hoso::all();
         // $user = User::find($id);
-        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',Auth::user()->id_nhanvien)->first();
-        
-        $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        
-        $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-        
-        $hopdong=tbl_hopdong::where([['id_nhanvien',Auth::user()->id_nhanvien],['trang_thai','1']])->first();
-        $phuluc=tbl_phuluc::where([['id_hopdong',$hopdong->id_hopdong],['id_loaiphuluc','2']])->first();
-        if(isset($phuluc)){
-            return view('pages.hosonhanvien',['nhanvien'=>$nhanvien,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'ds_ho_so'=>$ds_ho_so,'user'=>$user,'phuluc'=>$phuluc]);
-        
+
+        $nhanvien = tbl_hosonhanvien::where('id_nhanvien', Auth::user()->id_nhanvien)->first();
+
+        $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+
+        $trinhdo = tbl_trinhdo::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+        $user = User::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
+
+        $hopdong = tbl_hopdong::where([['id_nhanvien', Auth::user()->id_nhanvien], ['trang_thai', '1']])->first();
+        $phuluc = tbl_phuluc::where([['id_hopdong', $hopdong->id_hopdong], ['id_loaiphuluc', '2']])->first();
+        if (isset($phuluc)) {
+            return view('pages.hosonhanvien', ['nhanvien' => $nhanvien, 'lienhe' => $lienhe, 'trinhdo' => $trinhdo, 'ds_ho_so' => $ds_ho_so, 'user' => $user, 'phuluc' => $phuluc]);
+
         }
-        return view('pages.hosonhanvien',['nhanvien'=>$nhanvien,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'ds_ho_so'=>$ds_ho_so,'user'=>$user]);
+        return view('pages.hosonhanvien', ['nhanvien' => $nhanvien, 'lienhe' => $lienhe, 'trinhdo' => $trinhdo, 'ds_ho_so' => $ds_ho_so, 'user' => $user]);
     }
 
-    public function postThongtinTaikhoan(Request $request){
-        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',Auth::user()->id_nhanvien)->first();
-        $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-         
-        if($request->hasFile('Hinh')){
+    public function postThongtinTaikhoan(Request $request)
+    {
+        $nhanvien = tbl_hosonhanvien::where('id_nhanvien', Auth::user()->id_nhanvien)->first();
+        $user = User::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
 
-            $file=$request->file('Hinh');
+        if ($request->hasFile('Hinh')) {
 
-            $name=$file->getClientOriginalName();
-            $Hinh=str_random(4)."_".$name;
-            while (file_exists("upload/arvarta/".$Hinh)) {
-               $Hinh=str_random(4)."_".$name;
+            $file = $request->file('Hinh');
+
+            $name = $file->getClientOriginalName();
+            $Hinh = $name;
+            while (file_exists("upload/avatar/" . $Hinh)) {
+                $Hinh = str_random(4) . "_" . $name;
             }
-            $file->move("upload/arvarta",$Hinh);
-            $nhanvien->anh_dai_dien=$Hinh;
+            $file->move("upload/avatar", $Hinh);
+            $nhanvien->anh_dai_dien = $Hinh;
         }
-        $user->name=$request->name;
-        $user->password=bcrypt($request->password);
+        $user->name = $request->name;
+        $user->password = bcrypt($request->password);
 
 
         $user->save();
         $nhanvien->save();
-        return redirect('private/thongtincanhan')->with('thongbao','Sửa đổi thông tin tài khoản thành công');
-    }
-    
-    public function getDangXuatAdmin(){
-        Auth::logout();
-         return redirect('login');
+        return redirect('private/thongtincanhan')->with('thongbao', 'Sửa đổi thông tin tài khoản thành công');
     }
 
-    public function getHopDongNhanVien($id){
-        $hopdong=tbl_hopdong::where('id_nhanvien','=',$id)->get();
-            return view('pages.hopdong',['hopdong'=>$hopdong]);
+    public function getDangXuatAdmin()
+    {
+        Auth::logout();
+        return redirect('login');
+    }
+
+    public function getHopDongNhanVien($id)
+    {
+        $hopdong = tbl_hopdong::where('id_nhanvien', '=', $id)->get();
+        return view('pages.hopdong', ['hopdong' => $hopdong]);
     }
 
     // public function getGiaDinh($id){

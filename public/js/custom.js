@@ -1,6 +1,89 @@
+function filterTable() {
+    var selectedYear = document.getElementById("year").value;
+    var selectedMonth = document.getElementById("month").value;
+    var employeeNameFilter = document.getElementById("employeeName").value.toUpperCase();
+
+    var tableRows = document.querySelectorAll("#data-tables tbody tr");
+
+    tableRows.forEach(function(row) {
+        var rowYearMonth = row.getAttribute("data-filtertables-year");
+        var rowMonth = rowYearMonth.split("-")[1];
+        var rowEmployeeName = row.getElementsByTagName("td")[0].textContent.trim().toUpperCase(); // Assuming employee name is in the first column
+
+        var yearMatch = selectedYear === "Chọn năm" || rowYearMonth.startsWith(selectedYear);
+        var monthMatch = selectedMonth === "Chọn Tháng" || rowMonth === selectedMonth;
+        var employeeNameMatch = rowEmployeeName.includes(employeeNameFilter);
+
+        if (yearMatch && monthMatch && employeeNameMatch) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+// function filterTableByYear() {
+//     var selectedYear = document.getElementById('year').value;
+//     var monthSelect = document.getElementById("month");
+//     var optionsToDisplay = [];
+
+
+//     var rows = document.querySelectorAll('#data-tables tbody tr');
+//     rows.forEach(function (row) {
+//         var rowYear = row.getAttribute('filtertables-year');
+//         if (selectedYear === 'Chọn năm' || selectedYear === rowYear) {
+//             row.style.display = '';
+//         } else {
+//             row.style.display = 'none';
+//         }
+//     });
+
+//     // Lọc danh sách các tùy chọn cần hiển thị
+//     for (var i = 1; i < monthSelect.options.length; i++) {
+//         var optionYear = monthSelect.options[i].getAttribute("data-year");
+//         if (optionYear === selectedYear || selectedYear === "Chọn năm" || optionYear === null) {
+//             optionsToDisplay.push(i);
+//         }
+//     }
+
+//     // Ẩn tất cả các tùy chọn tháng
+//     for (var i = 1; i < monthSelect.options.length; i++) {
+//         monthSelect.options[i].style.display = "none";
+//     }
+
+//     // Hiển thị chỉ các tùy chọn đã lọc
+//     optionsToDisplay.forEach(function (index) {
+//         monthSelect.options[index].style.display = "";
+//     });
+
+// }
+// function filterTableByYear() {
+//     var selectedYear = document.getElementById("year").value;
+//     var monthSelect = document.getElementById("month");
+//     var optionsToDisplay = [];
+
+//     // Lọc danh sách các tùy chọn cần hiển thị
+//     for (var i = 1; i < monthSelect.options.length; i++) {
+//         var optionYear = monthSelect.options[i].getAttribute("data-year");
+//         if (optionYear === selectedYear || selectedYear === "Chọn năm" || optionYear === null) {
+//             optionsToDisplay.push(i);
+//         }
+//     }
+
+//     // Ẩn tất cả các tùy chọn tháng
+//     for (var i = 1; i < monthSelect.options.length; i++) {
+//         monthSelect.options[i].style.display = "none";
+//     }
+
+//     // Hiển thị chỉ các tùy chọn đã lọc
+//     optionsToDisplay.forEach(function (index) {
+//         monthSelect.options[index].style.display = "";
+//     });
+// }
 $(document).ready(function() { //datatables hỗ trợ xuất file
     var table = $('#data-tables').DataTable({
         lengthChange: false,
+
         buttons: ['excel', 'pdf'],
         "order": [
             [0, "desc"]
@@ -10,6 +93,7 @@ $(document).ready(function() { //datatables hỗ trợ xuất file
     table.buttons().container()
         .appendTo('#data-tables_wrapper .col-md-6:eq(0)');
 });
+
 $(document).ready(function() { //Datatables chấm công & lương
     // Setup - add a text input to each footer cell
     $('#data-tables-check thead tr').clone(true).appendTo('#data-tables-check thead');
@@ -31,11 +115,12 @@ $(document).ready(function() { //Datatables chấm công & lương
 
     var table = $('#data-tables-check').DataTable({
         orderCellsTop: true,
+        order: false,
         fixedHeader: true,
-        "order": false,
         "dom": 'lrtip', //Xóa search nhưng vẫn giữ bảng
         "info": false
     });
+
 });
 $(document).ready(function() { //Datatable bình thường
     $('#data-tables-ykien').DataTable({
@@ -416,15 +501,6 @@ function validatechucvu() {
                 " <img src='https://www.kindpng.com/picc/m/80-807690_check-mark-well-icon-internet-circle-good-correct.png' style='width:14px;height:14px;'/><i>Hợp lệ</i>";
 
         }
-        // if (phong_ban.length < 1) {
-        //     document.getElementById("phong_banf").innerHTML =
-        //         " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRovzTHcemSSBnpK3cjYqVSGWCJnvdAM6CjQQ&usqp=CAU' style='width:14px;height:14px;'/><i> Vui lòng chọn phòng ban</i>";
-        //     status = false;
-        // } else {
-        //     document.getElementById("phong_ban").innerHTML =
-        //         " <img src='https://www.kindpng.com/picc/m/80-807690_check-mark-well-icon-internet-circle-good-correct.png' style='width:14px;height:14px;'/><i>Hợp lệ</i>";
-
-        // }
         if (chuc_vu.length < 1) {
             document.getElementById("chuc_vuf").innerHTML =
                 " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRovzTHcemSSBnpK3cjYqVSGWCJnvdAM6CjQQ&usqp=CAU' style='width:14px;height:14px;'/><i> Vui lòng chọn chức vụ</i>";
