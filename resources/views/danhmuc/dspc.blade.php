@@ -36,7 +36,7 @@
                                         <tbody>
                                             @foreach($phucap as $pc)
                                             <tr class="even gradeC" align="center">
-                                                <td>{{$pc->tbl_chucvu->ten_chuc_vu}} - {{$pc->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>
+                                                <td>{{$pc->tbl_chucvu->ten_chuc_vu}}</td>
                                                 
                                                 <td>{{number_format($pc->an_trua)}} đ/tháng</td>
                                                 <td>{{number_format($pc->xang_xe)}} đ/tháng</td>

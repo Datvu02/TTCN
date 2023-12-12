@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\tbl_phongban;
 use App\tbl_chucvu;
 use App\tbl_hosonhanvien;
 use App\tbl_vitri;
@@ -33,10 +32,6 @@ class DanhmucController extends Controller
         return $ykien;
     } */
 
-     public function getDanhSachPB(){
-    	$phongban=tbl_phongban::all();
-    	return view('danhmuc.dspb',['phongban'=>$phongban]);
-    }
 
 
     public function getDanhSachPC(){
@@ -52,16 +47,14 @@ class DanhmucController extends Controller
     }
 
     public function getDanhSachNV(){
-        // if(Auth::user->tbl_chucvu->tbl_phongban->ten_phong_ban == GD){}
         $nhanvien=tbl_hosonhanvien::orderBy('created_at','desc')->get(); 
         return view('danhmuc.dsnv',['nhanvien'=>$nhanvien]);
     }
 
-    public function getDanhSachNVPB(){
-        $nhanvien = tbl_hosonhanvien::where('id_chucvu','like','%'.Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_phongban)->get();
-        $tenpb = Auth::user()->tbl_hosonhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban;
-        return view('danhmuc.dsnvpb',compact('nhanvien','tenpb'));
-    }
+    // public function getDanhSachNVPB(){
+    //     $nhanvien = tbl_hosonhanvien::where('id_chucvu','like','%'.Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_phongban)->get();
+    //     return view('danhmuc.dsnvpb',compact('nhanvien','tenpb'));
+    // }
 
 
     public function getDanhSachHD(){
@@ -100,7 +93,6 @@ class DanhmucController extends Controller
 
     public function getDanhSachYK(){
         if(tbl_chucvu_permission::where('id_chucvu',Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_chucvu)->where('id_permission',23)->exists()){
-            $ykien = tbl_luuykien::where('phong_ban_den',Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_phongban)->get();
         }
         else {
             $ykien = tbl_luuykien::all();
@@ -113,7 +105,6 @@ class DanhmucController extends Controller
     
     public function getDanhSachYKL($id){
         if(tbl_chucvu_permission::where('id_chucvu',Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_chucvu)->where('id_permission',23)->exists()){
-            $ykien = tbl_luuykien::where('id_nhanvien','like','%'.Auth::user()->tbl_hosonhanvien->tbl_chucvu->id_phongban.'%')->get();
         }
         else {
             $ykien = tbl_luuykien::where('id_ykien',$id)->get();

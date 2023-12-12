@@ -46,11 +46,6 @@
                                         <span class="form-control"
                                             name="chuc_vu">{{$ykien->tbl_hosonhanvien->tbl_chucvu->ten_chuc_vu}}</span>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="phong_ban">Phòng Ban</label>
-                                        <span class="form-control"
-                                            name="phong_ban">{{$ykien->tbl_hosonhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</span>
-                                    </div>
                                     <div class="form-group col-md-12">
                                         <label for="ly_do">Lý Do</label>
                                         <span class="form-control" name="ly_do">{{$ykien->ly_do}}</span>

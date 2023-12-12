@@ -17,7 +17,6 @@
                                 <th>Mã nhân viên</th>
                                 <th>Tên nhân viên</th>
                                 <th>Chức vụ</th>
-                                <th>Phòng ban</th>
                                 <th>Số lần kỹ luật</th>
                                 <th style="width:230px">Hành động</th>
                             </tr>
@@ -31,7 +30,6 @@
                                     <p>{{$nv->ho_ten}}</p>
                                 </td>
                                 <td>{{$nv->tbl_chucvu->ten_chuc_vu}}</td>
-                                <td>{{$nv->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>
                                 @foreach($kyluat as $kl)
 
                                 <!-- <tr class="even gradeC" align="center">

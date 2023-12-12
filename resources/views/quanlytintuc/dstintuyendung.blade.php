@@ -38,7 +38,7 @@
                                             @foreach($tuyendung as $td)
                                              <tr class="odd gradeX" align="">
                                             <td>{{$count++}}</td>
-                                            <td>{{$td->tbl_chucvu->ten_chuc_vu}}-{{$td->tbl_chucvu->tbl_phongban->ten_phong_ban}}
+                                            <td>{{$td->tbl_chucvu->ten_chuc_vu}}
                                             <br>
                                             @if($td->Hinh!=null)
                                             <img src="{{url('upload/linhvuc/'.$td->Hinh)}}" style="width: 100px;height:60px"></td>

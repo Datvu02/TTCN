@@ -70,7 +70,7 @@
                     @foreach($tuyendung as $td)
                       <tr>
                         <th scope="row">{{$count++}}</th>
-                        <td><h3>Vị trí: {{$td->tbl_chucvu->ten_chuc_vu}}-{{$td->tbl_chucvu->tbl_phongban->ten_phong_ban}}</h3>
+                        <td><h3>Vị trí: {{$td->tbl_chucvu->ten_chuc_vu}}</h3>
                         <br>
                         <h5>Lương: {{$td->muc_luong}} | Hạn nộp: {{date('d-m-Y',strtotime($td->han_nop))}}</h5></td>
                         <td><a class="btn btn-info" href="{{url('tuyendung/'.$td->id)}}" style="    font-size: 14px;margin-top: 25px "><i class="fa fa-edit">  Ứng tuyển vị trí này</a></td>

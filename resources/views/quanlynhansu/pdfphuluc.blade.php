@@ -33,7 +33,7 @@
     ?>
 <p> Ngày sinh: {{$namsinh}} tại {{$lienhenv->dia_chi_tam_tru}}</p>
 
-<p>Nghề nghiệp: {{$nhanvien->tbl_chucvu->ten_chuc_vu}} {{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</p>
+<p>Nghề nghiệp: {{$nhanvien->tbl_chucvu->ten_chuc_vu}}</p>
 
 <p>Địa chỉ thường trú: {{$lienhenv->dia_chi_thuong_tru}}</p>
 <?php
@@ -53,7 +53,7 @@
     <p style="margin-left: 5px">-Điều chỉnh, tăng mức lương chính từ: {{number_format($hopdong->muc_luong_chinh)}} đ/tháng lên: {{number_format($chitiet->thay_doi_luong)}} đ/tháng </p>
     @elseif (isset($chitiet->id_chucvu_moi))
     <p>Điều chỉnh, bổ sung Điều 1 của hợp đồng lao động số {{$hopdong->id_hopdong}} như sau:</p>
-    <p style="margin-left: 5px">-Điều chỉnh từ bộ phận công tác phòng: {{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}. Chức danh chuyên môn (vị trí công tác): {{$nhanvien->tbl_chucvu->ten_chuc_vu}}, đến bộ phận công tác phòng: {{$chitiet->tbl_chucvu->tbl_phongban->ten_phong_ban}}, chức danh chuyên môn( vị trí công tác): {{$chitiet->tbl_chucvu->ten_chuc_vu}}</p>
+    <p style="margin-left: 5px">-Chức danh chuyên môn (vị trí công tác): {{$nhanvien->tbl_chucvu->ten_chuc_vu}}, đến bộ phận công tác phòng: {{$chitiet->tbl_chucvu->tbl_phongban->ten_phong_ban}}, chức danh chuyên môn( vị trí công tác): {{$chitiet->tbl_chucvu->ten_chuc_vu}}</p>
     <p style="margin-left: 5px">-Điều chỉnh phụ cấp theo chức vụ : {{$nhanvien->tbl_chucvu->ten_chuc_vu}} từ: {{number_format($hopdong->phu_cap)}} vnđ, thành phụ cấp theo chức vụ: {{$chitiet->tbl_chucvu->ten_chuc_vu}} là: {{number_format($chitiet->tbl_phucap->tong_tien_phu_cap)}} vnđ</p>
     @elseif(isset($chitiet->id_loaihopdong_moi))
     <p>Điều chỉnh, bổ sung Điều 1 của hợp đồng lao động số {{$hopdong->id_hopdong}} như sau:</p>

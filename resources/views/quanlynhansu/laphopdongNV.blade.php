@@ -154,14 +154,6 @@
  @endsection
  @section('script')
  <script>
-$(document).ready(function() {
-    $("#phong_ban").change(function() {
-        var id_phongban = $(this).val();
-        $.get("ajax/chucvu/" + id_phongban, function(data) {
-            $("#chuc_vu").html(data);
-        });
-    });
-});
 
 $('#ten_hop_dong').on('change', function() {
 

@@ -55,16 +55,6 @@
                                                     @endif
                                                 @endforeach
                                         </select>
-                                        <!-- số 0 -->
-                                        <label for="phong_ban_den" class="y-kien {{$chucnang[0]}}">Phòng Ban Gừi Đến</label>
-                                        <select name="phong_ban_den" class="form-control col-md-4 mb-3 y-kien {{$chucnang[0]}}" style="-webkit-appearance: auto;" id="phong_ban_den">
-                                            <option selected value="">Chọn Phòng Ban</option>
-                                            @foreach($phongban as $pb)
-                                            <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                            @endforeach
-                                          </select>
-                                        
-                                        <!-- Số 1 -->
                                         
                                         <label for="nguoi_de_xuat" class="y-kien {{$chucnang[1]}}" >Chọn nhân viên</label>
                                         <div class="form-row">
@@ -102,19 +92,6 @@
                                         <!-- Số 3 -->
                                         <label for="gia_tri" class="y-kien {{$chucnang[3]}}" >Số tiền / Số Lượng</label>
                                         <input type="text" class="form-control y-kien {{$chucnang[3]}}" name="gia_tri" placeholder="Giá trị / Số Lượng" value="" >
-                                         <label for="phong_ban" class="y-kien 8">Chọn Phòng Ban Mong Muốn</label>
-                                        <select name="phong_ban" id="phong_ban" class="form-control y-kien 8" style="-webkit-appearance: auto;">
-                                            <option value="0"selected>--Phòng-- </option>
-                                            @foreach($phongban as $pb)
-                                                    <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                            @endforeach
-                                        </select> 
-                                         <select name="chuc_vu" id="chuc_vu" class="form-control y-kien 8" style="-webkit-appearance: auto;">
-                                            <option selected> Chọn Chức Vụ</option>
-                                             @foreach($phongban as $pb)
-                                                    <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                            @endforeach
-                                        </select> 
                                         <!-- số 4 -->
                                         <label for="thoi_gian_nghi" class="y-kien {{$chucnang[4]}}" >Thời gian nghỉ (ngày)</label>
                                         <input type="text" class="form-control y-kien {{$chucnang[4]}}" name="thoi_gian_nghi" placeholder="Ngày" >

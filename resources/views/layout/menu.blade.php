@@ -20,13 +20,9 @@
                                 class="fa fa-fw fa-user-circle"></i>Quản lý danh mục<span
                                 class="badge badge-success">6</span></a>
                         <div id="submenu-1"
-                            class="collapse submenu {{Request::is('private/phongban/danhsach')||Request::is('private/phucap/danhsach') ||Request::is('private/chucvu/danhsach') || Request::is('private/nhanvien/danhsach')|| Request::is('private/nhanvien/1')||Request::is('private/nhanvien/2')||Request::is('private/loaiykien/danhsach')||Request::is('private/hopdong/danhsach')||Request::is('private/chamcong/danhsach')? 'show':null}}"
+                            class="collapse submenu {{Request::is('private/phucap/danhsach') ||Request::is('private/chucvu/danhsach') || Request::is('private/nhanvien/danhsach')|| Request::is('private/nhanvien/1')||Request::is('private/nhanvien/2')||Request::is('private/loaiykien/danhsach')||Request::is('private/hopdong/danhsach')||Request::is('private/chamcong/danhsach')? 'show':null}}"
                             style="">
                             <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link {{Request::is('private/phongban/danhsach') ? 'active':null}}"
-                                        href="{{url('private/phongban/danhsach')}}">Danh sách phòng ban</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{Request::is('private/chucvu/danhsach') ? 'active':null}}"
                                         href="{{url('private/chucvu/danhsach')}}">Danh sách chức vụ</a>

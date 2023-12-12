@@ -13,7 +13,4 @@ class tbl_phucap extends Model
     public function tbl_chucvu(){
         return $this->belongsTo('App\tbl_chucvu','id_chucvu','id_chucvu');
     }
-    public function tbl_phongban(){
-        return $this->hasManyThrough('App\tbl_phongban','App\tbl_chucvu','id_phucap','id_chucvu','id_phongban');
-    }
 }

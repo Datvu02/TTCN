@@ -46,57 +46,6 @@
                                      <!--<div class="valid-feedback">
                                             Looks good!
                                         </div> -->
-                                     <div class="form-row">
-                                         <div class="form-group col-md-3">
-                                             <label>Phòng Ban</label>
-                                             <select name="id_phongban" class="form-control" id="ten_phong_ban"
-                                                 style="-webkit-appearance: auto;" disabled>
-                                                 <option selected value="">Chọn phòng ban</option>
-                                                 @foreach($phongban as $pb)
-                                                 <option @if($chucvu->id_phongban==$pb->id_phongban) {{"selected"}}
-                                                     @endif value="{{$pb->id_phongban}}" >{{$pb->ten_phong_ban}}
-                                                 </option>
-                                                 @endforeach
-
-                                             </select>
-                                             <span id="phongban123"></span>
-                                         </div>
-                                         <div class="form-group col-md-3">
-                                             <label for="id_chucvu">Mã Chức Vụ</label>
-                                             <input type="text" class="form-control" id="id_machucvu" name="id_chucvu"
-                                                 placeholder=""
-                                                 value="{{substr($chucvu->id_chucvu,strlen($chucvu->id_phongban))}}"
-                                                 disabled>
-                                             <span id="machucvu123"></span>
-                                         </div>
-                                         <div class="form-group col-md-6">
-                                             <label for="ten_chuc_vu">Tên Chức Vụ</label>
-                                             <input type="text" class="form-control" id="ten_chuc_vu" name="ten_chuc_vu"
-                                                 placeholder="" value="{{$chucvu->ten_chuc_vu}}">
-                                             <span id="chucvu123"></span>
-                                         </div>
-                                         <div class="form-group col-md-12">
-                                             <label>Nội dung công việc</label>
-                                             <textarea class="form-control" id="editor1" name="noi_dung_cv" rows="15"
-                                                 required>{!!$chucvu->noi_dung_cv!!}</textarea>
-                                         </div>
-                                         <div class=" form-group col-md-12">
-                                             <label>Phân quyền cho chức vụ: </label>
-                                             @foreach($permissions as $permission)
-                                             <div class="form-check">
-                                                 <div class="  float-left mt-3" style="width: 20%">
-
-                                                     <input {{$cv_permission->contains($permission->id)?'checked':''}}
-                                                         type="checkbox" class="form-check-input" name=permission[]
-                                                         value="{{$permission->id}}">
-                                                     <label
-                                                         class="form-check-label">{{$permission->ten_hien_thi}}</label>
-                                                 </div>
-                                             </div>
-                                             @endforeach
-                                         </div>
-                                     </div>
-
                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                          <button class="btn btn-primary" type="submit">Sửa</button>
                                          <button class="btn btn-default" type="reset">Reset</button>

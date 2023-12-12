@@ -53,7 +53,7 @@
                                                 <select name="vi_tri" class="form-control" style="-webkit-appearance: auto;" id="chuc_vu" required>
                                                     <option selected value="">Chọn vị trí</option>
                                                     @foreach($chucvu as $cv)
-                                                  <option value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu}} - {{$cv->tbl_phongban->ten_phong_ban}}</option>
+                                                  <option value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu}}</option>
                                                 @endforeach
                                                   </select>
                                             </div>

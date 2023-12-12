@@ -89,19 +89,6 @@
 
                                         @endif
                                     </div>
-                                    @if(isset($phongban))
-                                    <label for="phong_ban_den">Phòng Ban Gừi Đến</label>
-                                    <select name="phong_ban_den" class="form-control col-md-4 mb-3"
-                                        style="-webkit-appearance: auto;" id="phong_ban_den">
-                                        @foreach($phongban as $pb)
-                                        @if($ykien->id_phongban == $pb->id_phongban)
-                                        <option selected value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                        @else
-                                        <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                        @endif
-                                        @endforeach
-                                    </select>
-                                    @endif
                                     <div class="form-control">
                                         <label for="ly_do">Nội dung </label>
                                         <input type="text" class="form-control" id="ly_do" name="ly_do"
@@ -128,34 +115,8 @@
                                     @if($ykien->id_ykien == 8)
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
-                                            <label for="phong_ban_old">Phòng Ban Đã Chọn</label>
-                                            <div class="form-control" disabled>{{$ykien->phong_ban_old}}</div>
-                                        </div>
-                                        <div class="form-group col-md-2">
                                             <label for="chuc_vu_old">Chức Vụ Đã Chọn</label>
                                             <div class="form-control" disabled>{{$ykien->chuc_vu_old}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-2">
-                                            <label for="phong_ban_new">Chọn Lại Phòng Ban</label>
-                                            <select name="phong_ban_new" id="phong_ban_new" class="form-control "
-                                                style="-webkit-appearance: auto;">
-                                                <option>Chọn Phòng Ban</option>
-                                                @foreach($phongban as $pb)
-                                                <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                            <label for="chuc_vu_new">Chọn Lại Chức vụ</label>
-                                            <select name="chuc_vu_new" id="chuc_vu_new" class="form-control "
-                                                style="-webkit-appearance: auto;">
-                                                <option>Chọn Chức vụ</option>
-                                                @foreach($phongban as $pb)
-                                                <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                @endforeach
-                                            </select>
                                         </div>
                                     </div>
                                     @endif

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\tbl_phongban;
+// use App\tbl_phongban;
 use App\tbl_chucvu;
 use App\tbl_phucap;
 

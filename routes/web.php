@@ -102,21 +102,6 @@ Route::group(['prefix'=>'thongtin','middleware'=>'check:thongtincongty'],functio
 
 Route::get('danhsachnvpb','DanhmucController@getDanhSachNVPB')->middleware('check:qlnhanvienpb');;
 
-//--------------------------- Phòng ban ---------------------------
-Route::group(['prefix' => 'phongban','middleware'=>'check:phongban'], function () {
-    Route::get('danhsach','DanhmucController@getDanhSachPB');
-    //Route::get('danhsach', ['uses'=>'DanhmucController@getDanhSachPB', 'as'=>'danhsach.index']);
-    //---------------------Form Thêm phòng ban -----------------------------------
-    Route::get('them','PhongbanController@getThemPB');
-    Route::post('them','PhongBanController@postThemPB');
-
-    Route::get('sua/{id_phongban}','PhongBanController@getSuaPB');
-    Route::post('sua/{id_phongban}','PhongBanController@postSuaPB');
-
-    Route::get('xoa/{id_phongban}','PhongBanController@getXoaPB');
-    Route::get('bab','PhongBanController@tesT');
-});
-
 //--------------------------- Chức vụ ---------------------------
 Route::group(['prefix' => 'chucvu','middleware'=>'check:chucvu'], function () {
     Route::get('danhsach','DanhmucController@getDanhSachCV');
@@ -160,8 +145,8 @@ Route::group(['prefix' => 'hopdong','middleware'=>'check:quanlyhopdong'], functi
     Route::get('them','DanhmucController@getDanhSachCV');     //chua lam
     Route::post('them','DanhmucController@getDanhSachCV');     //chua lam
 
-    Route::get('sua','PhongbanController@getFormPB');   //chua lam
-    Route::post('sua','PhongbanController@addPhongBan');    //chua lam
+    // Route::get('sua','PhongbanController@getFormPB');   //chua lam
+    // Route::post('sua','PhongbanController@addPhongBan');    //chua lam
 });
 
 //--------------------------- Ý kiến ---------------------------

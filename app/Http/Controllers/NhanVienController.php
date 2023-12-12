@@ -13,7 +13,6 @@ use App\tbl_tinh;
 use App\tbl_trinhdo;
 use App\user;
 use App\tbl_dantoc;
-use App\tbl_phongban;
 use App\tbl_chucvu;
 use App\tbl_vitri;
 use App\tbl_hoso;

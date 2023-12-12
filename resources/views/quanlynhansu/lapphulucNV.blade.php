@@ -62,12 +62,6 @@
                                                 <div class="show chucvu" id="chucvu">
                                             <div class="form-row mb-3 ">
                                                 <div  class="form-group col-md-6 mt-3">
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label>Phòng ban cũ</label>
-                                                            <label class="form-control ">{{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</label>
-                                                            
-                                                        </div>
                                                     <div class="form-group col-md-6">
                                                         <label>Chức vụ cũ</label>
                                                         <label class="form-control ">{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label>
@@ -107,15 +101,6 @@
                                                 <div class="form-group col-md-6 mt-3">
                                                     
                                                     <div class="form-row  ">
-                                                    <div class="form-group col-md-6">
-                                                        <label>Phòng ban mới</label>
-                                                        <select name="phong_ban" class="form-control" style="-webkit-appearance: auto;" id="phong_ban_moi" >
-                                                            <option selected value="" >Chọn phòng ban</option>
-                                                            @foreach($phongban as $pb)
-                                                          <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                      @endforeach
-                                                          </select>
-                                                    </div>
                                                     <div class="form-group col-md-6">
                                                         <label>Chức vụ mới</label>
                                                         <select name="chuc_vu_moi" class="form-control" style="-webkit-appearance: auto;" id="chuc_vu_moi" >
@@ -236,19 +221,19 @@
 @endsection
 @section('script')
     <script>
-        $(document).ready(function(){
-            $("#phong_ban_moi").change(function(){
+        // $(document).ready(function(){
+        //     $("#phong_ban_moi").change(function(){
                 
-                var id_phongban=$(this).val();
+        //         var id_phongban=$(this).val();
                 
                 
-                $.get("../ajax/chucvu_moi/"+id_phongban,function(data){
+        //         $.get("../ajax/chucvu_moi/"+id_phongban,function(data){
                     
-                    $("#chuc_vu_moi").html(data);
-                });
-            });
+        //             $("#chuc_vu_moi").html(data);
+        //         });
+        //     });
             
-        });
+        // });
 
         $(document).ready(function(){
             $("#chuc_vu_moi").change(function(){

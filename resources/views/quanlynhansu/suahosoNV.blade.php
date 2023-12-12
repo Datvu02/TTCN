@@ -248,16 +248,6 @@
                                       <div id="menu4" class="tab-pane fade">
                                         <div class="form-row mb-3">
                                             <div class="form-group col-md-6 mb-3">
-                                                <label >Phòng Ban</label>
-                                                <select name="phong_ban" class="form-control" style="-webkit-appearance: auto;" id="phong_ban" required>
-                                                  <option selected value="">Chọn phòng ban</option>
-                                                  @foreach($phongban as $pb)
-                                                <option  @if($nhanvien->tbl_chucvu->id_phongban==$pb->id_phongban) {{"selected"}} @endif  value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                            @endforeach
-                                                </select>
-                                                <span id="phong_banf"></span>
-                                            </div>
-                                            <div class="form-group col-md-6 mb-3">
                                                 <label >Chức Vụ</label>
                                                 <select name="chuc_vu" class="form-control" style="-webkit-appearance: auto;" id="chuc_vu" required>
                                                   <option selected value="">Chọn chức vụ</option>
@@ -315,7 +305,7 @@
         <!-- ============================================================== -->
 @endsection
 @section('script')
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("#phong_ban").change(function(){
                 var id_phongban=$(this).val();
@@ -324,7 +314,7 @@
                 });
             });
         });
-    </script>   
+    </script>    -->
     <script language="javascript">
 
         document.getElementById("btn1").onclick = function () {

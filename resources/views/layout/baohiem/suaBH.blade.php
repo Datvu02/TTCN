@@ -65,10 +65,6 @@
                                                 <label for="chuc_vu">Chức Vụ</label>
                                                 <input type="text" class="form-control" name="chuc_vu" value="{{$nhanvien->tbl_chucvu->ten_chuc_vu}}" disabled>
                                             </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="phong_ban">Phòng Ban</label>
-                                                <input type="text" class="form-control" name="phong_ban" value="{{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}" disabled>
-                                            </div>
                                         </div>
                                         
                                         <div class="form-row">

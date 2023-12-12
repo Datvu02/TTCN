@@ -44,7 +44,7 @@
                                                     <select name="id_chucvu" class="form-control" style="-webkit-appearance: auto;">
                                                       <option selected value="0" ">Chọn chức vụ</option>
                                                         @foreach($chucvu as $cv)
-                                                        <option value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu." phòng: ". $cv->tbl_phongban->ten_phong_ban}}</option>
+                                                        <option value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu}}</option>
                                                          @endforeach
                                                     </select>
                                             </div>

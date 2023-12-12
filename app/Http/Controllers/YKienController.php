@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\tbl_ykien;
 use App\tbl_luuykien;
 use App\tbl_tangca;
-use App\tbl_phongban;
+// use App\tbl_phongban;
 use App\tbl_bangluong;
 use App\tbl_hosonhanvien;
 use App\tbl_anhykien;
@@ -126,7 +126,7 @@ class YKienController extends Controller
     public function getThemYK(){
         $loaiykien = tbl_ykien::all();
         $chucvu = tbl_chucvu::all();
-        $phongban = tbl_phongban::all();
+        // $phongban = tbl_phongban::all();
         $nhanvien=tbl_hosonhanvien::all();
         $mientrugiacanh = tbl_mientrugiacanh::where('id_nhanvien',Auth::user()->id_nhanvien)->exists();
         $chucnang = array();
@@ -153,7 +153,7 @@ class YKienController extends Controller
         //         }else echo "ý kiến số ".$dem." không có nội dung ".$i."</br>";
         //     }$dem++;
         // }
-        return view('layout.ykien.themYK',compact('loaiykien','phongban','chucvu','chucnang','nhanvien','mientrugiacanh'));
+        return view('layout.ykien.themYK',compact('loaiykien','chucvu','chucnang','nhanvien','mientrugiacanh'));
     }
  
     public function postThemYK(Request $request){
@@ -300,8 +300,8 @@ class YKienController extends Controller
         $ykien = tbl_luuykien::find($id_luuykien);
         $hinhanh = tbl_anhykien::where('id_luuykien',$id_luuykien)->get();
         if(!isset($ykien->nguoi_duyet_1)){
-            $phongban = tbl_phongban::all();
-            return view('layout.ykien.suaYK',compact('ykien','phongban','hinhanh'));
+            // $phongban = tbl_phongban::all();
+            return view('layout.ykien.suaYK',compact('ykien','hinhanh'));
         }
         return view('layout.ykien.suaYK',compact('ykien','hinhanh'));
     }

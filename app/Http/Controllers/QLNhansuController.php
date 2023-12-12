@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use App\tbl_dantoc;
 use App\tbl_tinh;
-use App\tbl_phongban;
+// use App\tbl_phongban;
 use App\tbl_chucvu;
 use App\tbl_hosonhanvien;
 use App\tbl_vitri;
@@ -35,13 +35,14 @@ class QLNhansuController extends Controller
      public function getThemnhanvien(){
         $dantoc=tbl_dantoc::all();
         $tinh=tbl_tinh::all();
-        $phongban=tbl_phongban::all();
+        // $phongban=tbl_phongban::all();
         $chucvu=tbl_chucvu::all();
         $ds_ho_so = tbl_hoso::all();
-        return view('quanlynhansu.laphosoNV',['dantoc'=>$dantoc,'tinh'=>$tinh,'phongban'=>$phongban,'chucvu'=>$chucvu,'ds_ho_so'=>$ds_ho_so]);
+        return view('quanlynhansu.laphosoNV',['dantoc'=>$dantoc,'tinh'=>$tinh,'chucvu'=>$chucvu,'ds_ho_so'=>$ds_ho_so]);
         
     }
     public function postThemnhanvien(Request $request){
+        // die($request->ho_ten);
         $demhoso=tbl_hosonhanvien::latest()->first();
         
         $arrName = explode(".", $demhoso->id_nhanvien);      
@@ -152,7 +153,7 @@ class QLNhansuController extends Controller
         $ds_ho_so = tbl_hoso::all();
         $dantoc=tbl_dantoc::all();
         $tinh=tbl_tinh::all();
-        $phongban=tbl_phongban::all();
+        // $phongban=tbl_phongban::all();
         $chucvu=tbl_chucvu::all();
         $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
         
@@ -162,7 +163,7 @@ class QLNhansuController extends Controller
         $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
         $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
 
-        return view('quanlynhansu.suahosoNV',['nhanvien'=>$nhanvien,'ds_ho_so'=>$ds_ho_so,'dantoc'=>$dantoc,'tinh'=>$tinh,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'phongban'=>$phongban,'chucvu'=>$chucvu,'user'=>$user]);
+        return view('quanlynhansu.suahosoNV',['nhanvien'=>$nhanvien,'ds_ho_so'=>$ds_ho_so,'dantoc'=>$dantoc,'tinh'=>$tinh,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'chucvu'=>$chucvu,'user'=>$user]);
     }
     public function postSuaHoSoNhanVien(Request $request,$id_nhanvien){
       
@@ -244,6 +245,7 @@ class QLNhansuController extends Controller
         
         $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
         $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
+        die("test");
         $hopdong=tbl_hopdong::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
         
         
@@ -384,10 +386,10 @@ class QLNhansuController extends Controller
         $phuluc=tbl_phuluc::where('id_hopdong',$id_hopdong)->get();
         $loaipl=tbl_loaiphuluc::all();
         $loaihd=tbl_loaihopdong::all();
-        $phongban=tbl_phongban::all();
+        // $phongban=tbl_phongban::all();
         $chucvu=tbl_chucvu::all();
         $phucap=tbl_phucap::all();
-        return view('quanlynhansu.lapphulucNV',['hopdong'=>$hopdong,'loaipl'=>$loaipl,'nhanvien'=>$nhanvien,'phongban'=>$phongban,'chucvu'=>$chucvu,'phucap'=>$phucap,'loaihd'=>$loaihd]);
+        return view('quanlynhansu.lapphulucNV',['hopdong'=>$hopdong,'loaipl'=>$loaipl,'nhanvien'=>$nhanvien,'chucvu'=>$chucvu,'phucap'=>$phucap,'loaihd'=>$loaihd]);
         
     }
     public function postlapPhulucNV(Request $request, $id_hopdong){

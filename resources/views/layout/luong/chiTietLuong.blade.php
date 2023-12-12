@@ -47,8 +47,8 @@
                                                 <span class="form-control" name="ho_ten">{{$nhanvien->ho_ten}}</span>
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <label for="chucvu_phongban">Chức vụ / Phòng Ban</label>
-                                                <span class="form-control" name="chucvu_phongban">{{$nhanvien->tbl_chucvu->ten_chuc_vu}} / {{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</span>
+                                                <label for="chucvu_phongban">Chức vụ </label>
+                                                <span class="form-control" name="chucvu_phongban">{{$nhanvien->tbl_chucvu->ten_chuc_vu}} </span>
                                             </div>
                                         </div>
                                         <div class="form-row">

@@ -14,10 +14,6 @@ class tbl_hosonhanvien extends Model
         return $this->hasOne('App\tbl_chucvu','id_chucvu','id_chucvu');
     }
     
-    public function tbl_phongban(){
-        return $this->hasManyThrough('App\tbl_phongban','App\tbl_chucvu','id_nhanvien','id_chucvu','id_phongban');
-    }
-    
     public function tbl_vitri(){
         return $this->belongsTo('App\tbl_vitri','id_vitri','id_vitri');
     }

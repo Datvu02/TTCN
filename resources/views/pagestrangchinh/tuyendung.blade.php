@@ -13,7 +13,7 @@
 					<hr>
 					<div class="page-title">
 						<p><span class="glyphicon glyphicon-time"></span>Ngày đăng bài : {{date('d-m-Y',strtotime($tuyendung->updated_at))}}</p>
-						<h2 style="color: Blue;text-transform:uppercase">Vị trí: {{$tuyendung->tbl_chucvu->ten_chuc_vu}}-{{$tuyendung->tbl_chucvu->tbl_phongban->ten_phong_ban}}</h2>
+						<h2 style="color: Blue;text-transform:uppercase">Vị trí: {{$tuyendung->tbl_chucvu->ten_chuc_vu}}</h2>
                     </div>
                     <hr>
                     <div class="infor-td" >

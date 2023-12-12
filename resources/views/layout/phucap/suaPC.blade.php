@@ -13,7 +13,7 @@
                     <div class="card">
                         <div class="card-header">
                         <h3 >Phụ cấp</h3>
-                        <p>Vị trí: {{$phucap->tbl_chucvu->ten_chuc_vu}} - {{$phucap->tbl_chucvu->tbl_phongban->ten_phong_ban}}</p>
+                        <p>Vị trí: {{$phucap->tbl_chucvu->ten_chuc_vu}}</p>
                         </div>
                         <div class="card-body">
                             @if(session('thongbao'))

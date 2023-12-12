@@ -30,8 +30,6 @@
                                             <tr align="center">
                                                 <th>Mã chức vụ</th>
                                                 <th>Tên chức vụ</th>
-                                                <th>Thuộc phòng ban</th>
-                                                <th>Thuộc quyền</th>
                                                 <th>Nội dung công việc</th>
                                                 <th>Tác vụ</th>
                                                 
@@ -42,8 +40,6 @@
                                             <tr class="even gradeC" align="center">
                                                 <td>{{$cv->id_chucvu}}</td>
                                                 <td>{{$cv->ten_chuc_vu}}</td>
-                                                <td>{{$cv->tbl_phongban->ten_phong_ban}}</td>
-                                                <td>{{$cv->ten_chuc_vu}} - {{$cv->tbl_phongban->ten_phong_ban}}</td>
                                                 <td style="display: block;overflow: scroll; height: 105px; text-align: left">{!!$cv->noi_dung_cv!!}</td>
                                                 <td>
                                                     <a class="btn btn-warning" href="{{url('private/chucvu/sua/'.$cv->id_chucvu)}}"><i class="fa fa-edit mr-2"></i>Sửa</a> 

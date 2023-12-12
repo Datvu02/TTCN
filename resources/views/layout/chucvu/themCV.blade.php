@@ -46,18 +46,6 @@
                                             Looks good!
                                         </div> -->
                                      <div class="form-row">
-                                         <div class="form-group col-md-2">
-                                             <label>Phòng Ban</label>
-                                             <select name="id_phongban" class="form-control" id="ten_phong_ban"
-                                                 style="-webkit-appearance: auto;">
-                                                 <option selected value="">Chọn phòng ban</option>
-                                                 @foreach($phongban as $pb)
-                                                 <option value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                 @endforeach
-
-                                             </select>
-                                             <span id="phongban123"></span>
-                                         </div>
                                          <div class="form-group col-md-8">
                                              <label for="ten_chuc_vu">Tên Chức Vụ</label>
                                              <input type="text" class="form-control" id="ten_chuc_vu" name="ten_chuc_vu"

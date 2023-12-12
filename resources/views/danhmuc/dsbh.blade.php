@@ -28,7 +28,6 @@
                                             @foreach($nhanvien as $nv)
                                             <tr class="even gradeC" align="center">
                                                 <td>{{$nv->ho_ten}}</td>
-                                                <td>{{$nv->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>
                                                 <td>{{$nv->tbl_chucvu->ten_chuc_vu}}</td>
                                                 @if(isset($nv->id_baohiem))
                                                 <td>

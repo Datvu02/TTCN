@@ -35,7 +35,6 @@
                                 <th>Mã nhân viên</th>
                                 <th>Tên nhân viên</th>
                                 <th>Chức vụ</th>
-                                <th>Phòng ban</th>
                                 <th>Trạng thái</th>
                                 <th style="width:230px">Tác vụ</th>
                             </tr>
@@ -51,7 +50,6 @@
                                 @endif
                             </td>
                                 <td>{{$nv->tbl_chucvu->ten_chuc_vu}}</td>
-                                <td>{{$nv->tbl_chucvu->tbl_phongban->ten_phong_ban}}</td>
                                 @if($nv->tinh_trang==1)
                                 <td class="label-success" >Đang làm</td>
                                 @else

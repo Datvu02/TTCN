@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\tbl_chucvu;
-use App\tbl_phongban;
 use App\tbl_phucap;
 use App\tbl_permissions;
 use App\tbl_chucvu_permission;
@@ -13,9 +12,8 @@ use App\tbl_hosonhanvien;
 class ChucVuController extends Controller
 {
     public function getThemCV(){
-        $phongban = tbl_phongban::all();
         $permissions=tbl_permissions::all();
-        return view('layout.chucvu.themCV',compact('phongban','permissions'));
+        return view('layout.chucvu.themCV',compact('permissions'));
     }
 
     public function postThemCV(Request $request){
@@ -27,10 +25,8 @@ class ChucVuController extends Controller
                 'ten_chuc_vu.unique'=>'Tên chức vụ đã tồn tại.',
             ]);
         $chucvu = new tbl_chucvu;
-        $chucvu->id_chucvu = $request->get('id_chucvu').$request->get('id_phongban');
         $chucvu->ten_chuc_vu = $request->get('ten_chuc_vu');
         $chucvu->noi_dung_cv = $request->get('noi_dung_cv');
-        $chucvu->id_phongban = $request->get('id_phongban');
         //lưu phụ cấp mới dựa vào chức vụ
         $phucap = new tbl_phucap;
         $phucap->id_chucvu = $chucvu->id_chucvu ;
@@ -58,10 +54,9 @@ class ChucVuController extends Controller
         
         $chucvu=tbl_chucvu::find($id_chucvu);
         $permissions=tbl_permissions::all();
-        $phongban = tbl_phongban::all();
         $cv_permission=tbl_chucvu_permission::where('id_chucvu',$id_chucvu)->pluck('id_permission');
         // die($cv_permission);
-        return view('layout.chucvu.suaCV',compact('chucvu','permissions','cv_permission','phongban'));
+        return view('layout.chucvu.suaCV',compact('chucvu','permissions','cv_permission'));
     }
 
     public function postSuaCV(Request $request, $id_chucvu){
@@ -76,7 +71,6 @@ class ChucVuController extends Controller
             ]);
         }
         
-        // $chucvu->id_chucvu = $chucvu->id_phongban.$request->get('id_chucvu');
         $chucvu->ten_chuc_vu = $request->get('ten_chuc_vu');
         $chucvu->noi_dung_cv = $request->get('noi_dung_cv');
         $chucvu->save();

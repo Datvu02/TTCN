@@ -65,10 +65,6 @@
                                                 <label for="chuc_vu">Chức Vụ</label>
                                                 <span class="form-control">{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</span>
                                             </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="phong_ban">Phòng Ban</label>
-                                                <span class="form-control">{{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</span>
-                                            </div>
                                         </div>
                                         
                                         <div class="form-row">

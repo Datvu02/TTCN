@@ -37,7 +37,7 @@
     $namsinh=date('d-m-Y',strtotime($nhanvien->ngay_sinh));
     ?>
     <p>Ngày sinh: {{$namsinh}}</p>
-    <p>Nghề nghiệp: {{$nhanvien->tbl_chucvu->ten_chuc_vu}} {{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</p>
+    <p>Nghề nghiệp: {{$nhanvien->tbl_chucvu->ten_chuc_vu}}</p>
     @if (isset($lienhenv))
     <p>Địa chỉ thường trú: {{$lienhenv->dia_chi_thuong_tru}}</p>
     <p>Số CMND: {{$nhanvien->so_cmnd}}</p>
@@ -58,7 +58,7 @@
 
     <p>Địa điểm làm việc: {{$thongtinchinh->dia_chi}}</p>
     
-    <p>Bộ phận công tác: Phòng {{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}. Chức danh chuyên môn (vị trí công tác): {{$nhanvien->tbl_chucvu->ten_chuc_vu}}.</p>
+    <p>Bộ phận công tác: Chức danh chuyên môn (vị trí công tác): {{$nhanvien->tbl_chucvu->ten_chuc_vu}}.</p>
     @if ($hopdong->id_loaihopdong==3)
     <p>Công việc phải làm:{{$hopdong->noi_dung_cv}}</p>
     @else
