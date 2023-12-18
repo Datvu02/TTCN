@@ -22,51 +22,56 @@
 
                     <div class="card-body">
                         <div id="data-tables_filter" class="dataTables_filter">
-                            <div class="form-group col-md-6">
-                                <label>Năm</label>
-                                <select id="year" name="year" class="form-control" style="-webkit-appearance: auto;"
-                                    onchange="filterTable()">
-                                    <option selected>Chọn năm</option>
-                                    @php
-                                    $uniqueYears = [];
-                                    @endphp
-                                    @foreach($luong as $l)
-                                    @php
-                                    $year = date('Y', strtotime($l->luong_thang));
-                                    @endphp
-                                    @if (!in_array($year, $uniqueYears))
-                                    <option value="{{ $year }}" id="year">{{ $year }}</option>
-                                    @php
-                                    $uniqueYears[] = $year;
-                                    @endphp
-                                    @endif
-                                    @endforeach
-                                </select>
-                                <label>Tháng</label>
-                                <label>Tháng</label>
-                                <select id="month" name="month" class="form-control" style="-webkit-appearance: auto;"
-                                    onchange="filterTable()">
-                                    <option selected>Chọn Tháng</option>
-                                    @php
-                                    $uniqueMonth = [];
-                                    @endphp
-                                    @foreach($luong as $l)
-                                    @php
-                                    $month = date('m', strtotime($l->luong_thang));
-                                    $year = date('Y', strtotime($l->luong_thang));
-                                    @endphp
-                                    @if (!in_array($month, $uniqueMonth))
-                                    <!-- <option value="{{ $month }}" id="month" data-year="{{ $year }}">{{ $month }}
+                            <div class="form-group searchs col-md-6">
+                                <div class="search">
+                                    <label>Năm</label>
+                                    <select id="year" name="year" class="form-control" style="-webkit-appearance: auto;"
+                                        onchange="filterTable()">
+                                        <option selected>Chọn năm</option>
+                                        @php
+                                        $uniqueYears = [];
+                                        @endphp
+                                        @foreach($luong as $l)
+                                        @php
+                                        $year = date('Y', strtotime($l->luong_thang));
+                                        @endphp
+                                        @if (!in_array($year, $uniqueYears))
+                                        <option value="{{ $year }}" id="year">{{ $year }}</option>
+                                        @php
+                                        $uniqueYears[] = $year;
+                                        @endphp
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <label>Tháng</label>
+                                    <select id="month" name="month" class="form-control"
+                                        style="-webkit-appearance: auto;" onchange="filterTable()">
+                                        <option selected>Chọn Tháng</option>
+                                        @php
+                                        $uniqueMonth = [];
+                                        @endphp
+                                        @foreach($luong as $l)
+                                        @php
+                                        $month = date('m', strtotime($l->luong_thang));
+                                        $year = date('Y', strtotime($l->luong_thang));
+                                        @endphp
+                                        @if (!in_array($month, $uniqueMonth))
+                                        <!-- <option value="{{ $month }}" id="month" data-year="{{ $year }}">{{ $month }}
                                     </option> -->
-                                    <option value="{{ $month }}" id="month">{{ $month }}</option>
-                                    @php
-                                    $uniqueMonth[] = $month;
-                                    @endphp
-                                    @endif
-                                    @endforeach
-                                </select>
-                                <label>HỌ TÊN NHÂN VIÊN</label>
-                                <input type="text" id="employeeName" oninput="filterTable()">
+                                        <option value="{{ $month }}" id="month">{{ $month }}</option>
+                                        @php
+                                        $uniqueMonth[] = $month;
+                                        @endphp
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <label>HỌ TÊN NHÂN VIÊN</label>
+                                    <input type="text" id="employeeName" placeholder="Nhập tên" oninput="filterTable()">
+                                </div>
                             </div>
                             <!-- <div class="btn-group mb-4">
                                 <form action="{{url('private/luong/update')}}" method="POST">

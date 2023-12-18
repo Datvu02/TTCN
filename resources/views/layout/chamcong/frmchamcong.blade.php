@@ -11,131 +11,71 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">LỊCH SỬ CHẤM CÔNG</h2>
-                     <div class="page-breadcrumb">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Forms</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
-                            </ol>
-                        </nav>
-                    </div> 
                 </div>
             </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- end pageheader -->
-        <!-- ============================================================== -->
-        <div class="row">            
-                <!-- ============================================================== -->
-                <!-- validation form -->
-                <!-- ============================================================== -->
-             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <!-- /.col-lg-12 -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                        <div class="card-body">
-                            @if(session('thongbao'))
-                                <div class="h5 alert alert-success">
-                                    {{session('thongbao')}}
-                               </div>
-                            @elseif(session('thongbaoloi'))
-                            <div class="h5 alert alert-warning">
-                                {{session('thongbaoloi')}}
-                           </div>
-                            @endif
-                            @if ($ngaynghi == "Saturday" || $ngaynghi == "Sunday" || $ngaynghi == "Holiday" || $ngaynghi == "DayOff")
-                            <div class="h1 font-weight-bold text-info">NGÀY NGHỈ</div>
-                            @elseif (isset($chamcong->check_in))
-                                @if(isset($chamcong->thoi_gian_lam))
-                                    <div class="h1 font-weight-bold text-danger">Đã chấm công hôm nay rồi</div>
-                                @else
-                                    <form action="{{route('checkout')}}" method="post">
-                                        {{ csrf_field() }}
-                                        <input class="btn btn-outline-danger" type="submit" name="" value="Checkout" />
-                                    </form>
-                                @endif  
-                            @else
-                             @if(date('08:00:00') < date('H:i:s') && date('H:i:s') < date('10:00:00')) 
-                             <form action="{{route('checkin')}}" method="post">
-                                {{ csrf_field() }}
-                                <input class="btn btn-outline-primary" type="submit" name="" value="Checkin" />
-                            </form> 
-                             @else
-                            <div class="h2"> Chưa Đến Giờ Điểm Danh </div>
-                            <div class="h3"> Cổng điểm danh mở ra từ 8h đến 10h sáng </div>
-                            @endif 
-                             @endif 
-                            
-                             {{ exec('getmac') }}  lay dia chi mac chua duoc
-                      </div> 
-                 </div> 
-            
-             </div>     
-                <!-- ============================================================== -->
-                <!-- end validation form -->
-                <!-- ============================================================== -->
-                @if(isset($chamcong->id_tangca) || isset($tangca)) 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="card">
-                        <div class=" card-header text-bold h5 text-danger">Hôm nay có tăng ca mà bạn đã đăng ký</div>
-                        <div class="card-body">
-                            <a href="{{url('private/chamcong/tangca')}}" class="btn btn-outline-dark"> Điểm Danh Tăng Ca </a>
+                    <div class="card-body">
+                        @if(session('thongbao'))
+                        <div class="alert alert-success ">
+                            {{session('thongbao')}}
                         </div>
-                    </div>
-                </div>
-                @endif
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="card">
-                        <h5 class="card-header">LỊCH SỬ CHẤM CÔNG</h5>
-                        <div class="card-body">
-                            <table class="table table-striped table-bordered" id="data-tables-check">
-                                <thead>
-                                   <tr align="center">
-                                        <th>Ngày</th>
-                                        <th>Giờ Vào</th>
-                                        <th>Giờ ra</th>
-                                        <th>Thời Gian Làm</th>
-                                        <th>Tăng ca</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($lichsu as $ls) 
-                                    <tr class="even gradeC" align="center">
-                                        <td>
-                                        @if(date('d/m',strtotime($ls->check_in)) == date('d/m'))
-                                        Hôm nay
-                                        @else   
-                                            {{date('d/m',strtotime($ls->check_in))}}
+                        @endif
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label class="text-left">Export:</label>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <label class="">Tìm kiếm:</label>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped table-bordered table-hover " id="data-tables">
+
+                            <thead class="">
+                                <tr align="center">
+                                    <th>Số thứ tự</th>
+                                    <th>Mã nhân viên</th>
+                                    <th>Tên nhân viên</th>
+                                    <th>Chức vụ</th>
+                                    <th>Ca làm</th>
+                                    <!-- <th>Trạng thái</th> -->
+                                    <th style="width:230px">Tác vụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $count=1 ?>
+                                @foreach($nhanvien as $nv)
+                                <tr class="even gradeC" align="center">
+                                    <td>{{$count++}}</td>
+                                    <td>{{$nv->id_nhanvien}}</td>
+                                    <td>
+                                        <p>{{$nv->ho_ten}}</p>
+                                        @if(isset($nv->anh_dai_dien))
+                                        <img src="{{url('upload/avatar/'.$nv->anh_dai_dien)}}"
+                                            style="width: 75px;height: 55px;"></a>
                                         @endif
-                                        </td>
-                                        <td>{{date('H:i:s',strtotime($ls->check_in))}}</td>
-                                        <td>
-                                        @if(isset($ls->thoi_gian_lam))
-                                            {{date('H:i:s',($ls->thoi_gian_lam * 3600) + strtotime($ls->check_in))}} <!-- cong thuc bi sai -->
-                                        @else
-                                            Đang Làm Việc
-                                        @endif
-                                        </td>
-                                        <td>
-                                        @if(isset($ls->thoi_gian_lam))
-                                            {{round($ls->thoi_gian_lam,1)}} Tiếng
-                                        @endif
-                                        </td>
-                                        <td>
-                                        @if(isset($ls->id_tangca))
-                                            Có <a href="{{url('private/chamcong/tangca/chitiet/'.$ls->id_tangca)}}"> (xem chi tiết)</a>
-                                        @else
-                                            Không có    
-                                        @endif
-                                        </td>
-                                    </tr> 
+                                    </td>
+                                    <td>{{$nv->tbl_chucvu->ten_chuc_vu}}</td>
+                                    <!-- @if($nv->tinh_trang==1)
+                                    <td class="label-success">Đang làm</td>
+                                    @else
+                                    <td class="label-danger">Đã nghĩ việc</td>
+                                    @endif -->
+                                    <td>12/12/2023</td>
+                                    <td>
+                                    <a class="btn btn-warning"
+                                            href="{{url('private/quanly/suathongtin/'.$nv->id_nhanvien)}}" title="Sửa">
+                                            <i class="fa fa-edit"></i> Chấm công</a>
+                                    </td>
+                                </tr>
                                 @endforeach
-                                </tbody>
-                            </table>
-                                     <!-- /.row -->
-                        </div>
-                        <div class="h5 alert alert-info"> Trong tháng {{date('m')}} bạn đã làm được {{round($bangluong->so_gio_lam_viec,1)}} giờ </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

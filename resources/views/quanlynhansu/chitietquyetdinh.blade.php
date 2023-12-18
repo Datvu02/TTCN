@@ -38,7 +38,7 @@
                             
                             <table class="table table-striped table-bordered table-hover" >
                                 <thead>
-                                    <tr align="center">
+                                    <tr text-align="center">
                                         
                                         <th>Mã nhân viên</th>
                                         <th>Tên nhân viên</th>
@@ -54,7 +54,7 @@
                                 <tbody><?php $count=1 ?>
                                     
                                   
-                                    <tr class="even gradeC" align="center">
+                                    <tr class="even gradeC" text-align="center">
                                         
                                         <td>{{$quyetdinh->id_nhanvien}}</td>
                                         <td>{{$quyetdinh->tbl_hosonhanvien->ho_ten}}</td>

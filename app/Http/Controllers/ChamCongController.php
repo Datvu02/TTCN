@@ -12,30 +12,34 @@ use App\tbl_luuykien;
 class ChamCongController extends Controller
 {
     public function getChamCong(){
-        // $cac=tbl_bangluong::where('id_nhanvien',Auth::user()->id_nhanvien)
-        //         ->where('luong_thang',date('Y-m-1'))->exists(); var_dump($cac);exit;
-        if( !tbl_bangluong::where('id_nhanvien',Auth::user()->id_nhanvien)->where('luong_thang',date('Y-m-1'))->exists())
-        {
-                $newbl = new tbl_bangluong;
-                $newbl->luong_thang = date("Y-m-1");
-                $newbl->id_nhanvien = Auth::user()->id_nhanvien;
-                $newbl->save();
-        }
-        $bangluong = tbl_bangluong::whereMonth('luong_thang',date('m'))
-                ->where('id_nhanvien',Auth::user()->id_nhanvien)
-                ->first();
-        $lichsu = tbl_chamcong::where('id_bangluong',$bangluong->id_bangluong)->get();
-        $chamcong = tbl_chamcong::where('id_bangluong',$bangluong->id_bangluong)
-                ->where('check_in','like', date('Y-m-d').'%')
-                ->first();
-               //var_dump($chamcong); exit;
-        $tangca = tbl_tangca::where('id_nhanvien',Auth::User()->id_nhanvien)
-               ->where('check_in','like', date('Y-m-d').'%')
-               ->first();
-        $ngaynghi = getNgayNghi();
-        
-        return view('layout.chamcong.frmchamcong', compact('lichsu','chamcong','bangluong','ngaynghi','tangca'));
+        $nhanvien=tbl_hosonhanvien::orderBy('created_at','desc')->get(); 
+        return view('layout.chamcong.frmchamcong',['nhanvien'=>$nhanvien]);
     }
+    // public function getChamCong(){
+    //     // $cac=tbl_bangluong::where('id_nhanvien',Auth::user()->id_nhanvien)
+    //     //         ->where('luong_thang',date('Y-m-1'))->exists(); var_dump($cac);exit;
+    //     if( !tbl_bangluong::where('id_nhanvien',Auth::user()->id_nhanvien)->where('luong_thang',date('Y-m-1'))->exists())
+    //     {
+    //             $newbl = new tbl_bangluong;
+    //             $newbl->luong_thang = date("Y-m-1");
+    //             $newbl->id_nhanvien = Auth::user()->id_nhanvien;
+    //             $newbl->save();
+    //     }
+    //     $bangluong = tbl_bangluong::whereMonth('luong_thang',date('m'))
+    //             ->where('id_nhanvien',Auth::user()->id_nhanvien)
+    //             ->first();
+    //     $lichsu = tbl_chamcong::where('id_bangluong',$bangluong->id_bangluong)->get();
+    //     $chamcong = tbl_chamcong::where('id_bangluong',$bangluong->id_bangluong)
+    //             ->where('check_in','like', date('Y-m-d').'%')
+    //             ->first();
+    //            //var_dump($chamcong); exit;
+    //     $tangca = tbl_tangca::where('id_nhanvien',Auth::User()->id_nhanvien)
+    //            ->where('check_in','like', date('Y-m-d').'%')
+    //            ->first();
+    //     $ngaynghi = getNgayNghi();
+        
+    //     return view('layout.chamcong.frmchamcong', compact('lichsu','chamcong','bangluong','ngaynghi','tangca'));
+    // }
  
 //     public function checkin(){
 //         // $checkin = new tbl_chamcong;

@@ -205,6 +205,19 @@ h6 {
     font-family: 'Circular Std Medium';
 }
 
+.searchs {
+    display: flex;
+    width: auto;
+}
+
+.searchs .search select,
+input {
+    width: 200px;
+    height: 36px;
+    margin-right: 20px;
+    padding-left: 5px;
+}
+
 h1 {
     font-size: 34px;
 }

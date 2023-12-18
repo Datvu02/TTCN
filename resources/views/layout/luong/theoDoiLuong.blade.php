@@ -26,12 +26,12 @@
                                 @foreach($luong as $l)
                                 <tr class="even gradeC" align="center">
                                     <th>{{date('m / Y',strtotime($l->luong_thang))}}</th>
-                                    <td>{{round($l->so_gio_lam_viec,1)}}</td>
                                     <td>
                                         @if(isset($l->tong_tien_luong) && isset($l->thue_thu_nhap))
                                         {{number_format(($l->tong_tien_luong - $l->thue_thu_nhap))}}
                                         @endif
                                     </td>
+                                    <td>{{round($l->so_gio_lam_viec,1)}}</td>
                                     <td>
                                         <a class="btn btn-outline-primary"
                                             href="{{url('private/luong/chitiet/'.$l->id_bangluong)}}">Xem Chi Tiết</a>

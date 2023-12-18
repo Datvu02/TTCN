@@ -148,14 +148,6 @@ class DanhmucController extends Controller
         return view('danhmuc.dskyluatAll',compact('kyluat','nhanvien'));
     }
 
-    public function getDanhSachThuong(){//chua them
-        $thuong = tbl_luuykien::where('id_ykien',9)
-                ->where('nguoi_huong',Auth::user()->tbl_hosonhanvien->ho_ten)
-                ->where('trang_thai',2)
-                ->get();
-        return view('danhmuc.dsthuong',compact('thuong'));
-    }
-
     public function getDanhSachKyLuat($id_nhanvien){
         $kyluat = tbl_luuykien::where('id_ykien',10)
                 ->where('nguoi_huong',$id_nhanvien)
@@ -164,6 +156,15 @@ class DanhmucController extends Controller
 
         $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
         return view('quanlynhansu.chitietkyluat',compact('kyluat','nhanvien'));
+    }
+    public function getChiTietThuong($id_nhanvien){
+        $thuong = tbl_luuykien::where('id_ykien',10)
+                ->where('nguoi_huong',$id_nhanvien)
+                ->where('trang_thai',2)->orderBy("created_at","desc")
+                ->get();
+
+        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
+        return view('quanlynhansu.chitietkhenthuong',compact('thuong','nhanvien'));
     }
 
 

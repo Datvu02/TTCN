@@ -237,35 +237,34 @@ class QLNhansuController extends Controller
 
     public function getXoaNhanvien($id_nhanvien){
         try{
-        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
-        
-        $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-        
-        $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-        $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-        die("test");
-        $hopdong=tbl_hopdong::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        
-        
-        foreach($hopdong as $hd){
-            $phuluc=tbl_phuluc::where('id_hopdong',$hd->id_hopdong)->get();
+            $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
+            
+            $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
+            
+            $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
+            $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
+            $hopdong=tbl_hopdong::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
             
             
-            
-        if($phuluc!=null){
-            foreach($phuluc as $pl){
-                
-                $chitiet=tbl_chitietphuluc::where('id',$pl->id_chitiet)->first();
-                
-                
-                $deletephuluc=tbl_phuluc::where('id_phuluc',$pl->id_phuluc)->first();
-                // dd($deletephuluc);
-                $chitiet->delete();
-                $deletephuluc->delete();
+            foreach($hopdong as $hd){
+                $phuluc=tbl_phuluc::where('id_hopdong',$hd->id_hopdong)->get();
             }
-        }
-        
-        $deletehopdong=tbl_hopdong::where('id_hopdong',$hd->id_hopdong)->first();
+                
+                
+            if($phuluc!=null){
+                foreach($phuluc as $pl){
+                    
+                    $chitiet=tbl_chitietphuluc::where('id',$pl->id_chitiet)->first();
+                    
+                    
+                    $deletephuluc=tbl_phuluc::where('id_phuluc',$pl->id_phuluc)->first();
+                    // dd($deletephuluc);
+                    $chitiet->delete();
+                    $deletephuluc->delete();
+                }
+            }
+            
+            $deletehopdong=tbl_hopdong::where('id_hopdong',$hd->id_hopdong)->first();
 
             $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
 
@@ -306,7 +305,7 @@ class QLNhansuController extends Controller
 
             $nhanvien->delete();
             return redirect('private/nhanvien/danhsach')->with('thongbao', 'Xóa Thành Công!');
-        }catch(Exception $e) {
+        } catch (Exception $e) {
             echo "Message: " . $e->getMessage();
 
         }

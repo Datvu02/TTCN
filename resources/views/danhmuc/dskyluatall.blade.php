@@ -15,9 +15,10 @@
                         <thead>
                             <tr align="center">
                                 <th>Mã nhân viên</th>
-                                <th>Tên nhân viên</th>
+                                <th>Tên nhân viên bị kỷ luật</th>
                                 <th>Chức vụ</th>
-                                <th>Số lần kỹ luật</th>
+                                <th>Ngày quyết định</th>
+                                <th>Trạng thái</th>
                                 <th style="width:230px">Hành động</th>
                             </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                     <p>{{$nv->ho_ten}}</p>
                                 </td>
                                 <td>{{$nv->tbl_chucvu->ten_chuc_vu}}</td>
+                                <td></td>
                                 @foreach($kyluat as $kl)
 
                                 <!-- <tr class="even gradeC" align="center">
@@ -49,14 +51,12 @@
                                 }
                                 ?>
                                 @endforeach
-                                <td>{{$count}}</td>
+                                <td>Đã duyệt</td>
                                 <td>
 
                                     <a class="btn btn-primary" href="{{url('private/kyluat/canhan/'.$nv->id_nhanvien)}}"
-                                        title="Xem chi tiết"> <i class="fa fa-eye"></i> Chi tiết</a>
-                                    <a class="btn btn-danger"
-                                        href="{{url('private/quyetdinhthoiviecNV/'.$nv->id_nhanvien)}}"
-                                        title="Lập quyết định"> <i class="fa fa-eye"></i> Lập quyết định</a>
+                                        title="Xem chi tiết"> <i class="fa fa-eye"></i> Chi tiết
+                                    </a>
                                 </td>
                                 @endforeach
 

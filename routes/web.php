@@ -198,7 +198,7 @@ Route::group(['prefix' => 'chamcong'], function () {
 //--------------------------- thưởng --------------------------- 19.8
 Route::group(['prefix' => 'thuong'], function () {
     Route::get('danhsach','DanhMucController@getDanhSachThuongAll');
-    Route::get('canhan','DanhMucController@getDanhSachThuong');
+    Route::get('canhan/{id_nhanvien}','DanhMucController@getChiTietThuong');
 });
 //--------------------------- kỷ luật ---------------------------
 Route::group(['prefix' => 'kyluat'], function () {

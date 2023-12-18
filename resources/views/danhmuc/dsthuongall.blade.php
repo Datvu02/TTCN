@@ -14,18 +14,17 @@
                     <table class="table table-striped table-bordered table-hover" id="data-tables">
                         <thead>
                             <tr align="center">
-                                <th>Ngày Quyết Định</th>
-                                <th>Họ Tên Nhân Viên</th>
-                                <th>Phòng Ban / Chức Vụ</th>
-                                <th>Người Đề Xuất</th>
-                                <th>Số Tiền</th>
-                                <th>Lý Do</th>
+                                <th>Mã nhân viên</th>
+                                <th>Tên nhân viên bị kỷ luật</th>
+                                <th>Chức vụ</th>
+                                <th>Ngày quyết định</th>
+                                <th>Trạng thái</th>
+                                <th style="width:230px">Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($thuong as $t)
                             <tr class="even gradeC" align="center">
-                                <td>{{$t->updated_at}}</td>
 
                                 @foreach ($nhanvien as $nv)
                                 @if($nv->id_nhanvien==$t->nguoi_huong)
@@ -35,8 +34,14 @@
                                 @endforeach
 
                                 <td>{{$t->tbl_hosonhanvien->ho_ten}}</td>
-                                <td>{{$t->gia_tri}}</td>
-                                <td>{{$t->ly_do}}</td>
+                                <td>{{$t->updated_at}}</td>
+                                <td>đã duyệt</td>
+                                <td>
+
+                                    <a class="btn btn-primary" href="{{url('private/thuong/canhan/'.$nv->id_nhanvien)}}"
+                                        title="Xem chi tiết"> <i class="fa fa-eye"></i> Chi tiết
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

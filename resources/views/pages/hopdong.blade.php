@@ -105,7 +105,7 @@
                                  @endif
                                  @endif
                                     
-                                     <td><a href="{{url('private/hopdong/'.$hd->id_nhanvien)}}">Xem Chi Tiết</a></td> 
+                                     <!-- <td><a href="{{url('private/hopdong/'.$hd->id_nhanvien)}}">Xem Chi Tiết</a></td>  -->
                                 </tr>
                                 @endforeach
                                 </tbody>

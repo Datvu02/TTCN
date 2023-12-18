@@ -32,8 +32,7 @@
                             enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             <ul class="nav  mt-3 mb-4 card-header">
-                                {{-- <a class" data-toggle="tab" href="#home">Thông Tin Chính</a> --}}
-                                <li class="active"><a class"="" data-toggle="tab" href="#home" class="active show">Thông
+                                <li class="active"><a class="" data-toggle="tab" href="#home" class="active show">Thông
                                         Tin Chính</a></li>
                                 <li><a data-toggle="tab" href="#menu1">Thông Tin Liên Hệ</a></li>
                                 <li><a data-toggle="tab" href="#menu2">Thông Tin Trình Độ Bằng Cấp</a></li>
@@ -259,7 +258,6 @@
                                               </div>
                                             
                                         </div>
-                                        @else
                                         
                                         
                                         <div class="form-row mb-3">
@@ -273,16 +271,9 @@
                                               </div>
                                             
                                         </div>
-
                                     </div>
                                     <p style="font-size: 16px;color: black; ">Thông tin vị trí mới tại công ty</p>
                                     <div class="form-row mb-3">
-
-                                        <div class="form-group col-md-4 mb-3">
-                                            <label>Phòng Ban</label>
-                                            <label
-                                                class="form-control mb-3">{{$phuluc->tbl_chitietphuluc->tbl_chucvu->tbl_phongban->ten_phong_ban}}</label>
-                                        </div>
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Chức Vụ</label>
                                             <label
@@ -299,12 +290,6 @@
 
 
                                     <div class="form-row mb-3">
-
-                                        <div class="form-group col-md-4 mb-3">
-                                            <label>Phòng Ban</label>
-                                            <label
-                                                class="form-control mb-3">{{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</label>
-                                        </div>
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Chức Vụ</label>
                                             <label
