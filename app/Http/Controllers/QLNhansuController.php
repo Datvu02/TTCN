@@ -31,35 +31,37 @@ class QLNhansuController extends Controller
 {
 
 
-    public function getThemnhanvien(){
-        $dantoc=tbl_dantoc::all();
-        $tinh=tbl_tinh::all();
+    public function getThemnhanvien()
+    {
+        $dantoc = tbl_dantoc::all();
+        $tinh = tbl_tinh::all();
         //  $phongban=tbl_phongban::all();
-        $chucvu=tbl_chucvu::all();
+        $chucvu = tbl_chucvu::all();
         $ds_ho_so = tbl_hoso::all();
-        return view('quanlynhansu.laphosoNV',['dantoc'=>$dantoc,'tinh'=>$tinh,'chucvu'=>$chucvu,'ds_ho_so'=>$ds_ho_so]);
-        
+        return view('quanlynhansu.laphosoNV', ['dantoc' => $dantoc, 'tinh' => $tinh, 'chucvu' => $chucvu, 'ds_ho_so' => $ds_ho_so]);
+
     }
-    public function postThemnhanvien(Request $request){
+    public function postThemnhanvien(Request $request)
+    {
         // die($request->ho_ten);
-        $demhoso=tbl_hosonhanvien::latest()->first();
-        
-        $arrName = explode(".", $demhoso->id_nhanvien);      
-        $so = array_pop($arrName)+1;
-        
-        $hosonhanvien= new tbl_hosonhanvien;
-        
-        $hosonhanvien->ho_ten=$request->ho_ten;
-        $hosonhanvien->ngay_sinh=$request->ngay_sinh;
-        $hosonhanvien->gioi_tinh=$request->gioi_tinh;
-        
-        $hosonhanvien->id_dantoc=$request->dan_toc;
-        $hosonhanvien->ton_giao=$request->ton_giao;
-        $hosonhanvien->so_cmnd=$request->so_cmnd;
-        $hosonhanvien->ngay_cap_cmnd=$request->ngay_cap_cmnd;
-        $hosonhanvien->noi_cap_cmnd=$request->noi_cap_cmnd;
-        if( $hosonhanvien->gioi_tinh==1){
-        $hosonhanvien->anh_dai_dien="usermen.jpg";
+        $demhoso = tbl_hosonhanvien::latest()->first();
+
+        $arrName = explode(".", $demhoso->id_nhanvien);
+        $so = array_pop($arrName) + 1;
+
+        $hosonhanvien = new tbl_hosonhanvien;
+
+        $hosonhanvien->ho_ten = $request->ho_ten;
+        $hosonhanvien->ngay_sinh = $request->ngay_sinh;
+        $hosonhanvien->gioi_tinh = $request->gioi_tinh;
+
+        $hosonhanvien->id_dantoc = $request->dan_toc;
+        $hosonhanvien->ton_giao = $request->ton_giao;
+        $hosonhanvien->so_cmnd = $request->so_cmnd;
+        $hosonhanvien->ngay_cap_cmnd = $request->ngay_cap_cmnd;
+        $hosonhanvien->noi_cap_cmnd = $request->noi_cap_cmnd;
+        if ($hosonhanvien->gioi_tinh == 1) {
+            $hosonhanvien->anh_dai_dien = "usermen.jpg";
         }
 
         $hosonhanvien->id_hoso = implode(",", $request->hoso);
@@ -101,7 +103,7 @@ class QLNhansuController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->email = $hosonhanvien->id_nhanvien . "@cnsg.com.vn";
-        $pass = Str::random(6);
+        $pass = "123456";
         $user->password = bcrypt($pass);
         $user->id_nhanvien = $hosonhanvien->id_nhanvien;
         $user->save();
@@ -149,18 +151,18 @@ class QLNhansuController extends Controller
     public function getSuaHoSoNhanVien($id_nhanvien)
     {
         $ds_ho_so = tbl_hoso::all();
-        $dantoc=tbl_dantoc::all();
-        $tinh=tbl_tinh::all();
-        $chucvu=tbl_chucvu::all();
-        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
-        
-        
-        $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        
-        $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-        $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
+        $dantoc = tbl_dantoc::all();
+        $tinh = tbl_tinh::all();
+        $chucvu = tbl_chucvu::all();
+        $nhanvien = tbl_hosonhanvien::where('id_nhanvien', $id_nhanvien)->first();
 
-        return view('quanlynhansu.suahosoNV',['nhanvien'=>$nhanvien,'ds_ho_so'=>$ds_ho_so,'dantoc'=>$dantoc,'tinh'=>$tinh,'lienhe'=>$lienhe,'trinhdo'=>$trinhdo,'chucvu'=>$chucvu,'user'=>$user]);
+
+        $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+
+        $trinhdo = tbl_trinhdo::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+        $user = User::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+
+        return view('quanlynhansu.suahosoNV', ['nhanvien' => $nhanvien, 'ds_ho_so' => $ds_ho_so, 'dantoc' => $dantoc, 'tinh' => $tinh, 'lienhe' => $lienhe, 'trinhdo' => $trinhdo, 'chucvu' => $chucvu, 'user' => $user]);
     }
     public function postSuaHoSoNhanVien(Request $request, $id_nhanvien)
     {
@@ -186,9 +188,9 @@ class QLNhansuController extends Controller
             $file = $request->file('Hinh');
 
             $name = $file->getClientOriginalName();
-            $Hinh = str_random(4) . "_" . $name;
+            $Hinh = Str::random(4) . "_" . $name;
             while (file_exists("upload/avatar/" . $Hinh)) {
-                $Hinh = str_random(4) . "_" . $name;
+                $Hinh = Str::random(4) . "_" . $name;
             }
             $file->move("upload/avatar", $Hinh);
             $nhanvien->anh_dai_dien = $Hinh;
@@ -235,36 +237,37 @@ class QLNhansuController extends Controller
 
     }
 
-    public function getXoaNhanvien($id_nhanvien){
-        try{
-            $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$id_nhanvien)->first();
-            
-            $lienhe=tbl_lienhe::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-            
-            $trinhdo=tbl_trinhdo::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-            $user=User::where('id_nhanvien',$nhanvien->id_nhanvien)->first();
-            $hopdong=tbl_hopdong::where('id_nhanvien',$nhanvien->id_nhanvien)->get();
-            
-            
-            foreach($hopdong as $hd){
-                $phuluc=tbl_phuluc::where('id_hopdong',$hd->id_hopdong)->get();
+    public function getXoaNhanvien($id_nhanvien)
+    {
+        try {
+            $nhanvien = tbl_hosonhanvien::where('id_nhanvien', $id_nhanvien)->first();
+
+            $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
+
+            $trinhdo = tbl_trinhdo::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
+            $user = User::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
+            $hopdong = tbl_hopdong::where('id_nhanvien', $nhanvien->id_nhanvien)->get();
+
+
+            foreach ($hopdong as $hd) {
+                $phuluc = tbl_phuluc::where('id_hopdong', $hd->id_hopdong)->get();
             }
-                
-                
-            if($phuluc!=null){
-                foreach($phuluc as $pl){
-                    
-                    $chitiet=tbl_chitietphuluc::where('id',$pl->id_chitiet)->first();
-                    
-                    
-                    $deletephuluc=tbl_phuluc::where('id_phuluc',$pl->id_phuluc)->first();
+
+
+            if ($phuluc != null) {
+                foreach ($phuluc as $pl) {
+
+                    $chitiet = tbl_chitietphuluc::where('id', $pl->id_chitiet)->first();
+
+
+                    $deletephuluc = tbl_phuluc::where('id_phuluc', $pl->id_phuluc)->first();
                     // dd($deletephuluc);
                     $chitiet->delete();
                     $deletephuluc->delete();
                 }
             }
-            
-            $deletehopdong=tbl_hopdong::where('id_hopdong',$hd->id_hopdong)->first();
+
+            $deletehopdong = tbl_hopdong::where('id_hopdong', $hd->id_hopdong)->first();
 
             $lienhe = tbl_lienhe::where('id_nhanvien', $nhanvien->id_nhanvien)->first();
 
@@ -407,15 +410,16 @@ class QLNhansuController extends Controller
         $phuluc = tbl_phuluc::where('id_hopdong', $id_hopdong)->get();
         return view('quanlynhansu.phulucNV', ['hopdong' => $hopdong, 'phuluc' => $phuluc]);
     }
-    public function getlapPhulucNV($id_hopdong){
-        $hopdong=tbl_hopdong::where('id_hopdong',$id_hopdong)->first();
-        $nhanvien=tbl_hosonhanvien::where('id_nhanvien',$hopdong->id_nhanvien)->first();
-        $phuluc=tbl_phuluc::where('id_hopdong',$id_hopdong)->get();
-        $loaipl=tbl_loaiphuluc::all();
-        $loaihd=tbl_loaihopdong::all();
-        $chucvu=tbl_chucvu::all();
-        $phucap=tbl_phucap::all();
-        return view('quanlynhansu.lapphulucNV',['hopdong'=>$hopdong,'loaipl'=>$loaipl,'nhanvien'=>$nhanvien,'chucvu'=>$chucvu,'phucap'=>$phucap,'loaihd'=>$loaihd]);
+    public function getlapPhulucNV($id_hopdong)
+    {
+        $hopdong = tbl_hopdong::where('id_hopdong', $id_hopdong)->first();
+        $nhanvien = tbl_hosonhanvien::where('id_nhanvien', $hopdong->id_nhanvien)->first();
+        $phuluc = tbl_phuluc::where('id_hopdong', $id_hopdong)->get();
+        $loaipl = tbl_loaiphuluc::all();
+        $loaihd = tbl_loaihopdong::all();
+        $chucvu = tbl_chucvu::all();
+        $phucap = tbl_phucap::all();
+        return view('quanlynhansu.lapphulucNV', ['hopdong' => $hopdong, 'loaipl' => $loaipl, 'nhanvien' => $nhanvien, 'chucvu' => $chucvu, 'phucap' => $phucap, 'loaihd' => $loaihd]);
     }
     public function getchitietPhulucNV($id_hopdong, $id_phuluc)
     {

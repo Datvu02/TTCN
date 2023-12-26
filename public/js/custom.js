@@ -5,7 +5,7 @@ function filterTable() {
 
     var tableRows = document.querySelectorAll("#data-tables tbody tr");
 
-    tableRows.forEach(function(row) {
+    tableRows.forEach(function (row) {
         var rowYearMonth = row.getAttribute("data-filtertables-year");
         var rowMonth = rowYearMonth.split("-")[1];
         var rowEmployeeName = row.getElementsByTagName("td")[0].textContent.trim().toUpperCase(); // Assuming employee name is in the first column
@@ -21,66 +21,27 @@ function filterTable() {
         }
     });
 }
+function createTable() {
+    // Tạo đối tượng Date cho ngày hiện tại
+    var currentDate = new Date();
 
-// function filterTableByYear() {
-//     var selectedYear = document.getElementById('year').value;
-//     var monthSelect = document.getElementById("month");
-//     var optionsToDisplay = [];
+    // Lấy ngày hiện tại
+    var day = currentDate.getDate();
 
+    // Lấy số ngày của tháng hiện tại
+    var numberOfDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
-//     var rows = document.querySelectorAll('#data-tables tbody tr');
-//     rows.forEach(function (row) {
-//         var rowYear = row.getAttribute('filtertables-year');
-//         if (selectedYear === 'Chọn năm' || selectedYear === rowYear) {
-//             row.style.display = '';
-//         } else {
-//             row.style.display = 'none';
-//         }
-//     });
-
-//     // Lọc danh sách các tùy chọn cần hiển thị
-//     for (var i = 1; i < monthSelect.options.length; i++) {
-//         var optionYear = monthSelect.options[i].getAttribute("data-year");
-//         if (optionYear === selectedYear || selectedYear === "Chọn năm" || optionYear === null) {
-//             optionsToDisplay.push(i);
-//         }
-//     }
-
-//     // Ẩn tất cả các tùy chọn tháng
-//     for (var i = 1; i < monthSelect.options.length; i++) {
-//         monthSelect.options[i].style.display = "none";
-//     }
-
-//     // Hiển thị chỉ các tùy chọn đã lọc
-//     optionsToDisplay.forEach(function (index) {
-//         monthSelect.options[index].style.display = "";
-//     });
-
-// }
-// function filterTableByYear() {
-//     var selectedYear = document.getElementById("year").value;
-//     var monthSelect = document.getElementById("month");
-//     var optionsToDisplay = [];
-
-//     // Lọc danh sách các tùy chọn cần hiển thị
-//     for (var i = 1; i < monthSelect.options.length; i++) {
-//         var optionYear = monthSelect.options[i].getAttribute("data-year");
-//         if (optionYear === selectedYear || selectedYear === "Chọn năm" || optionYear === null) {
-//             optionsToDisplay.push(i);
-//         }
-//     }
-
-//     // Ẩn tất cả các tùy chọn tháng
-//     for (var i = 1; i < monthSelect.options.length; i++) {
-//         monthSelect.options[i].style.display = "none";
-//     }
-
-//     // Hiển thị chỉ các tùy chọn đã lọc
-//     optionsToDisplay.forEach(function (index) {
-//         monthSelect.options[index].style.display = "";
-//     });
-// }
-$(document).ready(function() { //datatables hỗ trợ xuất file
+    // In ra ngày hiện tại và số ngày của tháng hiện tại
+    console.log("Ngày hiện tại: " + day);
+    console.log("Số ngày của tháng hiện tại: " + numberOfDays)
+    var ngay = [1, 2, 3, 4, 5];
+    let txt = "";
+    for (let x in numbers) {
+        txt += "<th>" + numbers[x] + "</th>";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+$(document).ready(function () { //datatables hỗ trợ xuất file
     var table = $('#data-tables').DataTable({
         lengthChange: false,
 
@@ -94,14 +55,14 @@ $(document).ready(function() { //datatables hỗ trợ xuất file
         .appendTo('#data-tables_wrapper .col-md-6:eq(0)');
 });
 
-$(document).ready(function() { //Datatables chấm công & lương
+$(document).ready(function () { //Datatables chấm công & lương
     // Setup - add a text input to each footer cell
     $('#data-tables-check thead tr').clone(true).appendTo('#data-tables-check thead');
-    $('#data-tables-check thead tr:eq(1) th').each(function(i) {
+    $('#data-tables-check thead tr:eq(1) th').each(function (i) {
         if (i === 4) { $(this).html(''); } else {
             var title = $(this).text();
             $(this).html('<input type="text" placeholder="Tìm ' + title + '" />');
-            $('input', this).on('keyup change', function() {
+            $('input', this).on('keyup change', function () {
                 if (table.column(i).search() !== this.value) {
                     table
                         .column(i)
@@ -122,20 +83,20 @@ $(document).ready(function() { //Datatables chấm công & lương
     });
 
 });
-$(document).ready(function() { //Datatable bình thường
+$(document).ready(function () { //Datatable bình thường
     $('#data-tables-ykien').DataTable({
         "order": [
             [3, "desc"]
         ]
     });
 });
-$(document).ready(function() { //Datatable bình thường
+$(document).ready(function () { //Datatable bình thường
     $('#data-tablesnormal').DataTable();
 });
 
-$(document).ready(function() { //Thêm ý kiến theo loại ý kiến
-    $("#id_ykien").change(function() {
-        $(this).find("option:selected").each(function() {
+$(document).ready(function () { //Thêm ý kiến theo loại ý kiến
+    $("#id_ykien").change(function () {
+        $(this).find("option:selected").each(function () {
             var optionValue = $(this).attr("value");
             if (optionValue) {
                 $(".y-kien").not("." + optionValue).hide();
@@ -147,7 +108,7 @@ $(document).ready(function() { //Thêm ý kiến theo loại ý kiến
     }).change();
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var table = $('#data-tables2').DataTable({
         "order": [
             [4, "desc"]
@@ -158,7 +119,7 @@ $(document).ready(function() {
         .appendTo('#data-tables_wrapper .col-md-6:eq(0)');
 });
 
-$(document).ready(function() { //Datatable
+$(document).ready(function () { //Datatable
     $('#data-tables1').DataTable();
 });
 
@@ -526,3 +487,4 @@ function validatechucvu() {
 
         return status;
     }
+}

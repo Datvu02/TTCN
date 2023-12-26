@@ -241,62 +241,28 @@
 
                                         </div>
                                     </div>
-                                  </div> 
-                                    <div id="menu4" class="tab-pane fade">
-                                        
-                                        @if(isset($phuluc))
-                                        <p style="font-size: 16px;color: black; ">Vị trí làm việc được thay đổi vào ngày: {{date('d-m-Y',strtotime($phuluc->tbl_chitietphuluc->ngay_bat_dau))}}</p>
-                                        <p style="font-size: 16px;color: black; " >Thông tin vị trí cũ tại công ty</p>
-                                        <div class="form-row mb-3">
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Chức Vụ</label>
-                                                <label class="form-control mb-3" >{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label>
-                                            </div>
-                                            
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label>Tên Nickname</label>
-                                                <label class="form-control mb-3" >{{$user->name}}</label>
-                                              </div>
-                                            
+                                </div>
+                                <div id="menu4" class="tab-pane fade">
+
+                                    @if(isset($phuluc))
+                                    <p style="font-size: 16px;color: black; ">Vị trí làm việc được thay đổi vào ngày:
+                                        {{date('d-m-Y',strtotime($phuluc->tbl_chitietphuluc->ngay_bat_dau))}}</p>
+                                    <p style="font-size: 16px;color: black; ">Thông tin vị trí cũ tại công ty</p>
+                                    <div class="form-row mb-3">
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label>Chức Vụ</label>
+                                            <label
+                                                class="form-control mb-3">{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label>
                                         </div>
-                                        <p style="font-size: 16px;color: black; " >Thông tin vị trí mới tại công ty</p>
-                                        <div class="form-row mb-3">
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Chức Vụ</label>
-                                                <label class="form-control mb-3" >{{$phuluc->tbl_chitietphuluc->tbl_chucvu->ten_chuc_vu}}</label>
-                                            </div>
-                                            
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label>Tên Nickname</label>
-                                                <label class="form-control mb-3" >{{$user->name}}</label>
-                                              </div>
-                                            
-                                        </div>
-                                        @else
-                                        
-                                        
-                                        <div class="form-row mb-3">
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Chức Vụ</label>
-                                                <label class="form-control mb-3" >{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label>
-                                            </div>
-                                            
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label>Tên Nickname</label>
-                                                <label class="form-control mb-3" >{{$user->name}}</label>
-                                              </div>
-                                            
+
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label>Tên Nickname</label>
+                                            <label class="form-control mb-3">{{$user->name}}</label>
                                         </div>
 
                                     </div>
                                     <p style="font-size: 16px;color: black; ">Thông tin vị trí mới tại công ty</p>
                                     <div class="form-row mb-3">
-
-                                        <div class="form-group col-md-4 mb-3">
-                                            <label>Phòng Ban</label>
-                                            <label
-                                                class="form-control mb-3">{{$phuluc->tbl_chitietphuluc->tbl_chucvu->tbl_phongban->ten_phong_ban}}</label>
-                                        </div>
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Chức Vụ</label>
                                             <label
@@ -313,12 +279,6 @@
 
 
                                     <div class="form-row mb-3">
-
-                                        <div class="form-group col-md-4 mb-3">
-                                            <label>Phòng Ban</label>
-                                            <label
-                                                class="form-control mb-3">{{$nhanvien->tbl_chucvu->tbl_phongban->ten_phong_ban}}</label>
-                                        </div>
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Chức Vụ</label>
                                             <label
@@ -332,28 +292,21 @@
 
                                     </div>
 
-
-
-                                    @endif
-
-
                                 </div>
+                                @endif
                             </div>
-                            <a class="btn btn-primary mr-5 "
-                                href="{{url('private/suathongtin/'.Auth::user()->id_nhanvien)}}">Sửa đổi thông tin</a>
-                        </form>
-
                     </div>
-
                 </div>
-                <a class="btn btn-primary mr-5 "
-                    href="{{url('private/quanly/suathongtin/'.$nhanvien->id_nhanvien)}}">Sửa đổi thông tin</a>
+
             </div>
-            <!-- ============================================================== -->
-            <!-- end validation form -->
-            <!-- ============================================================== -->
+            <a class="btn btn-primary mr-5 " href="{{url('private/quanly/suathongtin/'.$nhanvien->id_nhanvien)}}">Sửa
+                đổi thông tin</a>
         </div>
+        <!-- ============================================================== -->
+        <!-- end validation form -->
+        <!-- ============================================================== -->
     </div>
+</div>
 </div>
 <!-- /#page-wrapper -->
 <!-- ============================================================== -->
