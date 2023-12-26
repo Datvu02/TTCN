@@ -36,7 +36,7 @@
                             enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             <ul class="nav  mt-3 mb-4 card-header">
-                                <a class" data-toggle="tab" href="#home">Thông Tin Chính</a>
+                                {{-- <a class" data-toggle="tab" href="#home">Thông Tin Chính</a> --}}
                                 <li class="active"><a class"="" data-toggle="tab" href="#home" class="active show">Thông
                                         Tin Chính</a></li>
                                 <li><a data-toggle="tab" href="#menu1">Thông Tin Liên Hệ</a></li>
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div>
                                                         @if(isset($nhanvien->anh_dai_dien))
-                                                        <img src="{{url('upload/avatar/'.$nhanvien->anh_dai_dien)}}"
+                                                        <img src="{{url('upload/arvarta/'.$nhanvien->anh_dai_dien)}}"
                                                             style="width: 255px;height: 265px;">
                                                         @else
                                                         <img src="{{url('admin_asset/assets/images/avatar-1.jpg')}}"
@@ -280,7 +280,7 @@
                                 <div id="menu3" class="tab-pane fade">
                                     <div class="form-row mb-3">
                                         <div class="form-group col-md-12 mb-3">
-                                            @if($ds_ho_so->count()>0)
+                                            {{-- @if($ds_ho_so->count()>0) --}}
 
                                             @if(!empty($nhanvien->id_hoso))
                                             @php
@@ -296,7 +296,7 @@
                                                 @endforeach
                                             </div>
                                             @endif
-                                            @endif
+                                            {{-- @endif --}}
 
                                         </div>
                                     </div>
@@ -304,19 +304,6 @@
 
                                 <div id="menu4" class="tab-pane fade">
                                     <div class="form-row mb-3">
-                                        <div class="form-group col-md-6 mb-3">
-                                            <label>Phòng Ban</label>
-                                            <select name="phong_ban" class="form-control"
-                                                style="-webkit-appearance: auto;" id="phong_ban" required>
-                                                <option selected value="">Chọn phòng ban</option>
-                                                @foreach($phongban as $pb)
-                                                <option @if($nhanvien->tbl_chucvu->id_phongban==$pb->id_phongban)
-                                                    {{"selected"}} @endif
-                                                    value="{{$pb->id_phongban}}">{{$pb->ten_phong_ban}}</option>
-                                                @endforeach
-                                            </select>
-                                            <span id="phong_banf"></span>
-                                        </div>
                                         <div class="form-group col-md-6 mb-3">
                                             <label>Chức Vụ</label>
                                             <select name="chuc_vu" class="form-control"
@@ -332,51 +319,28 @@
                                         @foreach ($user as $user)
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Tên Người Dùng</label>
-                                            <label class="form-control mb-3">{{$nhanvien->id_chucvu}}</label>
+                                            {{-- <label class="form-control mb-3">{{$nhanvien->id_chucvu}}</label> --}}
                                             <input type="text" class="form-control mb-3" name="name"
                                                 placeholder="Nhập tên người dùng" value="{{$user->name}}" required>
                                         </div>
 
                                         <div class="form-group col-md-4 mb-3">
                                             <label>Email Công Ty (Tài khoản)</label>
-                                            <label
+                                            {{-- <label
                                                 class="form-control mb-3">{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label>
+                                            --}}
                                             <input type="email" class="form-control" name="email"
                                                 placeholder="Nhập email" value="{{$user->email}}" readonly="">
 
                                         </div>
-                                      </div> 
 
-                                      <div id="menu4" class="tab-pane fade">
-                                        <div class="form-row mb-3">
-                                            <div class="form-group col-md-6 mb-3">
-                                                <label >Chức Vụ</label>
-                                                <select name="chuc_vu" class="form-control" style="-webkit-appearance: auto;" id="chuc_vu" required>
-                                                  <option selected value="">Chọn chức vụ</option>
-                                                  @foreach($chucvu as $cv)
-                                                <option @if($nhanvien->id_chucvu==$cv->id_chucvu) {{"selected"}} @endif value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu}}</option>
-                                            @endforeach
-                                                </select>
-                                                <span id="chuc_vuf"></span>
-                                            </div>
-                                                @foreach ($user as $user)
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Tên Người Dùng</label>
-                                                 <label class="form-control mb-3" >{{$nhanvien->id_chucvu}}</label> 
-                                                <input type="text" class="form-control mb-3" name="name" placeholder="Nhập tên người dùng" value="{{$user->name}}" required>
-                                            </div>
-                                            
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Email Công Ty (Tài khoản)</label>
-                                                     <label class="form-control mb-3" >{{$nhanvien->tbl_chucvu->ten_chuc_vu}}</label> 
-                                            <input type="email" class="form-control" name="email" placeholder="Nhập email" value="{{$user->email}}" readonly="">
-                                                
-                                            </div>
-                                            
-                                             <div class="form-group col-md-4 mb-3">
-                                                <label>PassWord</label>
-                                                 <label class="form-control mb-3" >{{$nhanvien->tbl_vitri->ten_vi_tri}}</label> 
-                                             <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu" value="{{$user->password}}" required>
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label>PassWord</label>
+                                            {{-- <label
+                                                class="form-control mb-3">{{$nhanvien->tbl_vitri->ten_vi_tri}}</label>
+                                            --}}
+                                            <input type="password" class="form-control" name="password"
+                                                placeholder="Nhập mật khẩu" value="{{$user->password}}" required>
                                             @endforeach
 
                                         </div>
@@ -409,75 +373,75 @@
 <!-- ============================================================== -->
 @endsection
 @section('script')
-    <!-- <script>
-        $(document).ready(function(){
-            $("#phong_ban").change(function(){
-                var id_phongban=$(this).val();
-                $.get("ajax/chucvu/"+id_phongban,function(data){
-                    $("#chuc_vu").html(data);
-                });
+<script>
+    $(document).ready(function () {
+        $("#phong_ban").change(function () {
+            var id_phongban = $(this).val();
+            $.get("ajax/chucvu/" + id_phongban, function (data) {
+                $("#chuc_vu").html(data);
             });
         });
-    </script>    -->
-    <script language="javascript">
+    });
+</script>
+<script language="javascript">
 
-        document.getElementById("btn1").onclick = function () {
-            document.getElementById("content").style.display = 'none';
-            document.getElementById("btn2").style.display = 'block';
-        };
-    
-        document.getElementById("btn2").onclick = function () {
-            document.getElementById("content").style.display = 'block';
-            document.getElementById("btn2").style.display = 'none';
-        };
-        document.getElementById("btn3").onclick = function () {
-            document.getElementById("content1").style.display = 'none';
-            document.getElementById("btn4").style.display = 'block';
-        };
-    
-        document.getElementById("btn4").onclick = function () {
-            document.getElementById("content1").style.display = 'block';
-            document.getElementById("btn4").style.display = 'none';
-        };
-        document.getElementById("btn5").onclick = function () {
-            document.getElementById("content2").style.display = 'none';
-            document.getElementById("btn6").style.display = 'block';
-        };
-    
-        document.getElementById("btn6").onclick = function () {
-            document.getElementById("content2").style.display = 'block';
-            document.getElementById("btn6").style.display = 'none';
-        };
-        // document.getElementById("btn7").onclick = function () {
-        //     document.getElementById("content3").style.display = 'none';
-        //     document.getElementById("btn8").style.display = 'block';
-        // };
-    
-        // document.getElementById("btn8").onclick = function () {
-        //     document.getElementById("content3").style.display = 'block';
-        //     document.getElementById("btn8").style.display = 'none';
-        // };
-        document.getElementById("btn9").onclick = function () {
-            document.getElementById("content4").style.display = 'none';
-            document.getElementById("btn10").style.display = 'block';
-        };
-    
-        document.getElementById("btn10").onclick = function () {
-            document.getElementById("content4").style.display = 'block';
-            document.getElementById("btn10").style.display = 'none';
-        };
-        document.getElementById("btn13").onclick = function () {
-            document.getElementById("content5").style.display = 'none';
-            document.getElementById("btn14").style.display = 'block';
-        };
-    
-        document.getElementById("btn14").onclick = function () {
-            document.getElementById("content5").style.display = 'block';
-            document.getElementById("btn14").style.display = 'none';
-        };
-    
+    document.getElementById("btn1").onclick = function () {
+        document.getElementById("content").style.display = 'none';
+        document.getElementById("btn2").style.display = 'block';
+    };
 
-        document.getElementById("btn11").onclick = function () {
+    document.getElementById("btn2").onclick = function () {
+        document.getElementById("content").style.display = 'block';
+        document.getElementById("btn2").style.display = 'none';
+    };
+    document.getElementById("btn3").onclick = function () {
+        document.getElementById("content1").style.display = 'none';
+        document.getElementById("btn4").style.display = 'block';
+    };
+
+    document.getElementById("btn4").onclick = function () {
+        document.getElementById("content1").style.display = 'block';
+        document.getElementById("btn4").style.display = 'none';
+    };
+    document.getElementById("btn5").onclick = function () {
+        document.getElementById("content2").style.display = 'none';
+        document.getElementById("btn6").style.display = 'block';
+    };
+
+    document.getElementById("btn6").onclick = function () {
+        document.getElementById("content2").style.display = 'block';
+        document.getElementById("btn6").style.display = 'none';
+    };
+    // document.getElementById("btn7").onclick = function () {
+    //     document.getElementById("content3").style.display = 'none';
+    //     document.getElementById("btn8").style.display = 'block';
+    // };
+
+    // document.getElementById("btn8").onclick = function () {
+    //     document.getElementById("content3").style.display = 'block';
+    //     document.getElementById("btn8").style.display = 'none';
+    // };
+    document.getElementById("btn9").onclick = function () {
+        document.getElementById("content4").style.display = 'none';
+        document.getElementById("btn10").style.display = 'block';
+    };
+
+    document.getElementById("btn10").onclick = function () {
+        document.getElementById("content4").style.display = 'block';
+        document.getElementById("btn10").style.display = 'none';
+    };
+    document.getElementById("btn13").onclick = function () {
+        document.getElementById("content5").style.display = 'none';
+        document.getElementById("btn14").style.display = 'block';
+    };
+
+    document.getElementById("btn14").onclick = function () {
+        document.getElementById("content5").style.display = 'block';
+        document.getElementById("btn14").style.display = 'none';
+    };
+
+
+    document.getElementById("btn11").onclick = function () {
         document.getElementById("content8").style.display = 'none';
         document.getElementById("btn12").style.display = 'block';
     };

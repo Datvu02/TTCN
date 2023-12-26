@@ -60,20 +60,27 @@
                                     <td>
 
                                         <a class="btn btn-primary"
-                                            href="{{url('private/thongtincanhan/')}}" title="Xem"> <i
+                                            href="{{url('private/quanly/thongtin/'.$nv->id_nhanvien)}}" title="Xem"> <i
                                                 class="fa fa-eye"></i> Xem</a>
 
 
                                         <a class="btn btn-warning"
                                             href="{{url('private/quanly/suathongtin/'.$nv->id_nhanvien)}}" title="Sửa">
                                             <i class="fa fa-edit"></i> Sửa</a>
+                                        {{-- <a class="btn btn-danger"
+                                            href="{{url('private/quanly/xoathongtin/'.$nv->id_nhanvien)}}" title="Sửa">
+                                            <i class="fa fa-edit"></i> xóa</a> --}}
                                         <a class="btn btn-danger"
                                             href="{{url('private/quanly/xoathongtin/'.$nv->id_nhanvien)}}" role="button"
                                             onclick="return confirm('Khi xóa nhân viên: {{$nv->ho_ten}}, bạn sẽ bị mất đi tất cả các thông tin liên quan đến nhân viên này(thông tin cá nhân, hợp đồng,...). Bạn có muốn tiếp tục không?');"
                                             title="Xóa">Xóa
                                         </a>
-
-
+                                        {{-- <a class="btn btn-danger" href=""
+                                            onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');"
+                                            title="Xóa"> <i class="fa fa-trash"></i> Xóa</a> --}}
+                                        <a class="btn btn-info mb-2"
+                                            href="{{url('private/hopdong/nhanvien/'.$nv->id_nhanvien)}}"
+                                            title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý hợp đồng</a>
                                     </td>
                                 </tr>
                                 @endforeach

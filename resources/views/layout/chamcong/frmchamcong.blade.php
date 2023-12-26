@@ -1,7 +1,6 @@
- 
 @extends('layout.index')
 @section('content')
- 
+
 <div class="dashboard-wrapper">
     <div class="container-fluid  dashboard-content">
         <!-- ============================================================== -->
@@ -39,9 +38,16 @@
                                     <th>Mã nhân viên</th>
                                     <th>Tên nhân viên</th>
                                     <th>Chức vụ</th>
-                                    <th>Ca làm</th>
-                                    <!-- <th>Trạng thái</th> -->
-                                    <th style="width:230px">Tác vụ</th>
+                                    <?php
+                                    // Lấy số ngày của tháng hiện tại
+                                    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, date('m'), date('Y'));
+
+                                    // Tạo các cột cho mỗi ngày trong tháng
+                                    for ($i = 1; $i <= $daysInMonth; $i++) {
+                                        echo "<th>Ngày $i</th>";
+                                    }
+                                    ?>
+                                    <th style="width:230px">Tổng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,10 +69,16 @@
                                     @else
                                     <td class="label-danger">Đã nghĩ việc</td>
                                     @endif -->
-                                    <td>12/12/2023</td>
+                                    <?php
+                                                // Tạo các ô cho mỗi ngày trong tháng
+                                                for ($i = 1; $i <= $daysInMonth; $i++) {
+                                                    echo "<td>Ngày $i</td>";
+                                                }
+                                                ?>
                                     <td>
-                                    <a class="btn btn-warning"
-                                            href="{{url('private/quanly/suathongtin/'.$nv->id_nhanvien)}}" title="Sửa">
+                                        <a class="btn btn-warning"
+                                            href="{{url('private/quanly/suathongtin/'.$nv->id_nhanvien)}}"
+                                            title="Chấm công">
                                             <i class="fa fa-edit"></i> Chấm công</a>
                                     </td>
                                 </tr>
@@ -79,6 +91,5 @@
         </div>
     </div>
 </div>
- 
+
 @endsection
- 
