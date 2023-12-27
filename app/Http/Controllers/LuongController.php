@@ -27,8 +27,8 @@ class LuongController extends Controller
     {
         $nhanvien = tbl_hosonhanvien::all();
         foreach ($nhanvien as $nv) {
-            $thuecanhan = 11000000; //Thuế của bản thân updated 1.7.2020
-            $thuemientru = 4400000; //Thuế miễn trừ gia cảnh 1 người updated 1.7.2020
+            $thuecanhan = 11000000; //Thuế của bản thân updated 27.12.2023
+            $thuemientru = 4400000; //Thuế miễn trừ gia cảnh 1 người updated 27.12.2023
             $sumtangca = 0; //Tổng giờ làm tăng ca trong tháng
             $sumthuong = 0; //Tổng tiền thưởng
             $sumkyluat = 0; //Tổng tiền kỉ luật
@@ -88,8 +88,8 @@ class LuongController extends Controller
                 ->first();
             if ($luong == null)
                 continue;
-            $luongtong = (($luongcoban + $phucap->tong_tien_phu_cap) / 198) * $luong->so_gio_lam_viec;  //1 tháng làm 22 ngày mỗi ngày làm 9 tiếng từ 9h - 18h => 1 tháng làm tổng cộng 198 giờ.
-            $luongtong = $luongtong + ($sumtangca * (($luongcoban / 198)));                  //cộng thêm tiền tăng ca phải tính thuế
+            $luongtong = (($luongcoban + $phucap->tong_tien_phu_cap) / 28) * $luong->so_gio_lam_viec;  //1 tháng làm 28 ngày 
+            $luongtong = $luongtong + ($sumtangca * (($luongcoban / 28)));                  //cộng thêm tiền tăng ca phải tính thuế
             //echo "luong tong = ".$luongtong,"</br>";
             $thuebh = $luongtong * 10.5 / 100;
             if ($luongtong >= (($thuemientru * $soluongmientru) + $thuecanhan)) {
@@ -158,7 +158,7 @@ class LuongController extends Controller
         $thuebhtn = 0;   //tiền bảo hiểm thất nghiệp
         $luongnhanduoc = 0; //Lương nhận được
         $thuebhxh = $luong->tong_tien_luong * 0.08;
-        $thuebhyt = $luong->tong_tien_luong * 0.015;
+        $thuebhyt = $luong->tong_tien_luong * 0.045;
         $thuebhtn = $luong->tong_tien_luong * 0.01;
         $phucap = tbl_phucap::where('id_chucvu', $nhanvien->id_chucvu)->first();       //Phụ cấp
         $luonghopdong = tbl_hopdong::where('id_nhanvien', $nhanvien->id_nhanvien)
@@ -205,8 +205,8 @@ class LuongController extends Controller
         foreach ($tangca as $tc) {
             $tongtangca += $tc->thoi_gian_lam;
         }
-        $tientangca = ($luongcoban / 198) * $tongtangca * 1.5;    //Tăng ca nhân 1.5
-        $luongnhanduoc = $luong->tong_tien_luong + $thuong - $kyluatt - $ungluong - $luong->thue_thu_nhap - $luong->thue_bao_hiem + (($luongcoban / 198));
+        $tientangca = ($luongcoban / 28) * $tongtangca * 1.5;    //Tăng ca nhân 1.5
+        $luongnhanduoc = $luong->tong_tien_luong + $thuong - $kyluatt - $ungluong - $luong->thue_thu_nhap - $luong->thue_bao_hiem + (($luongcoban / 28));
         return view('layout.luong.chitietLuong', compact('luongcoban', 'ungluong', 'phucap', 'luong', 'thuebhxh', 'thuebhyt', 'thuebhtn', 'thuong', 'kyluatt', 'luongnhanduoc', 'nhanvien', 'khenthuong', 'kyluat'));
     }
 

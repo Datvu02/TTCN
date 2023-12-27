@@ -98,7 +98,7 @@
                                     <tr align="center">
                                         <th>LƯƠNG THÁNG</th>
                                         <th>HỌ TÊN NHÂN VIÊN</th>
-                                        <th>SỐ GIỜ LÀM VIỆC</th>
+                                        <th>SỐ NGÀY LÀM VIỆC</th>
                                         <th>LƯƠNG NHẬN</th>
                                         <th>CHI TIẾT</th>
                                         <th>CẬP NHẬT</th>

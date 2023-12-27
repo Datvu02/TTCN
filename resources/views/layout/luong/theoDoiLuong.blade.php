@@ -31,7 +31,7 @@
                                 <tr align="center">
                                     <th>LƯƠNG THÁNG</th>
                                     <th>LƯƠNG NHẬN</th>
-                                    <th>SỐ GIỜ LÀM VIỆC</th>
+                                    <th>SỐ NGÀY LÀM VIỆC</th>
                                     <th>CHI TIẾT</th>
                                     <th>CẬP NHẬT</th>
                                 </tr>
