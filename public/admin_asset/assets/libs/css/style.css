@@ -4628,6 +4628,7 @@ Pills vertical
 
 .table {
     margin-bottom: 0px;
+    overflow: auto;
 }
 
 .table td,

@@ -17,6 +17,7 @@ use App\tbl_chucvu;
 use App\tbl_vitri;
 use App\tbl_hoso;
 use App\tbl_phuluc;
+use App\tbl_thongtinchinh;
 use App\tbl_chitietphuluc;
 
 class NhanVienController extends Controller
@@ -107,6 +108,11 @@ class NhanVienController extends Controller
         $hopdong = tbl_hopdong::where('id_nhanvien', '=', $id)->get();
         return view('pages.hopdong', ['hopdong' => $hopdong]);
     }
+    public function getChiTietHopDongNhanVien($id_nhanvien)
+    {
+        $hopdong = tbl_hopdong::where('id_nhanvien', '=', $id_nhanvien)->first();
+        return view('quanlynhansu.chitiethopdongNV', ['hopdong' => $hopdong]);
+    }   
 
     // public function getGiaDinh($id){
     //     $giadinh=tbl_giadinh::where('id_nhanvien','=',$id)->get();

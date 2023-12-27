@@ -2,10 +2,9 @@
 <!-- ============================================================== -->
 <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-white fixed-top ">
-        <a href="{{url('private/')}}"> <img src="{{url('upload/logo/'.$thongtinchinh->Hinh)}}"
-                style="width: 70px;height: 70px;" class=""></a>
-
-        <a class="navbar-brand" href="{{url('private/')}}" style="color: #71748d;">{{$thongtinchinh->ten_cong_ty}}</a>
+        <div class="logo">
+            <a href="{{url('private/')}}"> <img src="{{url('upload/logo/'.$thongtinchinh->Hinh)}}" class=""></a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

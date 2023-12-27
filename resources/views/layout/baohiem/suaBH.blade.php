@@ -10,12 +10,12 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">SỬA THÔNG TIN BẢO HIỂM</h2>
+                    <h2 class="pageheader-title">Sửa thông tin bảo hiểm</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Forms</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Form Validations</li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Quản lý</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Bảo hiểm</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Sửa</li>
                             </ol>
                         </nav>
                     </div> 
