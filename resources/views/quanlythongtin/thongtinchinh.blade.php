@@ -4,8 +4,21 @@
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="col-lg-12">
-            <h1 class="page-header">THÔNG TIN CÔNG TY</h1>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Thông tin công ty</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Quản lý thông tin công
+                                        ty</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Thông tin công ty</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
         @if(session('thongbao'))
         <div class="alert alert-success">

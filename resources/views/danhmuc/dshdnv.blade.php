@@ -3,9 +3,21 @@
 
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="col-lg-12">
-            <h1 class="page-header">DANH SÁCH HỢP ĐỒNG</h1>
-
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Danh sách hợp đồng</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Quản lý hợp đồng chức
+                                        vụ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Danh sách hợp đồng</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -58,7 +70,7 @@
 
                                 <td>
                                     <a class="btn btn-primary" href="{{url('private/chitietHD/'.$hd->id_nhanvien)}}"
-                                    title="Xem"> <i class="fa fa-eye"></i> Xem</a>
+                                        title="Xem"> <i class="fa fa-eye"></i> Xem</a>
                                     <a class="btn btn-primary mb-2"
                                         href="{{url('private/laphopdong/pdf/'.$hd->id_hopdong)}}" title="Xuất file pdf">
                                         <i class="fa fa-edit"></i> Xuất file pdf</a>
@@ -128,17 +140,20 @@
                                 <td>{{$hd->ngay_ket_thuc_hop_dong}}</td>
                                 <td>{{$hd->nguoi_laphd}}</td>
 
-                                {{-- <a class="btn btn-primary " href="{{url('private/chitiethopdong/'.$hd->id_hopdong)}}"
-                                title="Xem"> <i class="fa fa-edit"></i> Xem</a> --}}
+                                {{-- <a class="btn btn-primary "
+                                    href="{{url('private/chitiethopdong/'.$hd->id_hopdong)}}" title="Xem"> <i
+                                        class="fa fa-edit"></i> Xem</a> --}}
 
                                 {{-- <a class="btn btn-info mb-2" href="{{url('private/phuluc/'.$hd->id_hopdong)}}"
-                                title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
+                                    title="Lập phụ lục"> <i class="fa fa-edit"></i> Quản lý phụ lục</a>
                                 <br> --}}
 
                                 {{-- <a class="btn btn-warning " href="" title="Sửa"> <i class="fa fa-edit"></i> Sửa</a>
-                                   
-                                    
-                                    <a class="btn btn-danger" href="" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');" title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td> --}}
+
+
+                                <a class="btn btn-danger" href=""
+                                    onclick="return confirm('Bạn có chắc chắn muốn xóa nhân sự này không?');"
+                                    title="Xóa"> <i class="fa fa-trash"></i> Xóa</a></td> --}}
 
 
                             </tr>
