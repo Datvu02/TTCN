@@ -7,9 +7,19 @@
         <!-- pageheader -->
         <!-- ============================================================== -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">THÊM NHÂN VIÊN
-                </h1>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Thêm nhân viên</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Quản lý nhân viên</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Lập hồ sơ nhân viên</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -207,14 +217,16 @@
                                     </div>
 
 
-                                        <h5 class="card-header mb-3" style="color: blueviolet;">Thông Tin Chức Vụ Tại Công Ty</h5>
-                                        <div class="form-row mb-3">
-                                            <div class="form-group col-md-4 mb-3">
-                                                <label >Chức Vụ</label>
-                                                <select name="chuc_vu" class="form-control" style="-webkit-appearance: auto;" id="chuc_vu">
-                                                  <option selected value="0">Chọn chức vụ</option>
-                                                  
-                                                  @foreach($chucvu as $cv)
+                                    <h5 class="card-header mb-3" style="color: blueviolet;">Thông Tin Chức Vụ Tại Công
+                                        Ty</h5>
+                                    <div class="form-row mb-3">
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label>Chức Vụ</label>
+                                            <select name="chuc_vu" class="form-control"
+                                                style="-webkit-appearance: auto;" id="chuc_vu">
+                                                <option selected value="0">Chọn chức vụ</option>
+
+                                                @foreach($chucvu as $cv)
                                                 <option value="{{$cv->id_chucvu}}">{{$cv->ten_chuc_vu}}</option>
                                                 @endforeach
                                             </select>

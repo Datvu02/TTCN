@@ -11,8 +11,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav flex-column" style="overflow-y: auto;">
                     <li class="nav-divider text-center">
-                        Menu
+                        <!-- Menu -->
                     </li>
+                    <li></li>
 
                     <li class="nav-item ">
                         <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false"
@@ -55,7 +56,11 @@
                             href="{{url('private/laphoso')}}">Lập hồ sơ nhân viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                        <a class="nav-link {{Request::is('private/nhanvien/danhsach') ? 'active':null}} "
+                            href="{{url('private/nhanvien/danhsach')}}">Danh sách nhân viên</a>
+                    </li>
+                    <!-- <li class="nav-item"> -->
+                    <!-- <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-2-2" aria-controls="submenu-2-2">Danh sách nhân viên</a>
                         <div id="submenu-2-2"
                             class="collapse submenu {{Request::is('private/nhanvien/danhsach')||Request::is('private/nhanvien/1')||Request::is('private/nhanvien/2') ? 'show':null}}"
@@ -68,7 +73,7 @@
 
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link {{Request::is('private/kyluat/danhsach') ? 'active':null}}"
                             href="{{url('private/kyluat/danhsach')}}">Danh sách nhân viên kỷ luật</a>
